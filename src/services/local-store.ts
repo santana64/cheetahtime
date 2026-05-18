@@ -15,11 +15,11 @@ export function getLocalStorePath() {
   const configuredPath = process.env["CHEETAH_TIME_LOCAL_STORE_PATH"]?.trim();
 
   if (configuredPath) {
-    return path.join(
-      process.cwd(),
-      "data",
-      path.basename(configuredPath),
-    );
+    // If the path is absolute (e.g. /tmp/cheetah-time.json on Vercel), use it as-is
+    if (path.isAbsolute(configuredPath)) {
+      return configuredPath;
+    }
+    return path.join(process.cwd(), "data", path.basename(configuredPath));
   }
 
   return path.join(process.cwd(), "data", "cheetah-time.local.json");
