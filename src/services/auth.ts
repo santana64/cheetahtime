@@ -921,7 +921,23 @@ export async function getCurrentSession() {
   return getSessionByToken(cookieStore.get(SESSION_COOKIE_NAME)?.value);
 }
 
+const GUEST_SESSION: AuthSession = {
+  id: "guest-session",
+  userId: DEFAULT_USER_ID,
+  workspaceId: DEFAULT_WORKSPACE_ID,
+  role: "OWNER",
+  email: "guest@cheetahtime.local",
+  name: "Invité",
+  workspaceName: "Cheetah Time",
+  expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+};
+
 export async function requireCurrentSession() {
+  // Auth bypass mode — set CHEETAH_TIME_AUTH_DISABLED=true to skip login
+  if (process.env["CHEETAH_TIME_AUTH_DISABLED"] === "true") {
+    return GUEST_SESSION;
+  }
+
   const session = await getCurrentSession();
   if (!session) {
     redirect("/login");
