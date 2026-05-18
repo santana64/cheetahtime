@@ -47,3 +47,4 @@ next-env.d.ts
 /.codex-mpp-probe/
 /.codex-temp/
 /scripts/__pycache__/
+.env.local
