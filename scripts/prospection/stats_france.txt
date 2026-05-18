@@ -1,0 +1,40 @@
+=== Rapport ChantierDevis Prospection ===
+Généré le : 2026-05-10 01:13
+
+TOTAL PROSPECTS         : 95498
+Avec email              : 32564 (34%)
+Avec site web           : 19811
+
+PRIORITÉ
+  P0 (site + email)     : 0
+  P1 (adresse complète) : 94568
+  P2 (données partielle): 930
+
+TOP 10 DÉPARTEMENTS
+    93 : 1954
+    75 : 1873
+    01 : 1672
+    95 : 1382
+    69 : 1380
+    31 : 1368
+    91 : 1353
+    67 : 1338
+    06 : 1316
+    38 : 1273
+
+RÉPARTITION PAR MÉTIER (NAF)
+    43.22B : 8094
+    43.22A : 6850
+    43.21A : 6717
+    43.32A : 6594
+    43.31Z : 6461
+    41.20A : 6234
+    43.99C : 6208
+    43.32B : 5067
+    43.34Z : 5038
+    43.33Z : 4992
+    41.20B : 4914
+    43.91A : 4733
+    43.91B : 4607
+    43.29A : 4562
+    43.39Z : 4289

@@ -1,0 +1,3770 @@
+============================================================
+FILE: EOS_2026
+============================================================
+Pages: 24
+--- Page 1 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+ 
+CHEETAH 
+Enterprise  Operating  System 
+Edition  2026   —   Version  2.0  
+ 
+Operating  Model   ·   Unit  Economics   ·   Product  Philosophy 
+Architecture  Doctrine   ·   Data  &  AI  Governance   ·   Risk  Register   ·   Maturity  Roadmap  
+CONFIDENTIEL  —  USAGE  INTERNE  —  NE  PAS  DIFFUSER  
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  1  /  24
+ 
+--- Page 2 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Executive  Summary  
+Cheetah  est  un  SaaS  B2B  de  contrôle  de  coûts  (méthode  FGF)  dédié  aux  projets  d'infrastructure,  de  
+construction
+ 
+et
+ 
+d'ingénierie.
+ 
+Ce
+ 
+document
+ 
+est
+ 
+le
+ 
+système
+ 
+d'exploitation
+ 
+de
+ 
+l'entreprise
+ 
+:
+ 
+les
+ 
+règles,
+ 
+les
+ 
+cadences,
+ 
+les
+ 
+métriques
+ 
+et
+ 
+les
+ 
+doctrines
+ 
+qui
+ 
+gouvernent
+ 
+toutes
+ 
+les
+ 
+décisions.  
+Mission  &  Périmètre  
+Dimension Spécification 
+Mission Donner  aux  chefs  de  projet  une  visibilité  totale  sur  leurs  coûts,  écarts  et  risques  en  temps  réel 
+Marché  cible PME  et  ETI  des  secteurs  BTP,  infrastructure,  maîtrise  d'ouvrage  publique  et  privée  —  French  first 
+Modele  metier SaaS  B2B  par  abonnement,  facturation  annuelle,  déploiement  multi-tenant  sur  infrastructure  cloud 
+Méthodologie FGF  (Forecasting  at  Completion)  —  méthode  de  soutenance  française  standard  grands  projets 
+Positionnement Outil  expert  de  niveau  enterprise,  simple  d'usage  —  contre  la  complexité  inutile  des  outils  génériques  
+Stack  Technologique  —  Etat  Actuel  
+★   Cheetah  aujourd'hui  :  stack  confirme Frontend  :  Next.js  16.2.4  +  TypeScript  +  React  +  Tailwind  CSS  —  déployé  sur  Vercel  (Edge) ORM  :  Prisma  —  base  de  données  :  PostgreSQL CI/CD  :  GitHub  Actions  —  versionning  :  GitHub Export  :  jsPDF  (PDF)  +  docx-js  (Word)  —  graphiques  :  SVG  custom  (recharts  supprime) Bundler  :  Turbopack  (Rust)  —  React  Compiler  en  mode  annotation Auth  :  MFA  partiel  —  SSO  :  non  encore  déployé Monitoring  :  non  configuré  —  SIEM  :  non  encore  déployé Backup  :  journalier  —  DRP  :  plan  documente,  non  encore  automatisé 
+ 
+→   Cheetah  cible  2026-2027  :  stack  enterprise SSO  universel  (Okta  ou  Auth0)  +  MFA  obligatoire  sur  tous  les  comptes Observabilite  :  Datadog  (APM  +  Logs  +  SIEM)  —  SLO/SLA  documentés IaC  :  Terraform  (eviter  vendor  lock-in  Vercel)  —  multi-region  actif CI/CD  full  automatise  :  tests  coverage  >  80%  +  zero-downtime  deployments DRP  automatisé  :  PRA  <  4h  RTO  /  <  1h  PROteste  trimestriellement SOC  2  Type  II  en  cours  de  préparation  (horizon  2027) 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  2  /  24
+ 
+--- Page 3 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+ 
+Tableau  de  Maturité  —  Etat  Actuel  
+Domaine Niveau Score Priorité 
+Sécurité  de  base Partiel ●●●○○ P1 
+CI/CD  &  Déploiement Partiel ●●○○○ P1 
+Observabilite Absent ●○○○○ P0 
+Gouvernance  produit EN  COURS ●●●○○ P2 
+Unit  Economics Partiel ●●○○○ P1 
+Data  Governance Absent ●○○○○ P2 
+Architecture  doctrine EN  COURS ●●○○○ P2 
+Risk  Management Absent ●○○○○ P1 
+SSO  &  IAM Absent ●○○○○ P0 
+DRP  /  PRA Partiel ●●○○○ P1  
+Top  5  Actions  Critiques  
+1.   OBSERVABILITE  :  déployer  Datadog  (APM  +  Logs  +  Alerting)  —  délai  :  30  jours  —  owner  :  CTO 2.   SSO  +  MFA  UNIVERSEL  :  deployer  Okta  ou  Auth0  sur  tous  les  acces  —  délai  :  60  jours  —  owner  :  
+CTO 3.   RISK  REGISTER  :  valider  le  registre  des  risques  en  comité  —  délai  :  14  jours  —  owner  :  CEO  +  CTO 4.   UNIT  ECONOMICS  :  instrumenter  CAC  /  LTV  /  NRR  dans  le  dashboard  financier  —  délai  :  45  jours  —  
+owner
+ 
+:
+ 
+CEO 5.   MATURITY  ROADMAP  :  valider  et  assigner  ownership  pour  chaque  domaine  —  délai  :  7  jours  —  owner  
+:
+ 
+CEO  
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  3  /  24
+ 
+--- Page 4 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  I  —  OPERATING  SYSTEM  
+1.1  Cadence  d'entreprise  —  Le  Rythme  de  Cheetah  
+Un  operating  system  d'entreprise  est  un  ensemble  de  rituels  et  de  cadences  qui  permettent  de  prendre  les  
+bonnes
+ 
+décisions
+ 
+au
+ 
+bon
+ 
+moment,
+ 
+sans
+ 
+sur-communiquer
+ 
+ni
+ 
+laisser
+ 
+des
+ 
+zones
+ 
+de
+ 
+silence.  
+Rituel Freq. Participants Input Output  obligatoire Durée 
+Daily  Standup Quotidien Equipe  dev  +  PM Tickets  en  cours Blockers  identifiés,  scope  du  jour 
+15  min 
+Product  Review Hebdo PM  +  CTO  +  CEO Sprint  metrics,  NPS,  tickets 
+Backlog  reprioritise,  decisions  actees 
+45  min 
+Architecture  Review Mensuel CTO  +  Tech  Leads ADR  en  attente,  tech  debt  score 
+ADR  signes,  dette  remboursée  priorisée 
+60  min 
+Business  Review  (MBR) Mensuel CEO  +  CFO  +  CTO  +  Sales 
+ARR,  CAC,  LTV,  NRR,  Burn 
+Actions  correctives,  owner  +  deadline 
+90  min 
+Security  Audit Trimestriel CTO  +  RSSI  (ou  externe) 
+Scan  vulnerabilities,  logs  SIEM 
+Rapport,  CVE  traites,  plan  90  jours 
+3h 
+Risk  Committee Trimestriel CEO  +  CTO  +  CFO Risk  Register  mis  à  jour Risques  re-scores,  mitigations  validées 
+60  min 
+Strategy  Review  (QBR) Trimestriel CEO  +  Board OKR  Q-1,  Unit  Economics 
+OKR  Q+1,  roadmap  ajustee 
+3h 
+Semi-Annual  Architecture 
+Semestriel CTO  +  CEO  +  Tech  Leads 
+Architecture  diagram  actualisé 
+Vision  12  mois,  dépréciations  planifiées 
+4h 
+ 
+POLICY   ·   Cadence  Policy Chaque  rituel  produit  EXACTEMENT  1  artefact  écrit  (Decision  Record,  rapport,  backlog  update). Pas  d'artefact  =  la  réunion  n'a  pas  eu  lieu  (elle  doit  être  reprogrammée). Tout  artefact  est  versionné  dans  le  Decision  Log  (Notion)  avec  :  date,  participants,  decisions,  owners,  deadlines. Un  rituel  manque  2  fois  de  suite  déclenche  une  alerte  au  CEO. 
+ 
+1.2  Lifecycle  d'une  Feature  —  Du  signal  à  la  suppression  
+Chaque  fonctionnalité  passe  par  6  phases.  Une  phase  ne  peut  pas  être  baisée.  Chaque  phase  a  un  gate  de  
+validation
+ 
+obligatoire.  
+1.  SIGNAL 
+→
+2.  SPEC 
+→
+3.  VALIDATION 
+→ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  4  /  24
+ 
+--- Page 5 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+1.  BUILD 
+→
+2.  MESURE 
+→
+3.  KEEP  /  KILL 
+→ 
+Phase Définition Owner 
+Gate  (condition  pour  passer  à  la  suite) 
+Artefact  produit 
+1.  SIGNAL Identification  d'un  besoin  client  ou  signal  marche 
+PM  /  CEO 
+Au  moins  3  signaux  indépendants  valident  le  besoin 
+User  story  1  ligne 
+2.  SPEC Spécification  détaillée  de  la  solution PM  +  CTO 
+Spec  validée  par  CTO  (faisabilité)  +  CEO  (valeur  métier) 
+PRD  (Product  Requirements  Doc) 
+3.  VALIDATION Test  de  l'hypothèse  avant  de  (wireframe  ou  spike) 
+PM  +  Dev Test  utilisateur  ou  spike  technique  concluant 
+Validation  report 
+4.  BUILD Développement,  tests,  intégration  continue 
+Dev  Team 
+Coverage  >  80%,  0  bug  critique,  code  review  approuvée 
+PR  merge  +  release  note 
+5.  MESURE Mesure  de  l'impact  30/60/90  jours  après  release 
+PM Métriques  instrumentées  opérationnelles  avant  release 
+Impact  Report  90j 
+6.  KEEP/KILL Décision  de  conserver,  pivoter  ou  supprimer  la  feature 
+PM  +  CEO 
+Si  impact  <  threshold  cible  après  90  j  :  kill  automatique 
+Décision  Record  signe  
+POLICY   ·   Feature  Kill  Policy Threshold  KEEP  :  feature  utilisée  par  >  15%  des  tenants  actifs  OU  reduce  time-to-value  de  >  20%. Si  Threshold  après  90  jours  :  kill  automatique.  PM  rédigé  Kill  Record.  Pas  de  débat. Une  feature  morte  qui  n'est  pas  supprimée  devient  de  la  dette  produit  —  elle  est  traitée  comme  de  la  dette  technique. 
+ 
+1.3  Incident  Lifecycle  —  SRE  Handbook  Cheetah  
+Le  workflow  complet  de  gestion  d'incident,  de  la  détection  à  la  prévention.  Chaque  phase  a  un  owner  
+désigne,
+ 
+un
+ 
+délai
+ 
+maximal,
+ 
+et
+ 
+un
+ 
+artefact
+ 
+obligatoire.  
+Phase  1  :  Detection  →  Triage  →  Escalation  →  Communication 
+1.  DÉTECTION 
+→
+2.  TRIAGE 
+→
+3.  ESCALATION 
+→
+4.  COMMUNICATION 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  5  /  24
+ 
+--- Page 6 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Phase  2  :  Fix  /  Rollback  →  RCA  →  Closure  →  Prevention 
+1.  FIX  /  ROLLBACK 
+→
+2.  RCA 
+→
+3.  CLOSURE 
+→
+4.  PRÉVENTION 
+ 
+Phase Owner Délai  max Actions  cles Artefact 
+1.  DÉTECTION On-call Instantané Alerte  Datadog  /  monitoring  OU  signalement  client 
+Ticket  incident  ouvert  (P0-P3) 
+2.  TRIAGE On-call <  5  min Evaluer  impact,  classer  P0-P3,  confirmer  périmètre 
+Sévérité  assigned,  channel  #incident  ouvert 
+3.  ESCALATION On-call <  10  min P0/P1  :  réveiller  CTO  +  CEO.  P2  :  notifier  CTO. 
+Equipe  assemblée,  lead  incident  désigne 
+4.  COMMS Lead/CEO <  15  min  P0 Status  page  update  +  email  clients  impacted  (P0/P1) 
+Status  page  'Investigating'  publie 
+5.  FIX/ROLL Lead  dev Variable Rollback  d'abord  si  >  30  min  de  fix.  Patch  sinon. 
+Commit  /  release  tag  +  test  smoke 
+6.  RCA Lead  +  CTO <  48h 5  Pourquoi,  timeline,  causes  racines,  sans  blâme 
+Post-mortem  blameless  documente 
+7.  CLOSURE Lead/PM <  72h Status  page  'Resolved',  email  clients  resolution 
+Email  clients  +  closure  note 
+8.  PRÉVENTION CTO <  2  semaines Action  items  préventifs  avec  owner  et  deadline  assigns 
+Prévention  tickets  dans  backlog  sprint+1  
+POLICY   ·   Incident  Escalation  Matrix P0  (panne  totale  /  breach)  :  réveiller  CTO  +  CEO  dans  les  10  min,  24/7,  même  la  nuit  et  le  weekend. P1  (fonctionnalité  clé  KO)  :  notifier  CTO  dans  les  30  minutes.  CEO  si  pas  résolu  en  1h. P2/P3  :  gestion  next  business  day  acceptable.  Log  dans  Jira.  RCA  optionnel. Rollback  policy  :  si  le  fix  estimé  >  30  min  EN  PRODUCTION,  rollback  immédiat  sans  débat. Post-mortem  :  obligatoire  pour  tout  P0/P1.  Template  standard  dans  Notion.  Due  dans  les  48h. 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  6  /  24
+ 
+--- Page 7 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+ 
+⚠   Règle  absolue  :  Zéro  manual  hotfix  en  production Toute  modification  de  production  passe  par  le  pipeline  CI/CD,  même  en  urgence. Exception  unique  :  rollback  via  commande  pré-approuvée  documentée  dans  le  Runbook. Un  hotfix  manuel  détecte  =  audit  de  sécurité  immédiat  +  post-mortem  obligatoire. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  7  /  24
+ 
+--- Page 8 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  II  —  UNIT  ECONOMICS  SAAS  
+Les  SaaS  top-tier  sont  obsédés  par  leurs  unités  économiques.  Ce  sont  les  métriques  qui  déterminent  la  
+santé
+ 
+financière
+ 
+réelle
+ 
+du
+ 
+modèle,
+ 
+la
+ 
+capacité
+ 
+à
+ 
+lever
+ 
+des
+ 
+fonds,
+ 
+et
+ 
+la
+ 
+viabilité
+ 
+à
+ 
+long
+ 
+terme.
+ 
+Un
+ 
+produit
+ 
+excellent
+ 
+avec
+ 
+de
+ 
+mauvaises
+ 
+unités
+ 
+économiques
+ 
+ne
+ 
+peut
+ 
+pas
+ 
+survivre.  
+2.1  Framework  de  Métriques  
+Métrique Formule 
+Benchmark  SaaS  sain 
+Benchmark  SaaS  top-tier 
+Priorité 
+CAC Total  Opex  Sales  &  Mktg  /  Nouveaux  clients  acquis 
+<  12  mois  ARR/client 
+<  6  mois  ARR/client 
+P0 
+LTV ARPU  /  Churn  Rate  mensuel >  3x  CAC >  10x  CAC P0 
+LTV/CAC LTV  /  CAC >  3x >  5x P0 
+Gross  Margin (Revenue  -  COGS)  /  Revenue >  60% >  75% P0 
+NRR (MRR  debut  -  churn  -  contraction  +  expansion)  /  MRR  debut 
+100-110% 125%+ P0 
+Burn  Multiple Net  Burn  /  Net  New  ARR <  2x <  1x  (tres  efficace) P1 
+Payback  Period CAC  /  (ARPU  *  Gross  Margin) <  18  mois <  12  mois P1 
+Revenue  Concentration 
+ARR  top  client  /  ARR  total <  20% <  10% P1 
+Infra  Cost  /  Tenant Coûts  infra  totaux  /  Nb  tenants <  5%  ARPU <  3%  ARPU P1  
+2.2  CAC  —  Customer  Acquisition  Cost  
+ℹ   Définition  :  CAC  =  Total  des  dépenses  Sales  &  Marketing  /  Nombre  de  nouveaux  clients  acquis  sur  la  même  période Inclure  dans  le  CAC  :  salaires  commerciaux,  commissions,  budget  publicité,  outils  marketing,  évènements,  demos. Calcul  sur  12  mois  glissants  pour  éviter  les  biais  saisonniers. 
+ 
+Composante  CAC Description A  instrumenter 
+Salaires  Sales  (prorata) Part  du  temps  commercial  dédié  à  l'acquisition 
+CRM  :  taux  d'activité  par  type 
+Budget  publicité  digitale Google  Ads,  LinkedIn,  SEO,  content UTM  tracking  +  attribution 
+Evènements  &  démos Salons,  webinaires,  cold  outreach Coût  par  opportunité  générée 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  8  /  24
+ 
+--- Page 9 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Composante  CAC Description A  instrumenter 
+Outils  Sales  &  Mktg CRM,  automation,  outils  prospection Factures  mensuelles  
+POLICY   ·   CAC  Policy Le  CAC  mesure  tous  les  mois  dans  le  MBR.  Alerte  si  CAC  >  15  mois  d'ARR  client. CAC  payback  >  24  mois  =  revue  stratégique  acquisition  obligatoire  dans  les  30  jours. Segmenter  le  CAC  par  canal  :  CAC  organique  vs  CAC  paye.  Optimiser  vers  le  canal  le  plus  efficace. 
+ 
+2.3  LTV  &  Payback  Period  
+ℹ   LTV  =  ARPU  (ARR  moyen  par  client)  /  Taux  de  churn  annuel Exemple  :  ARPU  =  6  000  EUR/an,  Churn  =  10%/an  →  LTV  =  60  000  EUR Payback  Period  =  CAC  /  (ARPU  mensuel  *  Gross  Margin  %) Exemple  :  CAC  =  3  000  EUR,  ARPU  mensuel  =  500  EUR,  GM  =  70%  →  Payback  =  3000  /  (500*0.70)  =  8.6  mois 
+ 
+Scénario Churn  annuel ARPU/an LTV CAC  cible  max Statut 
+Minimum  viable 20% 4  800 24  000 8  000 Acceptable 
+Sain 10% 6  000 60  000 20  000 Bon 
+Top-tier 5% 9  600 192  000 64  000 Excellent 
+Cheetah  cible <  8% >  6  000 >  75  000 <  25  000 A  mesurer  
+2.4  Gross  Margin  SaaS  
+La  marge  brute  SaaS  (Gross  Margin)  mesure  la  rentabilité  du  produit  avant  les  coûts  fixes.  C'est  un  
+indicateur
+ 
+de
+ 
+scalabilité
+ 
+:
+ 
+une
+ 
+GM
+ 
+>
+ 
+70%
+ 
+signifie
+ 
+que
+ 
+chaque
+ 
+euro
+ 
+de
+ 
+revenu
+ 
+supplémentaire
+ 
+génère
+ 
+environ
+ 
+0.70
+ 
+EUR
+ 
+de
+ 
+marge. 
+Coût  inclus  dans  COGS  SaaS Description Optimisation  possible 
+Infrastructure  cloud Vercel,  PostgreSQL  hosting,  CDN,  storage 
+IaC,  rightsizing,  reserved  instances 
+Support  client  (tier  1) Temps  agent  sur  tickets  basiques Chatbot,  documentation  self-service 
+Outils  customer  success CRM,  monitoring  usage,  NPS  tools Mutualiser  sur  stack  existante 
+Sous-traitance  directe Pentest,  audit  sécurité,  compliance Contractualiser  en  recurrent  
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  9  /  24
+ 
+--- Page 10 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+POLICY   ·   Gross  Margin  Policy Gross  Margin  <  60%  :  alerte  immédiate.  Audit  COGS  dans  les  7  jours.  Plan  de  réduction  dans  les  30  jours. Cost  per  Tenant  suivi  mensuellement  :  alerte  si  >  8%  ARPU. Tout  nouvel  outil  SaaS  >  500  EUR/mois  nécessite  une  validation  CFO  +  analyse  impact  GM. 
+ 
+2.5  NRR  —  Net  Revenue  Retention  
+ℹ   NRR  =  (MRR  debut  de  periode  -  Churn  -  Contractions  +  Expansions)  /  MRR  debut  de  periode  *  100 NRR  =  100%  :  vous  remplacez  exactement  ce  que  vous  perdez.  Neutre. NRR  >  100%  :  vos  clients  existants  vous  rapportent  de  plus  en  plus.  C'est  le  Graal  —  la  croissance  organique  pure. NRR  <  100%  :  vous  perdez  du  revenu  sur  votre  base  existante.  Même  avec  de  l'acquisition,  vous  coulez  plus  vite. Standard  top-tier  (Datadog,  Snowflake,  Stripe)  :  NRR  >  130%. 
+ 
+Driver  NRR Levier  actionnable  chez  Cheetah Impact  cible  NRR 
+Expansion  revenue Upsell  :  lots  supplementaires,  users,  modules  IA +10  à  20  pts  NRR 
+Réduction  churn Onboarding  excellence,  success  manager,  QBR  clients -  5  à  10%  churn 
+Contraction  prevention Alerte  early-warning  sur  faible  utilisation  (<  30j) -  3%  contraction 
+Upsell  module  bench. Vente  module  benchmarks  sectoriels  en  add-on +5  à  15  pts  NRR  
+2.6  Burn  Multiple  &  Revenue  Concentration  Risk  
+Métrique Formule Interprétation 
+Burn  Multiple Net  Cash  Burn  /  Net  New  ARR 1.0  =  vous  brûlez  1  EUR  pour  gagner  1  EUR  ARR.  Objectif  :  <  1.5x 
+Revenue  Concentration ARR  top  1  client  /  ARR  total Si  >  25%  :  risque  majeur.  Un  départ  =  crise  de  trésorerie  immédiate 
+Top  5  Concentration ARR  top  5  clients  /  ARR  total Si  >  60%  :  portefeuille  trop  concentré.  Objectif  <  40% 
+Infra  Cost/Tenant Total  infra  spend  /  Nb  tenants  actifs Doit  diminuer  à  mesure  que  l'échelle  augmente  (economies  d'échelle)  
+⚠   Règle  absolue  :  Concentration  Risk  Threshold 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  10  /  24
+ 
+--- Page 11 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Si  un  seul  client  représente  25%  de  l'ARR,  un  plan  de  diversification  est  actif  dans  les  90  jours. Aucun  contrat  client  ne  peut  être  signé  si  son  ART  dépasse  20%  de  l'ARR  total  projeté  à  12  mois. La  concentration  est  suivie  dans  le  MBR  mensuel.  Alerte  automatique  si  seuil  franchi. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  11  /  24
+ 
+--- Page 12 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  III  —  PHILOSOPHIE  PRODUIT  
+La  philosophie  produit  est  un  ensemble  de  contraintes  dures  et  de  principes  non-négociables  qui  gouvernent  
+toutes
+ 
+les
+ 
+décisions
+ 
+de
+ 
+conception.
+ 
+Sans
+ 
+doctrine
+ 
+explicite,
+ 
+le
+ 
+produit
+ 
+dérive
+ 
+vers
+ 
+la
+ 
+complexité
+ 
+et
+ 
+l'incohérence.  
+3.1  Ce  que  Cheetah  ne  fera  JAMAIS  
+Les  contraintes  négatives  sont  aussi  importantes  que  les  ambitions  positives.  Elles  empêchent  le  feature  
+creep
+ 
+et
+ 
+préservent
+ 
+l'identité
+ 
+du
+ 
+produit.  
+POLICY   ·   Hard  Constraints  —  Cheetah  Never  List 1.  JAMAIS  un  module  de  gestion  de  projet  general  (Asana,  Monday,  Notion  replacement)  —  hors  périmètre. 2.  JAMAIS  une  fonctionnalité  qui  nécessite  >  3  clics  pour  une  action  quotidienne  des  utilisateurs. 3.  Jamais  du  code  propriétaire  sur  les  formats  de  données  —  toujours  export  standard  (CSV,  Excel,  JSON). 4.  JAMAIS  une  fonctionnalité  non  mesurable.  Pas  de  métrique,  pas  de  feature. 5.  JAMAIS  une  IA  générative  sur  les  données  financières  confidentielles  sans  consentement  explicite. 6.  JAMAIS  une  UI  qui  cache  les  chiffres.  Cheetah  est  datafirst  —  les  métriques  sont  toujours  visibles. 7.  Jamais  de  lock-in  propriétaire.  Les  clients  peuvent  exporter  100%  de  leurs  données  à  tout  moment. 8.  JAMAIS  une  fonctionnalité  de  reporting  'statique'  —  tout  rapport  est  recalculé  en  temps  réel. 
+ 
+3.2  Principes  UX  
+Principe Spécification Anti-pattern  a  éviter 
+Rapidité  >  Complexité Interface  P  95  <  200ms.  Pas  de  loading  spinners  sur  les  actions  core 
+Dashboards  surcharged,  animations  inutiles 
+Densité  intelligente Maximiser  l'information  utile  par  pixel  —  pas  de  whitespace  vide 
+Pages  avec  3  chiffres  sur  une  écran  entier 
+3-click  rule Toute  action  critique  accessible  en  <=  3  clics  depuis  n'importe  ou 
+Menus  imbriqués  >  2  niveaux 
+Data-first  UX Les  données  brutes  sont  toujours  accessibles  en  un  clic 
+Métriques  uniquement  en  graphiques  sans  valeurs 
+Keyboard-first Toutes  les  actions  principales  ont  un  raccourci  clavier 
+Interfaces  full-mouse  sur  outils  experts 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  12  /  24
+ 
+--- Page 13 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Principe Spécification Anti-pattern  a  éviter 
+Offline  resiliency Les  données  affichées  restent  visibles  même  si  l'API  est  lente 
+Ecran  blanc  pendant  les  appels  API 
+Exploitability Chaque  calcul  a  un  tooltip  'Comment  c'est  calculé' Formules  cachées,  résultats  opaques 
+Mobile-second Desktop  priority.  Mobile  =  lecture  seule.  Jamais  de  saisie  complexe 
+Forcer  le  mobile-first  sur  un  outil  B2B  expert  
+3.3  Product  Fitness  Function  
+Avant  de  développer  une  feature,  elle  doit  passer  le  test  de  la  Fitness  Function.  Si  la  feature  n'améliore  
+aucune
+ 
+de
+ 
+ces
+ 
+5
+ 
+dimensions
+ 
+:
+ 
+refus
+ 
+automatique.  
+Dimension Question  de  qualification Threshold  minimum 
+1.  Vitesse La  feature  réduit-elle  le  temps  nécessaire  à  une  tâche  récurrente  ? 
+>  20%  de  réduction  du  temps  mesure 
+2.  Visibilité La  feature  donne-t-elle  une  information  qui  n'existait  pas  ? 
+Nouvelle  métrique  ou  alerte  actionnable 
+3.  Pilotage La  feature  aide-t-elle  à  prendre  une  décision  de  projet  ? 
+Utilisable  en  réunion  de  pilotage  (30  sec) 
+4.  Réduction  de  risque La  feature  est  détectée  ou  prévient-elle  un  dépassement  de  budget  ? 
+Alerte  ou  prédiction  quantifiable 
+5.  Qualité  décisionnelle La  feature  améliore-t-elle  la  fiabilité  ou  la  traçabilité  ? 
+Auditabilité  ou  précision  documentée  
+POLICY   ·   Fitness  Function  Gate Une  feature  DOIT  valider  au  moins  2  des  5  dimensions  avec  un  score  quantifie. Le  PM  remplit  la  Fitness  Function  dans  le  PRD.  Le  CEO  valide  avant  que  le  dev  commence. Une  feature  qui  passe  le  gâteau  mais  échoue  à  la  Mesure  (phase  5)  est  killer  automatiquement. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  13  /  24
+ 
+--- Page 14 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  IV  —  DOCTRINE  ARCHITECTURE  
+Les  principes  d'architecture  sont  des  décisions  permanentes  qui  s'appliquent  à  chaque  choix  technique.  Ils  
+ne
+ 
+sont
+ 
+pas
+ 
+des
+ 
+guidelines
+ 
+optionnels
+ 
+—
+ 
+ce
+ 
+sont
+ 
+des
+ 
+contraintes
+ 
+dures
+ 
+qui
+ 
+nécessitent
+ 
+une
+ 
+décision
+ 
+de
+ 
+CTO
+ 
+documentée
+ 
+pour
+ 
+être
+ 
+dérogées.  
+4.1  Les  10  Principes  d'Architecture  
+Principe Politique Anti-pattern 
+Exception  autorisée 
+A.  Stateless  First Aucun  etat  ne  vit  sur  le  serveur  applicatif  —  tout  en  base  ou  cache 
+Sessions  serveur,  fichiers  locaux 
+Traitements  longs  avec  queue  (Celery,  Bull  MQ) 
+B.  API-First Toute  fonctionnalité  expose  une  API  avant  d'avoir  une  UI 
+UI  sans  API  sous-jacente  structurée 
+Prototypes  internes  de  moins  de  2  sprints 
+C.  Event-Driven  Justified Event-driven  seulement  si  le  use  case  l'exige.  Sinon  :  REST 
+Queues  pour  des  appels  synchrones  simples 
+Notifications,  exports  asynchrones,  webhooks 
+D.  Monolith  Modulaire  d'abord 
+Microservices  seulement  après  >  3  squads  indépendantes  et  >  10k  tenants 
+Microservices  prematures  (death  star) 
+Modules  totalement  indépendants  avec  SLA  distinct 
+E.  Backward  Compatibility Chaque  API  est  maintenue  avec  un  cycle  de  dépréciation  de  6  mois  min 
+Breaking  changes  sans  préavis 
+Failles  de  sécurité  critiques  (préavis  <  7  jours) 
+F.  DB  Migration  Doctrine Zero  downtime  migrations.  Expand-Contract  pattern  obligatoire 
+ALTER  TABLE  bloquants  en  production 
+Tables  <  1000  lignes  en  maintenance  programmée 
+G.  Observability  by  Default 
+Toute  feature  sort  avec  logs,  métriques,  et  alertes  configurées 
+Features  sans  instrumentation 
+Prototypes  de  moins  de  1  sprint 
+H.  Security  by  Design La  sécurité  est  validée  au  code  review,  pas  en  post-deployment 
+Security  audit  en  fin  de  sprint 
+Hotfixes  (audit  dans  les  48h) 
+I.  Idempotency  Required Toutes  les  mutations  critiques  (paiements,  exports)  sont  idempotentes 
+Opérations  non-idempotentes  sur  données  financières 
+Opérations  de  lecture  pure 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  14  /  24
+ 
+--- Page 15 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Principe Politique Anti-pattern 
+Exception  autorisée 
+J.  Reliability  Budgets Chaque  service  a  un  SOLO  de  disponibilité  et  un  error  budget  mensuel 
+Pas  de  SLO  =  pas  de  service  production 
+Services  internes  non-critiques  (CLI,  scripts)  
+4.2  Stack  Actuel  vs  Stack  Cible  
+Couche Composant Aujourd'hui Cible  2026 
+Statut 
+Présentation Frontend Next.js  16  +  TypeScript  +  Tailwind 
+Idem  +  React  Compiler  full EN  COURS 
+Déploiement Hosting Vercel  (Edge,  serverless) Vercel  +  IaC  Terraform  (portabilité) 
+Partiel 
+API Backend Next.js  Route  Handlers  (API  routes) 
+API  routes  +  Open  API  spec  générée 
+NON  FAIT 
+ORM  /  Accessible 
+Database Prisma  ORM  +  PostgreSQL Prisma  +  migrations  Expand-Contract 
+Partiel 
+Authentification 
+Auth Custom  +  MFA  partiel Okta/Auth0  SSO  +  MFA  universel 
+NON  FAIT 
+CI/CD Pipeline GitHub  Actions  (partiel) Full  CI/CD  :  test  >  80%  +  zero-downtime 
+Partiel 
+Monitoring Observ. Non  configuré Datadog  APM  +  Logs  +  SIEM  +  Alerting 
+NON  FAIT 
+Cache Cache Non  configuré Redis  (sessions  +  calculs  FGF  caches) 
+NON  FAIT 
+Exports Export jsPDF  +  docx-js  (client-side) Export  server-side  +  queue  asynchrone 
+EN  COURS 
+IaC Infra Configuration  manuelle  Vercel Terraform  modules  versiones NON  FAIT  
+4.3  Tenant  Isolation  Policy  
+POLICY   ·   Multi-Tenant  Isolation  —  Niveaux  et  Politique NIVEAU  ACTUEL  :  Isolation  logique  (row-level  security  par  tenant_id).  Acceptable  jusqu'à  ~500  tenants. NIVEAU  CIBLE  2026  :  Isolation  renforcée  avec  RLS  PostgreSQL  +  audit  trail  par  tenant. 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  15  /  24
+ 
+--- Page 16 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+NIVEAU  CIBLE  2027  :  Isolation  physique  disponible  en  option  pour  clients  enterprise  (schema-per-tenant  ou  DB-per-tenant). RÈGLE  :  aucune  requête  cross-tenant  n'est  permise  en  production.  Violation  =  incident  P0. MONITORING  :  requêtes  sans  filtre  tenant_id  déclenchent  une  alerte  Datadog  automatique. 
+ 
+4.4  Reliability  Budgets  
+Service SLO  Disponibilité 
+Error  Budget  mensuel 
+MTTR  cible Alerting 
+Application  principale 99.5%  (44  h/an) 3.6h/mois <  1h Datadog  —  P1  si  >  15  min 
+API  publique 99.9%  (8.7h/an) 43  min/mois <  30  min Datadog  —  P0  si  >  5  min 
+Base  de  données 99.99%  (52  min/an) 
+4.4  min/mois <  15  min Datadog  —  P0  immédiat 
+Export  (PDF/Excel) 99.0%  (87h/an) 7.2h/mois <  2h Datadog  —  P2  si  >  30  min 
+Auth  &  SSO 99.9%  (8.7h/an) 43  min/mois <  20  min Datadog  —  P0  si  >  5  min  
+POLICY   ·   Error  Budget  Policy Si  50%  de  l'error  budget  est  consommé  avant  la  fin  du  mois  :  freeze  des  features  non-critiques. Si  100%  consomme  :  stop  features,  sprint  entier  dédié  reliability,  revue  CTO  obligatoire. Error  budget  reste  le  1er  du  mois.  Historique  conserve  12  mois  pour  trend  analysis. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  16  /  24
+ 
+--- Page 17 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  V  —  DATA  &  AI  GOVERNANCE  
+5.1  Classification  des  Données  
+Chaque  donnée  produite  ou  traitée  par  Cheetah  appartient  à  un  tiers  de  classification.  Le  tiers  détermine  les  
+droits
+ 
+d'accès,
+ 
+la
+ 
+retenue,
+ 
+les
+ 
+règles
+ 
+d'anonymisation,
+ 
+et
+ 
+l'éligibilité
+ 
+à
+ 
+l'usage
+ 
+IA.  
+Tier Type  de  donnée Exemples  concrets Acces 
+Rétention 
+IA-éligible 
+T1  —  Confidentiel 
+Données  financières  identifiantes  du  tenant 
+Montants  projets,  budgets,  écarts  nommés 
+Tenant  owner  only 
+7  ans  légaux 
+NON 
+T2  —  Restreint 
+Données  métier  non-financières  identifiantes 
+Noms  de  lots,  libellés  projets,  contacts 
+Tenant  +  admins 
+5  ans NON 
+T3  —  Interne 
+Données  agrégées  anonymisées  par  Cheetah 
+Benchmarks  sectoriels,  moyennes  marche 
+Equipe  Cheetah 
+3  ans OUI  (aggregate) 
+T4  —  Public Donnees  publiees  volontairement  ou  metadata  technique 
+Changelog  public,  API  docs,  status  page 
+Tout  le  monde 
+Indéfini 
+OUI 
+ 
+5.2  Retention  &  Lineage  Policies  
+Type  de  donnée Rétention  active Archivage Suppression 
+Lineage  documente 
+Données  projet  T1 Pendant  abonnement 
+7  ans  légaux Sur  demande  explicite OUI  —  audit  trail 
+Logs  applicatifs 90  jours 1  an Auto  apres  1  an OUI  —  Datadog 
+Logs  de  sécurité 1  an 3  ans Auto  après  3  ans OUI  —  SIEM 
+Exports  générés 30  jours Non  archive Auto  apres  30  jours NON 
+Sessions  utilisateur 24  heures Non Auto  apres  24h NON 
+Benchmarks  T3 3  ans 5  ans Sur  décision  CTO OUI  —  lineage  complet  
+5.3  Auditabilité  &  Acces  Tiers  
+POLICY   ·   Data  Access  &  Audit  Policy Tout  accès  à  des  données  T1/T2  est  logué  avec  :  timestamp,  user_id,  tenant_id,  action,  IP. 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  17  /  24
+ 
+--- Page 18 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Les  logs  d'audit  sont  immuables  —  aucun  employé  Cheetah  ne  peut  les  modifier  ou  les  supprimer. Un  rapport  d'audit  par  tenant  est  disponible  sur  demande  (dans  les  72h).  Requis  RGPD. L'équipe  support  Cheetah  peut  accéder  aux  données  T2  uniquement  avec  ticket  de  support  actif  +  consentement  tenant. Les  données  T1  ne  sont  JAMAIS  accessibles  à  l'équipe  Cheetah  sans  procédure  d'urgence  documentée  et  signée  CEO. 
+ 
+5.4  AI  Governance  Policy  
+Avec  l'introduction  de  fonctionnalités  IA  (benchmarks  prédictifs,  alertes  anticipées,  suggestions  
+automatiques),
+ 
+une
+ 
+politique
+ 
+de
+ 
+gouvernance
+ 
+IA
+ 
+explicite
+ 
+est
+ 
+obligatoire
+ 
+dès
+ 
+le
+ 
+premier
+ 
+usage
+ 
+en
+ 
+production.  
+Dimension  IA Politique Justification 
+Données  éligibles Uniquement  T3  (agrégées,  anonymisées).  JAMAIS  T1  ou  T2  brutes. 
+RGPD  +  confiance  client 
+Consentement Opt-in  explicite  du  tenant  pour  contribuer  aux  modèles  collectifs. 
+Article  6  RGPD  —  base  légale 
+Human-in-the-loop Toute  suggestion  IA  sur  un  montant  >  10k  EUR  nécessite  une  validation  humaine. 
+Responsabilité  contractuelle 
+Exploitability Chaque  output  IA  affiche  la  source  et  le  niveau  de  confiance. 
+Confiance  utilisateur  +  auditabilité 
+Hallucination  risk Aucun  chiffre  généré  par  LLM  ne  peut  être  présenté  sans  source  chiffrée. 
+Sécurité  financière 
+Vendor  AI  policy Les  prompts  ne  contiennent  jamais  de  données  T1/T2  —  même  Open  AIR. 
+Confidentialite  des  donnees  client 
+Rétention  IA Les  requêtes  aux  modules  externes  sont  loguées  90  jours  puis  supprimées. 
+Minimisation  données  RGPD 
+Audit  prompts Les  prompts  système  sont  versions  dans  Git  et  revus  trimestriellement. 
+Traçabilité  et  sécurité 
+ 
+⚠   Règle  absolue  :  Zero  données  client  non-anonymisées  dans  les  LLM  externes Aucun  appel  à  Open  Air,  Anthropic,  Gemini  ou  tout  autre  LLM  tiers  ne  peut  contenir  des  données  T1/T2. L'anonymisation  est  vérifiée  par  test  automatisé  dans  le  pipeline  CI/CD  avant  tout  appel  IA  externe. Violation  =  incident  P0  +  notification  DPO  +  évaluation  obligation  de  notification  CNIL. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  18  /  24
+ 
+--- Page 19 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  VI  —  RISK  REGISTER  
+Le  Risk  Register  est  un  document  vivant.  Il  est  mis  à  jour  lors  de  chaque  Risk  Committee  trimestriel  et  après  
+chaque
+ 
+incident
+ 
+significatif.
+ 
+Score
+ 
+=
+ 
+Probabilité
+ 
+(1-5)
+ 
+x
+ 
+Impact
+ 
+(1-5).
+ 
+Score
+ 
+>=
+ 
+12
+ 
+=
+ 
+risque
+ 
+critique.  
+6.1  Matrice  de  Risque  
+Impact  →Probabilite  ↓ 
+1  —  Négligeable 2  —  Mineur 3  —  Modéré 4  —  Majeur 
+5  —  Catastrophique 
+5  —  Quasi  certain 5   (Moyen) 10  (Élève) 15  (Critique) 20  (Critique) 25  (Critique) 
+4  —  Probable 4   (Faible) 8   (Moyen) 12  (Élève) 16  (Critique) 20  (Critique) 
+3  —  Possible 3   (Faible) 6   (Moyen) 9   (Moyen) 12  (Élève) 15  (Critique) 
+2  —  Improbable 2   (Faible) 4   (Faible) 6   (Moyen) 8   (Moyen) 10  (Élève) 
+1  —  Rare 1   (Faible) 2   (Faible) 3   (Faible) 4   (Faible) 5   (Moyen)  
+6.2  Registre  des  Risques  —  Cheetah  2026  
+ID 
+Risque P I 
+Score 
+Statut Mitigation 
+Owner 
+Deadline 
+R01 
+Départ  soudain  du  CTO 3 5 15 Critique 
+Plan  de  succession  +  doc  architecture  complète 
+CEO Q2  2026 
+R02 
+Breach  de  données  tenants 2 5 10 Elève Pentest  +  SIEM  +  chiffrement  T1  at-rest 
+CTO Q2  2026 
+R03 
+Client  concentr.  >  25%  ARR 3 4 12 Elève Monitoring  ARR  concentration  +  threshold  alerte 
+CEO Q3  2026 
+R04 
+Dépendance  totale  Vercel 2 4 8 Moyen IaC  Terraform  +  plan  migration  cloud  alternatif 
+CTO Q4  2026 
+R05 
+Ransomware  données  production 
+2 5 10 Elève Backup  chiffre  hors-site  +  DRP  teste  trimestriel 
+CTO Q2  2026 
+R06 
+Faille  authentification 2 5 10 Elève SSO  +  MFA  universel  +  audit  Okta 
+CTO Q2  2026 
+R07 
+Explosion  coûts  infra  Vercel 3 3 9 Moyen Budget  alert  +  rightsizing  +  IaC CFO+CTO 
+Q3  2026 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  19  /  24
+ 
+--- Page 20 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+ID 
+Risque P I 
+Score 
+Statut Mitigation 
+Owner 
+Deadline 
+R08 
+Dette  Prisma  migrations 4 3 12 Elève Expand-contract  +  tests  migration  <  1  min 
+CTO Q2  2026 
+R09 
+Saturation  DB  PostgreSQL 3 4 12 Elève Connection  pooling  +  read  replicas  +  monitoring 
+CTO Q3  2026 
+R10 
+Faille  supply  chain  (npm) 3 4 12 Elève Snyk  +  dependabot  +  npm  audit  CI/CD 
+CTO Q2  2026 
+R11 
+Non-conformité  RGPD  audit  CNIL 
+2 4 8 Moyen DPO  nomme  +  audit  RGPD  annuel  +  registre  traitement 
+CEO Q3  2026 
+R12 
+Perte  acces  comptes  cloud  admin 
+2 5 10 Elève 1Password  Teams  +  2  co-admins  +  access  review 
+CTO Q2  2026 
+R13 
+Depart  client  strategique  >  15% 
+3 4 12 Elève Early-warning  usage  <  30  jours  +  QBR  clients 
+CEO Continue 
+R14 
+Bus  Factor  =  1  sur  module  core 
+4 4 16 Critique 
+Documentation  +  pair  programming  +  runbooks 
+CTO Q2  2026 
+R15 
+Concurrence  price  war 3 3 9 Moyen Moat  données  +  NRR  >  110%  +  contrats  annuels 
+CEO Continue 
+ 
+POLICY   ·   Risk  Register  Policy Mise  à  jour  :  trimestrielle  obligatoire  +  après  chaque  incident  P0/P1. Risque  Score  >=  15  (CRITIQUE)  :  plan  de  mitigation  actif  et  suivi  mensuel  au  MBR. Nouveau  risque  identifié  :  ajoute  dans  les  48h  après  détection.  Owner  assigné  dans  les  7  jours. Risque  mitigé  avec  succès  :  archive  (ne  pas  supprimer  —  historique  de  décisions). 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  20  /  24
+ 
+--- Page 21 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+PARTIE  VII  —  MATURITY  ROADMAP  
+La  maturité  est  mesurée  sur  10  domaines,  avec  un  niveau  actuel  objective  et  un  niveau  cible  précis.  Chaque  
+domaine
+ 
+a
+ 
+un
+ 
+owner
+ 
+nommé
+ 
+et
+ 
+une
+ 
+deadline
+ 
+tranchée.
+ 
+Cette
+ 
+roadmap
+ 
+est
+ 
+revue
+ 
+trimestriellement
+ 
+lors
+ 
+du
+ 
+QBR.  
+7.1  Scoring  de  Maturité  
+ℹ   Echelle  de  maturité  :  5  niveaux L1  —  Absent  :  aucun  processus,  aucun  outil,  aucune  mesure. L2  —  Initial  :  processus  ad  hoc,  non  documenté,  non  reproductible. L3  —  Définit  :  processus  documentés  et  reproductibles,  non  encore  mesurés. L4  —  Gère  :  processus  mesures  avec  KPI,  amélioration  continue  active. L5  —  Optimiste  :  automates,  self-healing,  best-in-class,  certifiable. 
+ 
+Domaine 
+Niveau  actuel 
+Niveau  cible 
+Deadline Owner KPI  de  validation 
+Ressourcesestimées. 
+Observabilite L1 L4 Q2  2026 CTO Datadog  actif  +  alertes  P0  <  5  min 
+4  semaines  dev  +  outil 
+SSO  &  IAM L1 L4 Q2  2026 CTO SSO  actif  +  MFA  100%  comptes  actifs 
+3  semaines  Okta 
+CI/CD  &  Test  Coverage L2 L4 Q3  2026 CTO Coverage  >  80%  +  zero-downtime  deploy 
+6  semaines  dev 
+DRP  &  PRA L2 L4 Q2  2026 CTO RTO  <  4h  teste  et  valide  trimestriel 
+4  semaines  test 
+Risk  Management L1 L3 Q2  2026 CEO+CTO 
+Risk  Register  valide  +  Risk  Committee  acte 
+2  semaines  setup 
+Data  Governance L1 L3 Q3  2026 CTO+DPO 
+Classification  complete  +  audit  trail 
+6  semaines 
+Unit  Economics L2 L4 Q2  2026 CEO+CFO 
+Dashboard  CAC/LTV/NRR  mis  à  jour  mensuel 
+3  semaines  setup 
+Architecture  Doctrine L2 L3 Q2  2026 CTO 10  principes  documentés  +  ADR  process 
+2  semaines  doc 
+Tenant  Isolation L2 L4 Q3  2026 CTO RLS  actif  +  zero  requête  cross-tenant 
+5  semaines  dev 
+IaC  &  Portabilité L1 L3 Q4  2026 CTO Terraform  modules  cloud  deployment 
+6  semaines 
+AI  Governance L1 L3 Q3  2026 CTO+DPO 
+Policy  signée  +  anonymisation  testée  CI 
+3  semaines 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  21  /  24
+ 
+--- Page 22 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Domaine 
+Niveau  actuel 
+Niveau  cible 
+Deadline Owner KPI  de  validation 
+Ressourcesestimées. 
+Sécurité  enterprise L2 L4 Q3  2026 CTO Pentest  annuel  +  SOC2  readiness  audit 
+Pentest  +  4  semaines  
+7.2  Roadmap  Temporelle  
+Trimestre Priorités Livrables  cles Owner 
+Q2  2026 Observabilite  (Datadog),  SSO/MFA,  Risk  Register,  PRA  teste,  Unit  Econ  dashboard 
+Datadog  live,  Okta  SSO,  Risk  Register  v1.0,  DRP  teste 
+CTO  +  CEO 
+Q3  2026 CI/CD  coverage  80%+,  Data  Governance,  AI  Policy,  Tenant  isolation  RLS,  Pentest 
+Pipeline  full  auto,  Data  policy,  Pentest  rapport 
+CTO 
+Q4  2026 IaC  Terraform,  Error  budget  policy,  SOC2  readiness  assessment 
+Terraform  modules,  SOC2  gap  analysis 
+CTO  +  CFO 
+Q1  2027 SOC2  audit  commence,  Benchmarks  IA  v1.0,  Multi-region  actif 
+SOC2  en  cours,  benchmark  module  live 
+CEO  +  CTO 
+Q2-Q4  2027 
+ISO  27001  préparation,  SOC2  certification,  AI  features  v2.0 
+Certifications  obtenues CEO 
+ 
+7.3  Definition  of  Done  par  Domaine  
+POLICY   ·   Acceptance  Criteria  —  Maturity  Level  Validation L3  atteint  =  processus  documenté  dans  Notion  +  test  réel  effectué  +  owner  confirme. L4  atteint  =  L3  +  KPI  mesure  pendant  30  jours  consécutifs  +  rapport  de  validation  signe. L5  atteint  =  L4  +  certification  externe  OU  audit  tiers  positif. Downgrade  possible  :  si  un  KPI  L4  n'est  plus  respecté  2  mois  consécutifs,  niveau  revert  a  L3. 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  22  /  24
+ 
+--- Page 23 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Appendices  
+A.  Glossaire  des  Acronymes  
+Acronyme Signification Usage  dans  ce  document 
+ADR Architecture  Decision  Record Trace  toute  décision  technique  structurante 
+ARPU Average  Revenue  Per  User Revenu  moyen  par  client  (unit  economics) 
+CAC Customer  Acquisition  Cost Coût  d'acquisition  d'un  nouveau  client 
+COGS Cost  of  Goods  Sold Coûts  directs  de  production  du  service  SaaS 
+DRP Disaster  Recovery  Plan Plan  de  reprise  après  sinistre 
+GM Gross  Margin  (marge  brute) Rentabilité  produit  avant  coûts  fixes 
+IAM Identity  &  Access  Management Système  de  gestion  des  identités  et  acces 
+IaC Infrastructure  as  Code Gestion  infra  via  Terraform/code  versione 
+LTV Lifetime  Value Valeur  totale  d'un  client  sur  sa  durée  de  vie 
+MBR Monthly  Business  Review Comité  mensuel  de  pilotage  métier 
+MTTR Mean  Time  To  Recover Durée  moyenne  de  résolution  d'incident 
+NRR Net  Revenue  Retention Rétention  nette  de  revenu  après  churn/expansion 
+PRD Product  Requirements  Document 
+Spécification  complète  d'une  feature 
+QBR Quarterly  Business  Review Comité  trimestriel  de  pilotage  stratégique 
+RACI Responsible  /  Accountable  /  Consulted  /  Informed 
+Matrice  de  responsabilités 
+RLS Row  Level  Security Isolation  logique  des  données  par  tenant 
+RPO Recovery  Point  Objective Perte  de  données  maximale  acceptable 
+RTO Recovery  Time  Objective Durée  maximale  d'indisponibilité  acceptable 
+SIEM Security  Information  &  Event  Mgmt 
+Surveillance  sécurité  centralisée 
+SLO Service  Level  Objective Objectif  de  disponibilité  par  service 
+SSO Single  Sign-On Connexion  unique  pour  tous  les  outils  
+B.  Contacts  &  Owners  
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  23  /  24
+ 
+--- Page 24 ---
+Cheetah  Enterprise  Operating  System  2026CONFIDENTIEL
+ 
+Rôle Responsabilités  dans  ce  document Escalade 
+CEO Gouvernance,  Unit  Economics,  Risk  Register Board  /  investisseurs 
+CTO Architecture,  Sécurité,  Observabilite,  PRA CEO 
+CFO Unit  Economics,  Budget  infra,  Risk  financier CEO 
+RSSI  (ou  CTO  faisant  fonction) 
+Security  audit,  SIEM,  Pentest,  SSO CTO  +  CEO 
+DPO  (ou  Juridique) RGPD,  Data  Governance,  AI  Policy CEO  +  CNIL  si  incident 
+PM  (Product  Manager) Feature  Lifecycle,  Fitness  Function,  KPI CTO  +  CEO  
+C.  Historique  des  Révisions  
+Version Date Auteur Changements 
+1.0 Nov  2025 Cheetah Version  initiale  —  Guide  Sécurité  &  Gouvernance 
+1.1 Fév  2026 Cheetah Ajout  Résilience,  Anti-copie,  Dette  technique,  Scalabilité 
+2.0 Mai  2026 Cheetah Refonte  complete  —  Operating  System,  Unit  Economics,  Architecture  Doctrine,  Risk  Register,  Maturity  Roadmap  
+⚠   Statut  &  Prochaine  Révision Version  actuelle  :  2.0  —  Mai  2026   |   Classification  :  CONFIDENTIEL Prochaine  révision  planifiée  :  Août  2026  (QBR  Q2) Owner  document  :  CTO  +  CEO   |   Validation  :  CEO  signature  obligatoire  avant  diffusion 
+ 
+Cheetah  SaaS  ·  v2.0  ·  Mai  2026  Page  24  /  24
+ 
+============================================================
+FILE: ANNEXES
+============================================================
+Pages: 24
+--- Page 1 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+ 
+CHEETAH 
+Enterprise  Operating  System 
+Annexes  Premium   —   v2.1  
+ 
+Diagrammes   ·   Reality  Assessment   ·   Cost/Impact  Matrix Break-Glass  Procedures   ·   Minimum  Viable  Enterprise   ·   Benchmarks  calibres  
+Complément  stratégique  du  document  EOS  v2.0 CONFIDENTIEL  —  USAGE  INTERNE  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  1  /  24
+ 
+--- Page 2 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Avant-propos  
+Ce  document  est  l'annexe  premium  du  Cheetah  Enterprise  Operating  System  (EOS)  2026  v2.0.  Il  complète  
+le
+ 
+document
+ 
+principal
+ 
+sur
+ 
+7
+ 
+dimensions
+ 
+critiques
+ 
+pour
+ 
+atteindre
+ 
+le
+ 
+niveau
+ 
+audit
+ 
+/
+ 
+investisseur
+ 
+:  1.   Reset  temporel  :  recalibrage  des  deadlines  en  partant  du  fait  que  nous  sommes  en  mai  2026. 2.   Break-glass  procedures  :  procédures  d'exception  encadrées  pour  éviter  la  rigidité  opérationnelle. 3.   Diagrammes  :  6  schémas  visuels  (architecture  actuelle,  cible,  incident,  isolation  tenant,  classification  
+donnees,
+ 
+décision
+ 
+flow). 4.   Current  Reality  Assessment  :  état  réel  vérifiable  de  chaque  domaine,  avec  preuves  et  niveau  de  
+confiance. 5.   Cost  /  Impact  Matrix  :  priorisation  budgétaire  des  investissements  identifiés  dans  la  roadmap. 6.   Minimum  Viable  Enterprise  :  tier-list  opérationnel  avant  le  premier  grand  compte. 7.   Benchmark  validation  :  sources  et  calibrage  des  benchmarks  SaaS  pour  notre  segment  et  taille.  
+ℹ   A  qui  s'adresse  ce  document CEO  :  pour  comprendre  les  priorités  budgétaires  et  les  délais  réalistes. CTO  :  pour  la  mise  en  œuvre  concrète  des  procédures  et  l'architecture  cible. CFO  /  Investisseurs  :  pour  la  matrice  cost/impact  et  les  benchmarks  calibrés. Auditeur  externe  /  Due  Diligence  :  pour  le  Reality  Assessment  et  les  diagrammes. 
+ 
+Statut  :  ce  document  remplace  certaines  sections  de  l'EOS  v2.0  (notamment  les  deadlines  et  la  règle  
+'zero
+ 
+hotfix
+ 
+manuel').
+ 
+Les
+ 
+autres
+ 
+sections
+ 
+du
+ 
+v2.0
+ 
+restent
+ 
+en
+ 
+vigueur.  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  2  /  24
+ 
+--- Page 3 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A1.  Reset  Temporel  —  Réaliste  des  Échéances  
+La  première  version  du  document  a  été  rédigée  à  partir  d'un  cadre  Q2-Q4  2026  sans  tenir  compte  du  fait  
+que
+ 
+nous
+ 
+sommes
+ 
+déjà
+ 
+à
+ 
+mi-Q2
+ 
+2026.
+ 
+Cette
+ 
+section
+ 
+calibrera
+ 
+l'ensemble
+ 
+des
+ 
+deadlines
+ 
+en
+ 
+quatre
+ 
+tiers
+ 
+temporels
+ 
+concrets,
+ 
+partant
+ 
+de
+ 
+la
+ 
+date
+ 
+d'aujourd'hui.  
+A1.1  Tier  temporels  recalibrés  
+Tier Fenêtre Calendrier  réel Caractère 
+Nombre  d'items 
+Tier  0 30  jours  (D+30) Mai  -  Juin  2026 Critique  avant  tout  grand  compte 
+4  items 
+Tier  1 31-90  jours Juin  -  Août  2026 Important  —  fin  Q3  2026 5  items 
+Tier  2 91-180  jours Sept  -  Nov  2026 Recommande  —  fin  2026 4  items 
+Tier  3 180+  jours 2027  et  au-delà Excellence  —  montée  en  gamme 
+3  items  
+A1.2  Roadmap  recalibree  par  tier  
+Tier Item 
+Effort  estimé 
+Owner Deadline  réelle 
+Pré-requis  avant  grand  compte 
+T0 Risk  Register  validé  en  Comité 2  semaines CEO+CTO 
+31  mai  2026 OUI 
+T0 Architecture  documentée  (ADR  de  base) 
+2  semaines CTO 15  juil  2026 OUI 
+T0 DRP  test  de  restore  réel 3  semaines CTO 30  juin  2026 OUI 
+T0 Datadog  basic  (logs  +  1  dashboard  prod) 
+2  semaines CTO 30  juin  2026 OUI 
+T1 MFA  universel  (sans  SSO  complet) 
+2  semaines CTO 31  juillet  2026 OUI 
+T1 CI/CD  coverage  >  60% 5  semaines CTO 31  août  2026 OUI 
+T1 Datadog  APM  +  alertes  P0/P1 4  semaines CTO 31  août  2026 OUI 
+T1 Unit  Economics  dashboard  mensuel 
+3  semaines CFO+CEO 
+31  août  2026 Non  (mais  utile) 
+T1 DPO  désigne  +  registre  traitement  RGPD 
+2  semaines CEO 30  sept  2026 OUI  (si  contrats  grand  compte) 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  3  /  24
+ 
+--- Page 4 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Tier Item 
+Effort  estimé 
+Owner Deadline  réelle 
+Pré-requis  avant  grand  compte 
+T2 SSO  complet  (Okta  ou  Auth0) 4  semaines CTO 31  oct  2026 Négociable  selon  client 
+T2 Tenant  isolation  RLS  renforcée 5  semaines CTO 30  nov  2026 OUI  pour  grand  compte 
+T2 Pentest  annuel Externe  —  3  semaines 
+CTO 30  nov  2026 Demande  par  certains  grands  comptes 
+T2 Data  governance  T1-T4  deployee 4  semaines CTO+DPO 
+30  nov  2026 OUI  pour  secteurs  régulés 
+T3 IaC  Terraform  multi-cloud 8  semaines CTO Q2  2027 Non  —  stratégique 
+T3 SOC  2  readiness  assessment Externe  —  6  sem. 
+CTO+CEO 
+Q1  2027 Cible  US  /  grands  comptes 
+T3 ISO  27001  preparation 12  semaines CEO 2027-2028 Cible  marchés  publics  France  
+⚡   Pourquoi  ce  recalibrage L'effet  'Q2  2026'  dans  le  document  v2.0  était  une  artificialité  calendaire  (Q2  finit  le  30  juin). Mai  2026  +  30  jours  =  30  juin  2026.  Tier  0  doit  être  réalisé  :  4  actions  max  sur  cette  fenêtre. Ce  recalibrage  part  de  la  réalité  opérationnelle  :  équipe  limite,  priorités  contraintes,  capacité  réelle  de  delivery. 
+ 
+POLICY   ·   Date  Anchoring  Policy Toute  deadline  est  exprimée  en  DATE  RÉELLE  (jour/mois/année),  pas  en  notation  trimestrielle. Notation  trimestrielle  (Q2  2026)  interdite  dans  tout  document  opérationnel  —  ambiguë  et  facilitatrice  de  glissement. Date  de  révision  de  cette  roadmap  :  30  juin  2026,  puis  chaque  30  du  mois. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  4  /  24
+ 
+--- Page 5 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A2.  Break-Glass  Procedures  
+Une  organisation  rigide  est  aussi  dangereuse  qu'une  organisation  laxiste.  Les  règles  absolues  du  document  
+v2.0
+ 
+(notamment
+ 
+'zero
+ 
+hotfix
+ 
+manuel')
+ 
+peuvent
+ 
+être
+ 
+complétées
+ 
+par
+ 
+des
+ 
+procédures
+ 
+d'exception
+ 
+encadrées.
+ 
+Une
+ 
+procédure
+ 
+'break-glass'
+ 
+est
+ 
+une
+ 
+dérogation
+ 
+rare,
+ 
+tracée,
+ 
+validée
+ 
+par
+ 
+une
+ 
+chaîne
+ 
+d'approbation
+ 
+spécifique,
+ 
+et
+ 
+systématiquement
+ 
+auditée
+ 
+après
+ 
+usage.  
+A2.1  Principe  general  des  break-glass  
+ℹ   Definition  :  Break-Glass  Procedure Littéralement  :  'casser  la  vitre'  —  la  procédure  d'urgence  réservée  au  moment  où  les  règles  normales  bloquent  une  action  critique. 5  éléments  obligatoires  :  (1)  trigger  documente,  (2)  chaîne  d'approbation,  (3)  audit  trail  immutable,  (4)  expiration  automatique,  (5)  post-incident  review  obligatoire  dans  les  72h. Une  procédure  break-glass  utilisée  plus  de  3  fois  en  30  jours  signale  un  problème  structurel,  pas  une  exception. 
+ 
+A2.2  Procédure  BG-01  :  Hotfix  Production  en  urgence  
+POLICY   ·   BG-01  —  Production  Hotfix  Bypass TRIGGER  :  incident  P0  actif  depuis  >  30  min  sans  rollback  possible  (ex  :  breaking  change  DB). APPROBATION  (chaîne  OU)  :  RECTO  seul,  OU  2  Tech  Leads  en  accord,  ou  CEO  +  1  Tech  Lead. AUDIT  :  commit  signe  avec  tag  'BREAK-GLASS-BG01'  +  lien  vers  ticket  incident. EXPIRATION  :  la  branche  hotfix  a  un  TTL  de  24h.  Après  :  merge  sur  main  +  revue  par  toute  l'équipe. POST-REVIEW  :  RCA  obligatoire  dans  les  72h  +  ajout  au  registre  des  dérogations. LIMITE  :  si  BG-01  utilise  >  2  fois  en  30  jours,  freeze  des  features  et  revue  CTO. 
+ 
+A2.3  Procédure  BG-02  :  Acces  direct  base  de  production  
+POLICY   ·   BG-02  —  Production  Database  Direct  Access TRIGGER  :  incident  nécessitant  inspection  ou  correction  manuelle  de  données  client  (P0/P1  uniquement). APPROBATION  (chaîne  ET)  :  CTO  +  ticket  incident  actif  +  tenant_id  spécifique  vise. AUDIT  :  session  enregistrée  (script  ou  outil  type  Teleport).  Toutes  les  requêtes  loggers. EXPIRATION  :  token  d'accès  TTL  1h  max.  Renouvellement  =  nouvelle  approbation. POST-REVIEW  :  log  analyse  par  RSSI  dans  les  24h.  Notification  tenant  si  donnees  lues. INTERDICTION  ABSOLUE  :  pas  d'acces  aux  donnees  T1  d'autres  tenants  pendant  la  session. 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  5  /  24
+ 
+--- Page 6 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+ 
+A2.4  Procédure  BG-03  :  Bypass  MFA  pour  compte  technique  
+POLICY   ·   BG-03  —  MFA  Bypass  Technical  Account TRIGGER  :  compte  technique  (CI/CD,  monitoring,  backup)  doit  être  créé  ou  rotated. APPROBATION  :  CTO  seul  +  création  d'un  ticket  de  tracking  dans  Jira. AUDIT  :  credential  stocke  dans  1Password  Vault  avec  accès  logue. EXPIRATION  :  credential  rotated  automatiquement  tous  les  90  jours  via  script. POST-REVIEW  :  revue  mensuelle  des  comptes  BG-03  par  RSSI. LIMITE  :  maximum  5  comptes  BG-03  actifs  simultanément.  Excédent  =  audit  immédiat. 
+ 
+A2.5  Registre  des  dérogations  
+Champ  à  tracer Description Stockage 
+Date  /  heure Timestamp  UTC  d'invocation  de  la  procédure Notion  +  audit  log  Datadog 
+Procédure  invoquée BG01  /  BG02  /  BG-03 Champ  requis 
+Trigger Incident  ID  +  lien  vers  ticket Champ  requis  avec  lien 
+Approbateur Email  +  rôle  +  horodatage  approval Pas  de  modification  possible 
+Action  réalisée Résumé  technique  en  1-2  lignes Visible  toute  l'équipe 
+Post-review  status Ouvert  /  En  cours  /  Clôture Clôture  obligatoire  en  72h 
+RCA Lien  vers  post-mortem  documente Obligatoire  pour  BG-01/02  
+⚠   Règle  absolue  —  Zéro  break-glass  non-trace Toute  action  correspondant  à  un  break-glass  mais  NON  DÉCLARÉE  =  incident  de  sécurité  P0. Audit  trimestriel  :  toute  trace  technique  d'action  en  production  sans  entrée  correspondante  au  registre  =  revue  sécurité. La  transparence  sur  l'usage  des  break-glass  est  protégée  :  aucune  sanction  pour  usage  légitime  documenté. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  6  /  24
+ 
+--- Page 7 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A3.  Diagrammes  Visuels  
+6  schémas  pour  visualiser  l'architecture,  les  flux  et  la  gouvernance.  Tous  les  diagrammes  sont  synthétiques  
+et
+ 
+privilégient
+ 
+la
+ 
+clarté
+ 
+sur
+ 
+l'exhaustivité.  
+Diagramme  1  —  Architecture  actuelle  (Mai  2026)  
+UTILISATEUR Browser  desktop   ·   PME  /  ETI   ·   ~50-200  users  actifs 
+▼ 
+VERCEL  EDGE  NETWORK CDN  global   ·   TLS  termination   ·   Edge  Functions Provider  unique  —  risque  vendor  lock-in
+ 
+▼ 
+NEXT.JS  16  (App  Router) Frontend  React  +  Tailwind   |   Backend  :  Route  Handlers  (API) TypeScript  strict  mode   ·   Turbopack  bundler
+ 
+▼ 
+PRISMA  ORM Type-safe  queries   ·   Migration  manager 
+▼ 
+POSTGRESQL Multi-tenant  (RLS  basique)   ·   Backup  journalier   ·   Single-region ⚠  Aucun  reed  replica   ·   Aucun  monitoring  détaillé
+  
+⚡   Lecture  du  diagramme Architecture  monolithe  modulaire  serverless  —  adaptée  au  stade  actuel  (PME,  <  500  tenants). Goulots  identifiés  :  monitoring  absent,  single-region,  dépendance  Vercel  non-mitigée. Forces  :  stack  moderne,  type-safety  end-to-end,  déploiements  rapides. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  7  /  24
+ 
+--- Page 8 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Diagramme  2  —  Architecture  cible  (fin  2026)  
+UTILISATEUR Web  +  API  publique   ·   Multi-région 
+▼ 
+OKTA  /  AUTH0 SSO  +  MFA
+ 
+VERCEL  EDGE CDN  +  Functions
+ 
+DATADOG APM  +  SIEM
+ 
+▼ 
+NEXT.JS  16  (App  Router)  +  OpenAPI  auto-generee Frontend   |   API  documents   |   Rate  limiting   |   Idempotency  keys 
+▼ 
+PRISMA  ORM Expand-Contract  migrations
+ 
+REDIS  CACHE Sessions  +  calculs  FGF
+ 
+▼ 
+POSTGRESQL RLS  strict   ·   Read  replicas   ·   Multi-region  failover   ·   Audit  trail  T1/T2 RTO  <  4h   ·   RPO  <  1h   ·   Backup  chiffre  hors-région
+  
+→   Différence  avec  le  diagramme  1 Ajouts  :  SSO  (Okta),  Observabilite  (Datadog),  Cache  (Redis),  Multi-region. Renforcements  :  RLS  strict  (vs  basique),  Audit  trail  T1/T2,  Rate  limiting,  Idempotency. Mitigation  :  OpenAPI  generee  =  API  portable,  IaC  Terraform  =  portabilite  cloud  (T3  —  2027). 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  8  /  24
+ 
+--- Page 9 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Diagramme  3  —  Lifecycle  d'un  incident  P0  
+DÉTECTION  (T+0) Alerte  Datadog   OU   Signalement  client   OU   Synthetic  test  KO Owner  :  On-call  duty  engineer
+ 
+▼ 
+TRIAGE  (T+5  min) Sévérité  (P0/P1/P2/P3)   ·   Périmètre   ·   Channel  #incident-XXX  créé Owner  :  On-call
+ 
+▼ 
+ESCALATION  (T+10  min) P0  =  appel  CTO  +  CEO   |   P1  =  appel  CTO   |   P2  =  notification  Slack Owner  :  On-call
+ 
+▼ 
+COMMUNICATION  (T+15  min) Status  page  :  Investigating   ·   Email  clients  impacted   ·   Tweet  si  >  100  clients Owner  :  CTO  ou  CEO  selon  sévérité
+ 
+▼ 
+FIX  OU  ROLLBACK Si  fix  >  30  min  :  rollback  IMMÉDIAT  (pas  de  débat).   Sinon  :  patch  +  tests  +  deploy. Owner  :  Lead  dev   ·   Approbation  :  CTO
+ 
+▼ 
+RCA  —  Root  Cause  Analysis  (T+48h  max) 5  Pourquoi   ·   Timeline   ·   Causes  racines   ·   Sans  blâme   ·   Documentation  Notion Owner  :  Lead  incident  +  CTO
+ 
+▼ 
+CLOSURE  (T+72h  max) Status  page  :  Resolved   ·   Email  clients  :  explication  +  actions   ·   Closure  ticket Owner  :  Lead  ou  PM
+ 
+▼ 
+PREVENTION  (T+2  semaines  max) Action  items  dans  backlog  sprint+1   ·   Update  runbook   ·   Update  monitoring Owner  :  CTO   ·   Suivi  :  MBR  mensuel
+  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  9  /  24
+ 
+--- Page 10 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Diagramme  4  —  Tenant  Isolation  (actuel  +  cible)  
+Modèle  actuel  :  Row-Level  Security  (RLS)  basique 
+TENANT  A Users  +  Projects
+ 
+TENANT  B Users  +  Projects
+ 
+TENANT  C Users  +  Projects
+ 
+Tenant  D... ...
+ 
+▼ 
+APPLICATION  LAYER Filtre  tenant_id  systématique  dans  chaque  query  Prisma   ·   Risque  :  oubli  développeur 
+▼ 
+POSTGRESQL  —  TABLES  PARTAGÉES Tables  uniques  pour  tous  les  tenants   ·   Colonne  tenant_id  sur  toutes  les  rows  
+Modèle  cible  :  Row-Level  Security  renforce  +  audit 
+TENANT  A Users  +  Projects
+ 
+TENANT  B Users  +  Projects
+ 
+TENANT  C Users  +  Projects
+ 
+Tenant  D... ...
+ 
+▼ 
+APPLICATION  LAYER  +  AUDIT Tenant  context  injecte  automatiquement   ·   Tests  QUI  vérifient  absence  requête  cross-tenant 
+▼ 
+POSTGRESQL  —  RLS  POLICIES  NATIVES Policy  :  USING  (tenant_id  =  current_setting('app.tenant_id'))   ·   Audit  log  par  requete  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  10  /  24
+ 
+--- Page 11 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Diagramme  5  —  Pyramide  de  classification  des  données  
+  T1  —  CONFIDENTIEL ~5%  volume  —  Données  financières  identifiantes   ·   IA  :  INTERDIT
+ 
+ 
+  T2  —  RESTREINT ~25%  volume  —  Données  métier  identifiantes   ·   IA  :  INTERDIT  brut
+ 
+ 
+  T3  —  INTERNE ~50%  volume  —  Données  agrégées  anonymisées   ·   IA  :  AUTORISÉ
+ 
+ 
+  T4  —  PUBLIC ~20%  volume  —  Documentation,  status  page   ·   IA  :  AUTORISÉ
+ 
+ 
+ 
+ℹ   Lecture  de  la  pyramide T1  (haut,  étroit)  =  peu  de  données,  mais  protection  maximale.  Accès  tenant  owner  uniquement. T4  (base,  large)  =  beaucoup  de  données,  accessibles  publiquement.  Aucun  risque  légal. Plus  on  descend,  plus  le  volume  augmente  et  plus  les  règles  s'assouplissent. Tout  dataset  envoyer  à  un  LLM  externe  doit  être  T3  ou  T4.  Vérification  automatisée  dans  le  CI/CD. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  11  /  24
+ 
+--- Page 12 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Diagramme  6  —  Feature  Décision  Flow  
+1.  SIGNAL Besoin  client  OU  signal  marche  OU  intuition  équipe 
+▼ 
+GATE  1  :  3  signaux  indépendants  ? Si  NON  :  kill  ici  (idée  bibliothèque)   ·   Si  OUI  :  passer  a  SPEC Approbateur  :  PM
+ 
+▼ 
+2.  SPEC  (PRD) Problème   ·   Solution   ·   Métriques  de  succès   ·   Fitness  Function  score 
+▼ 
+GATE  2  :  Fitness  Function  >=  2  dimensions  /  5  ? Si  NON  :  kill   ·   Si  OUI  :  VALIDATION Approbateur  :  CTO  +  CEO
+ 
+▼ 
+3.  VALIDATION  (test  rapide) Wireframe  utilisateur  OU  spike  technique   ·   <  1  sprint 
+▼ 
+GATE  3  :  Test  concluant  ? Si  NON  :  kill  ou  pivot   ·   Si  OUI  :  BUILD Approbateur  :  PM  +  CTO
+ 
+▼ 
+4.  BUILD Develop   ·   Tests  >  80%  coverage   ·   Code  review   ·   Release  notes 
+▼ 
+5.  MESURE  (90  jours) Métriques  instrumentées   ·   Suivi  adoption   ·   Impact  business 
+▼ 
+GATE  4  (T+90j)  :  Adoption  >  15%  tenants  ? Si  OUI  :  KEEP   ·   Sinon  :  KILL  automatique  (zero  débat) Approbateur  :  PM  seul
+  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  12  /  24
+ 
+--- Page 13 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A4.  Current  Reality  Assessment  
+Pour  chaque  domaine  de  maturité,  ce  tableau  distingue  :  (1)  ce  qui  existe  vraiment  chez  Cheetah  
+aujourd'hui,
+ 
+(2)
+ 
+la
+ 
+preuve
+ 
+vérifiable,
+ 
+(3)
+ 
+le
+ 
+niveau
+ 
+de
+ 
+confiance
+ 
+dans
+ 
+la
+ 
+preuve,
+ 
+(4)
+ 
+le
+ 
+gap
+ 
+concret
+ 
+avec
+ 
+la
+ 
+cible.
+ 
+Cette
+ 
+section
+ 
+est
+ 
+la
+ 
+version
+ 
+'audit'
+ 
+de
+ 
+la
+ 
+roadmap
+ 
+—
+ 
+sans
+ 
+déclaration
+ 
+sur
+ 
+parole.  
+A4.1  Échelle  de  confiance  
+ℹ   Notation  de  la  confiance  dans  une  assertion FORTE   :  preuve  vérifiable  directement  (capture  d'écran,  log,  document  signé,  test  réel). MOYENNE  :  assertion  documentée  mais  non  testée  récemment  (>  90  jours  sans  vérification). FAIBLE  :  déclaration  orale  ou  sentimentale,  pas  de  preuve  formelle. AUDIT  :  aucune  vérification  jamais  effectuée.  Statut  à  découvrir. 
+ 
+A4.2  Reality  Assessment  par  domaine  
+Sécurité  &  Accès 
+Domaine Aujourd'hui  chez  Cheetah Preuve  vérifiable 
+Confiance 
+Gap  pour  cible  2026 
+MFA  pour  comptes  admin 
+Active  partiellement Capture  admin  Vercel MOYENNE 
+Étendre  à  100%  comptes  actifs 
+SSO  d'entreprise Absent Aucun  outil  déployé FORTE Deployer  Okta  ou  Auth0 
+Rotation  des  credentials Manuelle,  ad  hoc Aucun  calendrier  défini AUDIT Automatiser  tous  les  90  jours 
+Audit  trail  des  accès Logs  Vercel  basiques Logs  accessibles  7  jours MOYENNE 
+Centraliser  dans  SIEM  90  jours 
+Gestion  mots  de  passe  equipe 
+Probablement  individuel Aucune  vault  d'équipe  documentée 
+FAIBLE 1Password  Teams  pour  tous  
+Donnees  &  Backup 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  13  /  24
+ 
+--- Page 14 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Domaine Aujourd'hui  chez  Cheetah Preuve  vérifiable 
+Confiance 
+Gap  pour  cible  2026 
+Backup  base  de  données 
+Journalier  (configure  provider) 
+Documentation  provider MOYENNE 
+Tester  restore  complet 
+Test  de  restore  réel Jamais  effectué  (probable) Aucune  trace  de  test AUDIT Test  trimestriel  obligatoire 
+Chiffrement  at-rest Configure  par  provider Documentation  PostgreSQL  provider 
+MOYENNE 
+Vérifier  configuration  et  keys 
+Chiffrement  in-transit TLS  1.3  actif Test  SSL  Labs FORTE Aucun  gap 
+Anonymisation  export  benchmark 
+Logique  à  coder Aucune  fonction  déployée 
+FORTE Implémenter  +  tests  CI  
+Opérationnel  &  CI/CD 
+Domaine Aujourd'hui  chez  Cheetah Preuve  vérifiable 
+Confiance 
+Gap  pour  cible  2026 
+GitHub  Actions  CI Configure  (build  +  lint) Workflows  .github  visibles 
+FORTE Ajouter  tests  automatisés 
+Test  coverage  actuel Probablement  <  30% Aucun  rapport  coverage  publié 
+FAIBLE Atteindre  60%  Tier  1,  80%  Tier  2 
+Deploiement  zero-downtime 
+Vercel  —  natif Documentation  Vercel FORTE Aucun  gap 
+Rollback  rapide Vercel  deployments  —  natif Console  Vercel FORTE Documenter  procédure  runbook 
+Monitoring  production Quasi  absent  (pas  de  Datadog) 
+Constat  sur  incidents  récents 
+FORTE Déployer  Datadog  T0  
+Gouvernance  &  Documentation 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  14  /  24
+ 
+--- Page 15 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Domaine Aujourd'hui  chez  Cheetah Preuve  vérifiable 
+Confiance 
+Gap  pour  cible  2026 
+Decision  Log  central Absent  ou  disperse Pas  d'outil  désigne AUDIT Setup  Notion  +  template 
+ADR  (Architecture  Decision) 
+Aucun  documente Pas  de  fichier  ADR FORTE Démarrer  avec  5  ADR  rétroactifs 
+Runbooks  operationnels Aucun  documente Pas  de  fichier  runbook FORTE Créer  5  runbooks  critiques 
+Risk  Register Liste  verbale  informelle Document  v2.0  fournit  base 
+MOYENNE 
+Valider  en  Comité  De  +  suivi  mensuel 
+Onboarding  documente Probablement  informel Pas  de  doc  onboarding  équipe 
+FAIBLE Career  checklist  +  buddy  system  
+⚡   Lecture  du  Reality  Assessment Les  statuts  AUDIT  et  FAIBLE  sont  les  plus  urgents  :  ils  indiquent  une  absence  de  preuve,  pas  une  absence  d'action. Première  action  concrète  :  vérifier  les  domaines  en  AUDIT  dans  les  30  jours  pour  reclasser  en  FORTE  /  MOYENNE  /  FAIBLE. Ce  tableau  doit  être  ré-exécuté  par  un  auditeur  externe  ou  un  nouvel  embauche  pour  valider  sans  biais. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  15  /  24
+ 
+--- Page 16 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A5.  Cost  /  Impact  Matrix  
+La  roadmap  du  document  v2.0  est  ambitieuse  mais  ne  hiérarchise  pas  budgétairement.  Cette  section  
+classifie
+ 
+les
+ 
+18
+ 
+actions
+ 
+identifiées
+ 
+selon
+ 
+une
+ 
+matrice
+ 
+cost/impact
+ 
+pour
+ 
+permettre
+ 
+une
+ 
+priorisation
+ 
+réaliste
+ 
+sous
+ 
+contrainte
+ 
+de
+ 
+ressources.  
+A5.1  Quadrants  de  la  matrice  
+Quadrant Caractéristique Action  recommandée 
+Quick  Win  (Bas  /  Élevé) Coût  <  5  000  EUR   +   Impact  maturité  >  1  niveau Faire  en  T0  ou  T1  —  priorité  absolue 
+Strategic  (Eleve  /  Eleve) Coût  >  25  000  EUR   +   Impact  maturité  >  1  niveau Planifier  et  budgéter  —  T1  ou  T2 
+Major  Invest  (Élevé  /  Bas) Coût  >  25  000  EUR   +   Impact  limité Différer  ou  réduire  scope  —  T3 
+Defer  (Bas  /  Bas) Coût  <  5  000  EUR   +   Impact  limité A  faire  en  remplissage  temps  libre  
+A5.2  Classification  des  18  actions  
+Action Coût  estimé 
+Impact  maturité 
+Quadrant Tier  deadline 
+Risk  Register  validé  en  Comité 0  EUR  (temps  interne) 
++1  niveau QUICK  WIN T0 
+Architecture  documentation  (ADR  retroactifs) 
+0  EUR  (temps  interne) 
++1  niveau QUICK  WIN T0 
+Datadog  basic  (logs  +  1  dashboard) 
+200  EUR/mois +1  niveau QUICK  WIN T0 
+DRP  —  test  de  restore 500  EUR  (temps  +  test) 
++1  niveau QUICK  WIN T0 
+MFA  universel  (Google  Authenticator  +  policy) 
+0  EUR +1  niveau QUICK  WIN T1 
+Decision  Log  Notion  +  Runbooks 30  EUR/mois  (Notion) 
++1  niveau QUICK  WIN T0-T1 
+1Password  Teams  (vault) 5  EUR/user/mois +1  niveau QUICK  WIN T0 
+Datadog  APM  +  alertes  P0/P1 500-1500  EUR/mois +2  niveaux STRATEGIC T1 
+DPO  +  registre  traitement  RGPD 5-15k  EUR  (consultant) 
++1  niveau STRATEGIC T1 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  16  /  24
+ 
+--- Page 17 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Action Coût  estimé 
+Impact  maturité 
+Quadrant Tier  deadline 
+CI/CD  coverage  80%  +  zero-downtime 
+8-12  semaines  dev +2  niveaux STRATEGIC T1-T2 
+SSO  Okta  ou  Auth0  complet 15  EUR/user/mois  +  setup 
++1  niveau STRATEGIC T2 
+Tenant  isolation  RLS  renforcée 5  semaines  dev +2  niveaux STRATEGIC T2 
+Pentest  annuel  externe 8-15  k  EUR/an +1  niveau STRATEGIC T2 
+Data  governance  T1-T4  +  audit  trail 
+4  semaines  dev +2  niveaux STRATEGIC T2 
+Unit  Economics  dashboard 3  semaines  +  outil +2  niveaux STRATEGIC T1 
+IaC  Terraform  +  multi-cloud  option 8-12  semaines  dev +1  niveau MAJOR  INVEST 
+T3 
+SOC  2  Type  II  readiness  +  audit 30-80  k  EUR/an +2  niveaux MAJOR  INVEST 
+T3 
+ISO  27001  préparation  et  certification 
+40-100k  EUR  +  12  mois 
++2  niveaux MAJOR  INVEST 
+T3 
+ 
+A5.3  Budget  total  par  tier  
+Tier 
+Budget  récurrent  (année  1) 
+Budget  one-shot  setup 
+Total  année  1 Justification 
+Tier  0 <  1  200  EUR <  1  000  EUR <  2  200  EUR Quasiment  gratuit  —  temps  interne  +  outils  basiques 
+Tier  1 10-25k  EUR 10-25k  EUR 20-50k  EUR Datadog  +  DPO  +  dev  —  investissement  maîtrisé 
+Tier  2 20-40k  EUR 30-60k  EUR 50-100k  EUR SSO  +  Pentest  +  dev  conséquent 
+Tier  3 50-150k  EUR 100-200k  EUR 150-350  k  EUR Certifications  externes  —  ROI  long  terme  
+✔   Recommandation  budgétaire Engager  IMMÉDIATEMENT  le  Tier  0  —  moins  de  2  200  EUR  de  coût  total.  Excuse  impossible. Tier  1  :  budgéter  30-50k  EUR  pour  les  90  prochains  jours  —  coût  plus  que  justifié  par  premier  grand  compte. Tier  2  :  à  engager  au  plus  tôt  après  signature  du  premier  grand  compte  (autofinancement). Tier  3  :  à  planifier  stratégiquement  —  pas  avant  ARR  >  1  M  EUR  ou  cible  US/grands  marchés. 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  17  /  24
+ 
+--- Page 18 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  18  /  24
+ 
+--- Page 19 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A6.  Minimum  Viable  Enterprise  —  MVE  
+La  roadmap  totale  est  ambitieuse.  Cette  section  définit  le  strict  minimum  exigible  avant  la  signature  du  
+premier
+ 
+grand
+ 
+compte
+ 
+(ETI
+ 
+>
+ 
+250
+ 
+employés,
+ 
+CA
+ 
+>
+ 
+50M
+ 
+EUR,
+ 
+ou
+ 
+organisation
+ 
+publique).
+ 
+C'est
+ 
+la
+ 
+version
+ 
+'go
+ 
+/
+ 
+no-go'
+ 
+du
+ 
+document.  
+A6.1  Définition  du  grand  compte  
+ℹ   Profil  'grand  compte'  —  déclenchement  des  exigences  MVE ETI  ou  groupe  avec  250  collaborateurs  OU  CA  >  50M  EUR. Organisation  publique  (collectivité,  ministère,  établissement  public). Tout  client  demandant  un  audit  sécurité  ou  une  clause  RGPD  spécifique. Tout  contrat  avec  ARR  >  50  000  EUR  /  an  /  client. 
+ 
+A6.2  Le  'MVE  Floor'  —  Strict  minimum  avant  signature  
+Domaine Exigence  minimum Vérification 
+Bloquant  ? 
+Donnees  &  Hosting Hébergement  UE  (RGPD)  +  chiffrement  at-rest  vérifiable 
+Capture  config  Vercel  +  Postgres 
+OUI 
+Authentification MFA  obligatoire  admin  +  utilisateurs  sensibles 
+Test  direct  sur  compte  démo 
+OUI 
+Backup  &  Restore Backup  journalier  +  1  test  restore  réel  documenté 
+Rapport  de  test  +  capture OUI 
+RGPD  &  DPO DPO  désigne  (interne  ou  externe)  +  registre  traitement 
+Document  +  email  DPO OUI 
+Contrat  type  SaaS CGV  +  DPA  +  SLA  disponibles  et  signes Documents  PDF  à  jour OUI 
+Audit  trail  accès Logs  auth  +  actions  sensibles  conserves  90  jours  min 
+Capture  log  Vercel/Datadog 
+OUI 
+Plan  de  reprise  (DRP) Document  PRA  avec  RTO/RPO  chiffres  +  nominatifs 
+Document  signé  CTO  +  CEO 
+OUI 
+Risk  Register Document  existant  +  revue  trimestrielle  planifiée 
+Capture  document  +  meeting  recurrent 
+OUI 
+Décision  Log  +  ADR Au  moins  5  ADR  documentés  +  Décision  Log  démarre 
+URL  Notion  /  Confluence Recommandé 
+Pentest Pentest  documenté  dans  les  12  derniers  mois 
+Rapport  +  plan  d'actions Recommandé 
+Monitoring  de  base Au  minimum  :  alertes  uptime  +  erreurs  5xx 
+Dashboard  Datadog  ou  alternative 
+OUI 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  19  /  24
+ 
+--- Page 20 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Domaine Exigence  minimum Vérification 
+Bloquant  ? 
+Fournisseur  IA  (si  IA  active) 
+Policy  AI  +  anonymisation  systématique Document  AI  Policy  +  test  CI 
+OUI  si  IA 
+ 
+A6.3  Tier-list  opérationnelle  
+MVE  T0  —  OBLIGATOIRE  avant  signature  grand  compte  (30  jours) •   MFA  universel  sur  tous  les  comptes  admin  et  utilisateurs  sensibles. •   Backup  journalier  vérifie  +  1  test  restore  réel  documenté. •   DPO  désigne  (interne  ou  consultant  externe  ponctuel)  +  registre  RGPD  basique. •   CGV  +  DPA  +  SLA  disponibles  et  à  jour,  signés  par  avocat. •   Document  PRA  basique  :  RTO  <  8h,  RPO  <  4h,  owners  nommés. •   Risk  Register  validé  en  Comité  +  planification  trimestrielle. •   Datadog  basic  ou  alternative  :  monitoring  uptime  +  erreurs  5xx  +  alertes  email. •   Audit  trail  :  conservation  logs  auth  90  jours  minimum.  
+MVE  T1  —  TRÈS  RECOMMANDÉ  dans  les  90  jours  suivant  signature •   Datadog  APM  complet  +  alertes  P0/P1/P2  différenciées. •   Test  coverage  >  60%  sur  le  code  critique  (auth,  paiement,  données  financières). •   5  ADR  documentés  +  5  runbooks  opérationnels  critiques. •   Pentest  externe  annuel  commande  (même  si  rapport  pas  encore  livré). •   Décision  Log  Notion  active  depuis  >  60  jours,  mis  à  jour  hebdomadairement.  
+MVE  T2  —  RECOMMANDÉ  pour  positionnement  grand  compte  (6  mois) •   SSO  d'entreprise  (Okta  ou  Auth0)  avec  MFA  universel  obligatoire. •   Pentest  externe  livré  +  plan  d'actions  sur  findings  critiques  (<  30  jours). •   Tenant  isolation  RLS  renforcée  +  tests  automatisés  CI. •   Data  governance  T1-T4  déployée  +  audit  trail  pour  données  sensibles. •   Unit  Economics  dashboard  mensuel  (CAC  /  LTV  /  NRR  /  Burn).  
+MVE  T3  —  DIFFÉRENCIATION  sur  grands  marchés  (12-18  mois) •   SOC  2  Type  II  readiness  assessment  ou  audit  en  cours. •   ISO  27001  préparation  lancée  si  cible  marches  publics. •   Multi-région  failover  automatique  +  tests  trimestriels. •   Bug  Bounty  programme  privé  actif  sur  Plateau  Réseau  ou  HackerOne.  
+⚠   Règle  absolue  MVE 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  20  /  24
+ 
+--- Page 21 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Aucun  contrat  grand  compte  ne  peut  être  signé  sans  validation  explicite  des  8  items  'Bloquant  :  OUI'  du  tableau  A6.2. Cette  validation  est  documentée  par  le  CTO  +  CEO  dans  un  Pre-Sign  Checklist. Toute  exception  nécessite  une  décision  Comité  +  provision  contractuelle  de  délai  pour  atteindre  l'item  manquant. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  21  /  24
+ 
+--- Page 22 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+A7.  Validation  des  Benchmarks  
+Les  benchmarks  SaaS  du  document  v2.0  étaient  généraux  et  risquent  d'être  identifiés  comme  issus  de  
+templates.
+ 
+Cette
+ 
+section
+ 
+les
+ 
+calibre
+ 
+selon
+ 
+le
+ 
+segment
+ 
+Cheetah
+ 
+(B2B
+ 
+mid-market
+ 
+France,
+ 
+ARR
+ 
+sub-5
+ 
+M
+ 
+EUR),
+ 
+avec
+ 
+sources
+ 
+et
+ 
+niveaux
+ 
+de
+ 
+confiance.  
+A7.1  Niveaux  de  confiance  des  benchmarks  
+ℹ   Notation  des  benchmarks TIER  1  (FORT)  :  source  publique  reconnue  +  multiples  sources  concordantes  (ex  :  OpenView,  Bessemer,  KeyBanc). TIER  2  (MOYEN)  :  source  unique  reconnue  OU  heuristique  sectorielle  bien  documentée. TIER  3  (FAIBLE)  :  extrapolation  ou  intuition  —  a  valider  par  un  CFO  senior  ou  auditeur  externe. Pour  Cheetah  (early-stage  SaaS  B2B  France,  ARR  <  5  M  EUR),  les  benchmarks  'top-tier'  US  ne  sont  pas  directement  applicables. 
+ 
+A7.2  Benchmarks  calibres  pour  le  profil  Cheetah  
+Métrique v2.0  (top-tier  US) 
+Calibre  Cheetah  (France,  B2B  mid-market) 
+Source Niveau 
+LTV/CAC >  5x  (top-tier) >  3x  (sain)   ·   >  4x  (excellent) 
+OpenView  Partners  2024 
+TIER  1 
+Payback  period <  12  mois  (top-tier) <  18  mois  (sain)   ·   <  14  mois  (bon) 
+KeyBanc  SaaS  Survey  2024 
+TIER  1 
+NRR 125%+  (top-tier  US) 
+105-115%  (sain  France)   ·   120%+  (top) 
+Bessemer  Cloud  Index TIER  1 
+Gross  Margin >  75%  (top-tier) >  65%  (sain)   ·   >  75%  (excellent) 
+Battery  Ventures,  Dell'Oro 
+TIER  1 
+Burn  Multiple <  1x  (efficient) <  2x  (acceptable)   ·   <  1.5x  (efficient) 
+David  Sacks  (Craft) TIER  1 
+Churn  annuel <  5%  (top-tier) <  10%  (sain  France)   ·   <  6%  (excellent) 
+Heuristique  sectorielle TIER  2 
+NPS >  50  (top-tier) >  30  (sain)   ·   >  40  (excellent) 
+Heuristique  sectorielle TIER  2 
+Magic  Number >  1  (top-tier) >  0.7  (acceptable)   ·   >  1  (efficient) 
+Lemkin  /  Sammut TIER  1 
+ 
+A7.3  Caveats  spécifiques  au  marche  francais  
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  22  /  24
+ 
+--- Page 23 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+⚡   Spécificités  du  SaaS  B2B  France  vs  USA Cycles  de  vente  plus  longs  :  90-180  jours  en  France  vs  30-90  jours  aux  US  —  impact  direct  sur  Payback  Period. Churn  structurellement  plus  élevé  en  France  sur  PME  :  ~12-15%  vs  8-10%  US  —  dans  le  calcul  LTV. ACV  (Annual  Contract  Value)  plus  faible  :  -20  a  -30%  ou  équivalent  US  —  impact  sur  economies  d'echelle. Adoption  SaaS  plus  lente  :  retentir  dans  le  NRR  la  première  année  (faible  expansion). RGPD  :  surcharge  opérationnelle  de  ~5-8%  vs  SaaS  US  —  impact  sur  Gross  Margin. 
+ 
+A7.4  Recommandations  méthodologiques  
+•   Mesurer  les  KPI  sur  12  mois  glissants  minimum  —  éviter  les  biais  saisonniers. •   Comparer  Cheetah  a  3  cohortes  :  (1)  SaaS  BTP/Construction  France,  (2)  SaaS  B2B  mid-market  France,  (3)  
+SaaS
+ 
+expert
+ 
+vertical
+ 
+Europe. •   Faire  valider  la  méthodologie  de  calcul  par  un  CFO  senior  externe  avant  communication  investisseur. •   Réévaluer  les  benchmarks  tous  les  12  mois  —  l'écosystème  SaaS  évolue  rapidement. •   Pour  les  benchmarks  TIER  2  ou  TIER  3,  indiquer  clairement  le  niveau  de  confiance  dans  les  communications  
+externes.  
+POLICY   ·   Benchmark  Communication  Policy Toute  communication  externe  (pitch  deck,  due  diligence,  board  meeting)  cite  la  source  du  benchmark. Aucun  benchmark  TIER  3  communique  sans  'caveat'  explicite  ('estimation  interne,  à  valider'). Benchmarks  révisés  chaque  trimestre  lors  du  QBR  avec  validation  CEO  +  CFO. En  cas  de  discordance  entre  sources  :  utiliser  la  fourchette  plutôt  que  la  valeur  unique. 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  23  /  24
+ 
+--- Page 24 ---
+Cheetah  EOS  —  Annexes  Premium  v2.1  CONFIDENTIEL
+ 
+Conclusion  et  Prochaines  Étapes  
+Cette  annexe  premium  consolide  le  Cheetah  Enterprise  Operating  System  v2.0  sur  7  dimensions  critiques  
+pour
+ 
+atteindre
+ 
+le
+ 
+niveau
+ 
+audit
+ 
+/
+ 
+investisseur.
+ 
+Elle
+ 
+ne
+ 
+remplace
+ 
+pas
+ 
+le
+ 
+document
+ 
+principal
+ 
+—
+ 
+elle
+ 
+le
+ 
+rend
+ 
+opérationnel,
+ 
+réaliste,
+ 
+et
+ 
+auditable.  
+Synthese  des  7  améliorations  
+# Amélioration Impact  direct Statut 
+A1 Reset  temporel  des  deadlines Roadmap  réaliste  calibrée  sur  Mai  2026  +  4  tiers FAIT 
+A2 Break-glass  procedures 3  procédures  documentées  +  registre  des  dérogations 
+FAIT 
+A3 Diagrammes  visuels  (6) Architecture,  incident,  isolation,  classification,  decision 
+FAIT 
+A4 Current  Reality  Assessment 20  domaines  audités  avec  preuves  et  niveau  de  confiance 
+FAIT 
+A5 Cost  /  Impact  Matrix 18  actions  classifiées  +  budget  par  tier FAIT 
+A6 Minimum  Viable  Enterprise Tier-list  opérationnelle  pour  signature  grand  compte FAIT 
+A7 Validation  des  benchmarks 8  KPI  calibres  marche  francais  +  sources FAIT  
+Validation  et  Mise  en  Application  
+1.   Ce  document  doit  être  approuvé  par  CEO  +  CTO  dans  les  7  jours. 2.   Le  Tier  0  (4  actions  à  30  jours)  doit  être  engagé  immédiatement  —  coût  <  2  200  EUR. 3.   Une  revue  mensuelle  de  progression  est  planifiée  dans  le  MBR  (Monthly  Business  Review). 4.   Les  7  améliorations  sont  intégrées  dans  le  Risk  Register  comme  actions  de  mitigation. 5.   Une  révision  de  cette  annexe  est  prévue  le  30  juin  2026,  puis  chaque  trimestre.  
+⚠   Statut  de  validation Document  :  Cheetah  EOS  v2.0  +  Annexes  Premium  v2.1 Auteur  :  Cheetah   |   Date  :  Mai  2026   |   Classification  :  CONFIDENTIEL Approbation  requise  :  CEO  +  CTO   |   Diffusion  :  equipe  direction  +  due  diligence  sur  demande Prochaine  révision  :  30  juin  2026 
+ 
+Cheetah  SaaS  ·  Annexes  Premium  ·  Mai  2026  Page  24  /  24
+ 
+============================================================
+FILE: GOUVERNANCE
+============================================================
+Pages: 27
+--- Page 1 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+ 
+CHEETAH 
+Gouvernance  &  Resilience 
+Edition  2026  
+ 
+Guide  strategique  &  operationnel 
+SaaS   ·   Security  Enterprise   ·   Resilience   ·   Scalabilité   ·   Gestion  de  crise 
+ 
+DOCUMENT  CONFIDENTIEL  —  USAGE  INTERNE  UNIQUEMENT  
+Cheetah  SaaS  ·  Edition  2026  Page  1  /  27
+ 
+--- Page 2 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Avant-propos  
+Ce  document  est  le  complément  stratégique  du  Guide  de  Sécurité  Cheetah  2026.  La  ou  le  premier  guide  
+posait
+ 
+les
+ 
+fondations
+ 
+juridiques
+ 
+et
+ 
+les
+ 
+règles
+ 
+de
+ 
+sécurité
+ 
+de
+ 
+base,
+ 
+celui-ci
+ 
+traite
+ 
+des
+ 
+décisions
+ 
+de
+ 
+gouvernance,
+ 
+de
+ 
+la
+ 
+robustesse
+ 
+organisationnelle,
+ 
+et
+ 
+de
+ 
+la
+ 
+capacité
+ 
+de
+ 
+Cheetah
+ 
+à
+ 
+grandir
+ 
+sans
+ 
+se
+ 
+fragiliser. Chaque  thème  est  présenté  de  façon  concrète  et  directement  actionnable.  Les  termes  techniques  sont  
+systématiquement
+ 
+expliqués
+ 
+avec
+ 
+des
+ 
+analogies
+ 
+du
+ 
+quotidien.
+ 
+L'objectif
+ 
+est
+ 
+qu'un
+ 
+dirigeant
+ 
+—
+ 
+même
+ 
+non-technicien
+ 
+—
+ 
+comprenne
+ 
+les
+ 
+enjeux
+ 
+et
+ 
+prenne
+ 
+des
+ 
+décisions
+ 
+claires.  
+ℹ   Comment  utiliser  ce  document Les  boîtes  vertes  'Concrètement'  donnent  l'essentiel  en  30  secondes  —  lisez-les  en  premier. Les  boites  rouges  'Règle  absolue'  sont  non-négociables  —  respectez-les  sans  exception. Les  boîtes  orange  'Attention'  signalent  les  erreurs  les  plus  courantes  dans  ce  domaine. Les  tableaux  permettent  d'évaluer  la  situation  actuelle  de  Cheetah  et  de  prioriser  les  actions. 
+ 
+Classification  :  Confidentiel  —  Usage  interne  uniquement  
+Cheetah  SaaS  ·  Edition  2026  Page  2  /  27
+ 
+--- Page 3 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+1.  Gouvernance  SaaS  :  Qui  décide  quoi  ?  
+La  gouvernance,  c'est  l'art  d'organiser  les  décisions  dans  une  entreprise.  Dans  un  SaaS  (logiciel  vendu  
+en
+ 
+abonnement
+ 
+sur
+ 
+internet),
+ 
+les
+ 
+mauvaises
+ 
+décisions
+ 
+—
+ 
+ou
+ 
+l'absence
+ 
+de
+ 
+décisions
+ 
+—
+ 
+coûtent
+ 
+cher.
+ 
+Une
+ 
+bonne
+ 
+gouvernance
+ 
+permet
+ 
+d'avancer
+ 
+vite
+ 
+tout
+ 
+en
+ 
+gardant
+ 
+le
+ 
+cap. 
+1.1  Les  4  piliers  de  la  gouvernance  
+✔   Concrètement  :  La  gouvernance,  c'est  comme  un  gouvernement  d'entreprise Imaginez  que  Cheetah  est  un  pays.  Il  faut  des  lois  (les  règles  du  produit),  des  ministres  (les  responsables),  un  parlement  (le  conseil  de  direction),  et  des  citoyens  (les  utilisateurs). Sans  gouvernance  clairement  définie,  tout  le  monde  décide  de  tout  —  et  au  final,  personne  ne  décide  vraiment.  C'est  la  paralysie. 
+ 
+Pilier Définit Responsable  recommandé 
+Fréquence  de  revue 
+Stratégie  produit Quelles  fonctionnalités  construire  en  priorité  et  pourquoi 
+CEO  +  CTO Mensuelle 
+Sécurité  &  conformité Les  données  sont-elles  protégées  ?  Sommes-nous  en  conformité  RGPD  ? 
+RSSI  ou  CTO Trimestrielle 
+Finances  SaaS ARR,  churn,  CAC,  LTV  —  indicateurs  de  santé  financière 
+CFO  +  CEO Mensuelle 
+Architecture  technique Les  choix  technologiques  structurants  à  long  terme 
+CTO  +  Tech  Lead Semestrielle 
+ 
+1.2  La  matrice  RACI  :  Qui  fait  quoi,  sans  ambiguïté  
+ℹ   Définition  :  RACI RACI  est  une  méthode  pour  clarifier  les  rôles  sur  chaque  décision  importante. R  =  Responsable  (fait  le  travail  concret)   |   A  =  Accountable  (en  répond  devant  la  direction) C  =  Consulte  (donne  son  avis  avant)   |   I  =  Informe  (est  tenu  au  courant  après) Règle  d'or  :  chaque  décision  doit  avoir  EXACTEMENT  1  personne  Accountable.  Pas  0,  pas  2. 
+ 
+Décision Responsable Accountable Consulte Informe 
+Lancement  nouvelle  fonctionnalité 
+Chef  produit CEO CTO,  Commercial Equipe  dev 
+Choix  sous-traitant  critique CTO CEO Juridique,  Finance Toute  l'équipe 
+Incident  de  sécurité  majeur RSSI  /  CTO CEO Juridique Direction  +  clients 
+Cheetah  SaaS  ·  Edition  2026  Page  3  /  27
+ 
+--- Page 4 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Décision Responsable Accountable Consulte Informe 
+Augmentation  tarifaire CEO CEO Commercial,  Finance Clients  (90j  avant) 
+Refonte  architecture  technique 
+CTO CTO Tech  Lead,  CEO Equipe  produit 
+Recrutement  senior RH  +  Manager CEO CTO,  Finance Equipe  concernée  
+1.3  Les  3  erreurs  de  gouvernance  à  éviter  absolument  
+▶   Erreur  1  —  Trop  de  réunions,  aucune  décision Symptôme  :  des  réunions  interminables  se  terminent  par  'on  se  repose  la  question  la  semaine  prochaine'. Solution  :  chaque  réunion  doit  produire  AU  MOINS  1  décision  actée,  datée,  et  documentée  dans  le  Decision  Log. 
+ 
+▶   Erreur  2  —  Le  consensus  éternel  (la  paralysie  collégiale) Symptôme  :  on  attend  que  tout  le  monde  soit  d'accord  avant  d'avancer.  Résultat  :  on  n'avance  jamais. Solution  :  le  'Accountable'  a  le  droit  et  le  devoir  de  trancher  en  dernier  ressort,  après  consultation. 
+ 
+▶   Erreur  3  —  Les  décisions  orales  qui  disparaissent Symptôme  :  'On  en  avait  parlé...  mais  personne  ne  se  souvient  de  ce  qui  avait  été  décidé.' Solution  :  toute  Décision  Record  (DR)  doit  être  documentée,  datée,  signée,  et  stockée  dans  un  outil  centralisé  (Notion,  Confluence). 
+ 
+1.4  Les  indicateurs  clés  de  la  gouvernance  (KPI)  
+Indicateur Définition Cible  saine Signal  d'alerte 
+Taux  de  décisions  documentées 
+%  des  décisions  majeures  tracées  dans  le  Decision  Log 
+>  80% <  50% 
+Délai  moyen  de  décision Temps  moyen  entre  identification  d'un  problème  et  décision 
+<  5  jours >  15  jours 
+Taux  de  décisions  revisitées %  de  décisions  rouvertes  dans  les  30  jours 
+<  15% >  30% 
+NPS  interne  (enquête  equipe) 
+Satisfaction  des  équipes  vis-a-vis  du  processus  décisionnel 
+Score  >  7/10 Score  <  5/10 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  4  /  27
+ 
+--- Page 5 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+1.5  Checklist  gouvernance  
+•   Chaque  décision  stratégique  a  un  Accountable  nomme  et  documente •   Un  Décision  Log  centralisé  est  tenu  à  jour  et  accessible  à  toute  l'équipe  de  direction •   Les  KPI  stratégiques  (ARR,  churn,  NPS)  sont  revus  en  comité  mensuel •   Un  processus  d'escalade  urgent  est  défini  pour  les  décisions  hors  calendrier •   Les  actionnaires  et  investisseurs  reçoivent  un  rapport  trimestriel  structure  
+Cheetah  SaaS  ·  Edition  2026  Page  5  /  27
+ 
+--- Page 6 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+2.  Résilience  Organisationnelle  :  Survivre  à  
+l'Imprévisible
+ 
+La  résilience  organisationnelle,  c'est  la  capacité  de  Cheetah  à  continuer  de  fonctionner  normalement  face  
+à
+ 
+des
+ 
+événements
+ 
+imprévisibles
+ 
+:
+ 
+départ
+ 
+soudain
+ 
+d'un
+ 
+employé
+ 
+clé,
+ 
+cyberattaque,
+ 
+panne
+ 
+majeure,
+ 
+ou
+ 
+crise
+ 
+économique.
+ 
+Ce
+ 
+n'est
+ 
+pas
+ 
+une
+ 
+question
+ 
+de
+ 
+pessimisme
+ 
+—
+ 
+c'est
+ 
+une
+ 
+question
+ 
+de
+ 
+professionnalisme. 
+2.1  Le  Bus  Factor  :  la  fragilité  cachée  
+✔   Concrètement  :  Le  Bus  Factor Le  'Bus  Factor'  répond  à  une  question  cruelle  mais  indispensable  :  'Si  cette  personne  se  faisait  renverser  par  un  bus  demain  matin,  l'entreprise  pourrait-elle  continuer  à  fonctionner  ?' Bus  Factor  =  1  :  UNE  SEULE  personne  connait  ce  processus  ou  ce  système.  Si  elle  part  du  jour  au  lendemain,  tout  s'arrête. Bus  Factor  =  2  ou  plus  :  deux  personnes  peuvent  assurer  la  continuité.  C'est  le  minimum  acceptable  pour  tout  processus  critique. Chez  les  startups  SaaS,  le  Bus  Factor  moyen  est  de  1.3  —  ce  qui  signifie  que  la  plupart  des  entreprises  ont  un  Bus  Factor  de  1  sur  leurs  processus  les  plus  critiques. 
+ 
+Processus  critique Bus  Factor  cible Action  si  Bus  Factor  =  1 
+Acces  base  de  données  production 2+ Documenter  +  former  un  second  administrateur 
+Déploiement  en  production  (release) 2+ Runbook  écrit  +  formation  croisée  obligatoire 
+Architecture  technique  globale 2+ ADR  (Architecture  Décision  Records)  complets 
+Accès  comptes  cloud  (AWS/Vercel/GCP) 
+2+ Coffre-fort  +  2  co-administrateurs  nommés 
+Relations  clients  grands  comptes 2+ CRM  exhaustif  +  briefing  systématique  du  N+1 
+Facturation  et  accès  financiers 2+ Procédure  écrite  +  access  partage  direction  
+2.2  La  doctrine  des  3  copies  du  savoir  
+⚠   Règle  absolue  :  Toute  connaissance  critique  doit  exister  en  3  endroits 1.  Dans  la  tête  de  la  personne  (qui  peut  partir  ou  tomber  malade) 2.  Dans  un  document  écrit  et  accessible  à  toute  l'équipe  autorisée 3.  Dans  le  systeme  lui-meme  (code  commenté,  configuration  documentée,  logs) Si  une  information  n'existe  que  dans  la  tête  d'une  personne,  ce  n'est  pas  une  connaissance  d'entreprise  —  c'est  un  risque  majeur  non  assuré. 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  6  /  27
+ 
+--- Page 7 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Type  de  documentation 
+Contenu Format  recommandé Fréquence  de  mise  à  jour 
+Runbook  operationnel Comment  faire  tourner  le  système  au  quotidien 
+Wiki  interne  (Notion) A  chaque  changement 
+ADR  (Decision  Records) 
+Pourquoi  on  a  fait  tel  choix  technique  et  non  un  autre 
+Git  +  Wiki A  chaque  décision  structurante 
+Post-mortem Ce  qui  s'est  passé  lors  d'un  incident  +  leçons 
+Wiki  interne Après  chaque  incident  P0/P1 
+Procédures  RH Onboarding,  offboarding,  acces  a  revoquer 
+RH  +  Wiki  interne Annuelle  +  a  chaque  départ  
+2.3  Plan  de  Continuité  d'Activité  (PCA)  
+Le  PCA  répond  à  la  question  :  'Si  une  catastrophe  frappe  Cheetah,  comment  peut-on  continuer  à  
+travailler
+ 
+?'
+ 
+Ce
+ 
+n'est
+ 
+pas
+ 
+un
+ 
+plan
+ 
+pour
+ 
+éviter
+ 
+les
+ 
+catastrophes
+ 
+—
+ 
+c'est
+ 
+un
+ 
+plan
+ 
+pour
+ 
+y
+ 
+survivre
+ 
+et
+ 
+se
+ 
+relever
+ 
+rapidement. 
+✔   Concrètement  :  RTO  et  RPO  —  les  deux  métriques  de  survie RTO  (Recovery  Time  Objective)  :  le  temps  MAXIMUM  tolérable  d'indisponibilité.  Ex  :  'On  accepte  4h  de  panne  au  maximum,  pas  plus.' RPO  (Recovery  Point  Objective)  :  la  quantité  MAXIMALE  de  données  qu'on  accepte  de  perdre.  Ex  :  'On  accepte  de  perdre  au  max  1h  de  données  si  le  serveur  tombe.' Pour  un  SaaS  professionnel  :  RTO  <  4h  et  RPO  <  1h  sont  les  standards  minimaux  du  marché  entreprise. 
+ 
+Scénario  de  crise Impact  si  non  géré RTO  cible Responsable  PCA 
+Panne  totale  serveur  principal Service  indisponible  pour  tous  les  clients 
+<  4  heures CTO 
+Breach  de  données  (fuite  confirmée) 
+RGPD  :  notification  CNIL  obligatoire  72h 
+<  2  heures RSSI  +  DPO 
+Départ  soudain  du  CTO  ou  CEO  intérimaire 
+Blocage  des  décisions  et  deployments 
+<  72  heures CEO 
+Ransomware  (données  chiffrées) Perte  totale  d'acces  aux  donnees  prod 
+<  24  heures CTO 
+Perte  client  >  20%  ARR  en  30  jours Crise  de  trésorerie  immédiate <  30  jours CEO  +  CFO 
+Fournisseur  critique  hors-service Fonctionnalité  clé  indisponible <  8  heures CTO  
+2.4  Plan  de  succession  des  postes  clés  
+Cheetah  SaaS  ·  Edition  2026  Page  7  /  27
+ 
+--- Page 8 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+ℹ   Principe  :  Chaque  poste  clé  doit  avoir  un  successeur  identifié Il  ne  s'agit  pas  de  remplacer  les  personnes  —  il  s'agit  d'assurer  la  continuité  en  cas  d'imprévision. Pour  chaque  poste  stratégique  :  nommer  un  'suppléant  officiel'  qui  connaît  les  dossiers  critiques  et  peut  assurer  l'intérim. Ce  plan  doit  être  révisé  chaque  année  et  à  chaque  réorganisation. 
+ •   CEO  :  successeur  interim  nomme  +  acces  aux  comptes  bancaires,  contrats,  et  contacts  clés •   CTO  :  Tech  Lead  principal  briefed  +  acces  completed  documents  +  roadmap  technique  a  jour •   RSSI  /  Responsable  sécurité  :  procédés  documentés  +  contacts  incidents  cybersécurité •   Responsable  commercial  :  CRM  complet  +  briefing  systématique  N+1  sur  chaque  compte  clé  
+Cheetah  SaaS  ·  Edition  2026  Page  8  /  27
+ 
+--- Page 9 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+3.  Stratégie  Anti-Copie  :  Construire  un  Avantage  
+Durable
+ 
+La  protection  juridique  (brevets,  droits  d'auteur,  NDA)  est  nécessaire  mais  pas  suffisante.  Les  entreprises  
+les
+ 
+plus
+ 
+solides
+ 
+construisent
+ 
+des
+ 
+'fosses
+ 
+économiques'
+ 
+qui
+ 
+rendent
+ 
+la
+ 
+copie
+ 
+inutile
+ 
+—
+ 
+même
+ 
+si
+ 
+elle
+ 
+était
+ 
+techniquement
+ 
+possible.
+ 
+Un
+ 
+concurrent
+ 
+qui
+ 
+copie
+ 
+votre
+ 
+produit
+ 
+sans
+ 
+ces
+ 
+fosses
+ 
+ne
+ 
+peut
+ 
+pas
+ 
+vous
+ 
+faire
+ 
+de
+ 
+mal. 
+3.1  Les  5  types  de  fosses  économiques  (Moats)  
+✔   Concrètement  :  Un  'Mot'  (fosse),  c'est  ce  qui  vous  protège  mieux  que  n'importe  quel  brevet Imaginez  un  château  médiéval.  Sans  douves  (moat),  il  suffit  d'approcher  pour  l'attaquer.  Avec  de  larges  douves,  même  une  armée  ne  peut  pas  approcher  facilement. Warren  Buffett,  l'investisseur  le  plus  riche  du  monde,  dit  :  'Je  n'investis  QUE  dans  les  entreprises  avec  un  large  montant.' Un  produit  sans  mot  est  facilement  copié  et  vendu  moins  cher.  Un  produit  avec  un  mot  solide  est  chapitre  même  à  prix  double. 
+ 
+Type  de  moat Principe Application  a  Cheetah Force 
+1.  Effet  de  réseau Plus  il  y  a  d'utilisateurs,  plus  le  produit  a  de  valeur 
+Benchmarks  sectoriels  collectifs  impossibles  seuls 
+★★★★★ 
+2.  Données  exclusives Vous  possédez  des  données  uniques  inaccessibles  ailleurs 
+5  ans  de  coutances  FGF  =  base  de  benchmarks  rare 
+★★★★☆ 
+3.  Coûts  de  changement 
+Partir  chez  un  concurrent  est  douloureux  et  cher 
+Migrer  5  ans  de  projets  Cheetah  =  effort  énorme 
+★★★★☆ 
+4.  Économies  d'échelle Plus  vous  grandissez,  moins  vous  coutez  à  opérer 
+R&D  SaaS  amorti  sur  des  milliers  de  clients 
+★★★☆☆ 
+5.  Marque  et  confiance Les  clients  paient  plus  car  ils  font  confiance  à  la  marque 
+Expertise  FGF  reconnue  dans  le  secteur  BTP/Infra 
+★★★☆☆ 
+ 
+3.2  Le  moat  des  données  :  votre  atout  le  plus  puissant  
+Les  données  de  coûts  accumulées  chez  Cheetah  sont  uniques  et  non  reproductibles.  Aucun  concurrent  
+ne
+ 
+peut
+ 
+les
+ 
+recréer
+ 
+sans
+ 
+des
+ 
+clients
+ 
+actifs.
+ 
+C'est
+ 
+un
+ 
+avantage
+ 
+concurrentiel
+ 
+que
+ 
+le
+ 
+code
+ 
+seul
+ 
+ne
+ 
+peut
+ 
+pas
+ 
+copier. 
+▶   Stratégie  recommandée  :  transformer  les  données  en  insights  exclusifs Collectez  (avec  consentement  RGPD)  des  données  agrégées  et  anonymisées  sur  les  projets. Créez  des  benchmarks  sectoriels  :  'Votre  coût  au  m2  vs  la  moyenne  BTP  en  Ile-de-France'. Proposez  des  alertes  prédictives  :  'Les  projets  avec  ces  indicateurs  dépassent  le  budget  de  23%  en  moyenne'. 
+Cheetah  SaaS  ·  Edition  2026  Page  9  /  27
+ 
+--- Page 10 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Ces  insights  deviennent  impossibles  à  reproduire  sans  votre  base  de  données  unique  —  c'est  un  mot  de  niveau  1. 
+ 
+3.3  Les  coûts  de  changement  :  l'intégration  profonde  protege  
+Plus  Cheetah  est  intégré  dans  les  processus  quotidiens  de  ses  clients,  plus  les  quitter  devient  pénible.  Ce  
+n'est
+ 
+pas
+ 
+un
+ 
+piège
+ 
+—
+ 
+c'est
+ 
+le
+ 
+signe
+ 
+d'une
+ 
+valeur
+ 
+réelle
+ 
+créée. 
+Intégration  profonde Ce  qu'elle  crée  comme  coût  de  sortie 
+Historique  de  projets  (5  ans) Ressaisie  manuelle  de  centaines  de  projets  et  de  milliers  de  lignes 
+Connexion  ERP  /  comptabilité Reconfiguration  complète  de  toutes  les  interfaces  tierces 
+Formation  des  équipes Réapprendre  un  nouveau  logiciel  =  3  à  6  mois  de  perte  de  productivité 
+Rapports  clients  standardisés Adapter  tous  les  templates  de  reporting  et  les  habitudes  clients 
+Workflows  valides  métier Re-valider  tous  les  processus  internes  sur  un  nouveau  système  
+3.4  Protection  par  la  vitesse  :  l'avantage  de  l'itération  
+ℹ   Principe  :  Le  produit  le  plus  copiable  est  celui  qui  n'évolue  pas Si  Cheetah  sort  2  nouvelles  fonctionnalités  majeures  par  mois,  un  concurrent  mettrait  6  mois  à  copier...  ce  que  Cheetah  avait  il  y  a  6  mois. La  vitesse  d'itération  est  en  elle-même  un  mot.  Amazon  appelle  ça  'la  vitesse  comme  défense'. Combiné  avec  les  données  exclusives  et  les  coûts  de  changement,  c'est  une  triple  protection  pratiquement  infranchissable. 
+ 
+3.5  Checklist  moat  
+•   Notre  moat  principal  est  clairement  identifié,  mesure,  et  défendu  activement •   Les  données  clients  sont  valorisées  en  insights  exclusifs  (benchmarks,  alertes  prédictives) •   L'onboarding  intégré  profondément  Cheetah  dans  les  processus  du  client  (60  premiers  jours) •   Un  programme  'migration  depuis  concurrents'  facilite  l'entrée,  mais  pas  la  sortie •   La  marque  Cheetah  est  associée  à  l'expertise  coûtenance  FGF  dans  les  réseaux  professionnels  
+Cheetah  SaaS  ·  Edition  2026  Page  10  /  27
+ 
+--- Page 11 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+4.  Dette  Technique  :  L'Argent  qu'on  Doit  au  Futur  
+La  dette  technique  est  l'un  des  concepts  les  plus  importants  et  les  plus  mal  compris  en  gestion  de  produit.  
+Elle
+ 
+conditionne
+ 
+la
+ 
+vitesse
+ 
+de
+ 
+développement,
+ 
+la
+ 
+stabilité
+ 
+du
+ 
+produit,
+ 
+et
+ 
+les
+ 
+coûts
+ 
+futurs
+ 
+de
+ 
+maintenance.
+ 
+Une
+ 
+dette
+ 
+mal
+ 
+gérée
+ 
+peut
+ 
+paralyser
+ 
+une
+ 
+entreprise
+ 
+—
+ 
+même
+ 
+avec
+ 
+une
+ 
+excellente
+ 
+stratégie. 
+4.1  L'analogie  financière  qui  explique  tout  
+✔   Concrètement  :  La  dette  technique  fonctionne  exactement  comme  une  dette  bancaire Quand  vous  empruntez  de  l'argent  pour  avancer  vite,  vous  payez  des  intérêts  tous  les  mois. Quand  votre  équipe  écrit  du  code  'vite  fait'  pour  livrer  rapidement,  vous  payez  des  intérêts  techniques  :  chaque  évolution  future  prend  2  à  3  fois  plus  de  temps. La  bonne  nouvelle  :  comme  une  dette  bancaire,  on  peut  la  rembourser  progressivement  et  intelligemment. La  mauvaise  nouvelle  :  si  on  ne  la  gère  pas  du  tout,  elle  devient  insurmontable  —  et  le  produit  doit  être  entièrement  refait  (=  la  banqueroute  technique). 
+ 
+4.2  Les  4  types  de  dette  technique  
+Type Comment  elle  apparaît Symptômes  visibles Dangerosité 
+Délibérée  responsable Choix  conscient  de  livrer  vite,  avec  plan  de  remboursement  documente 
+Code  'TODO'  bien  documenté,  ticket  créé 
+Faible  si  geree 
+Délibérée  imprudente Choix  conscient  de  ne  pas  bien  faire,  sans  plan  de  remboursement 
+Nombreux  hacks  non  documentés 
+Élevée 
+Accidentelle  (bonne  foi) Mauvais  choix  technique  pris  sincèrement,  découvert  après 
+Bugs  récurrents  sur  un  même  module 
+Moyenne 
+Dette  d'usure  (obsolescence) 
+Code  initialement  propre  mais  devenu  obsolète  avec  le  temps 
+Librairies  périmées,  sécurité  risqué 
+Élevée  à  long  terme  
+4.3  Comment  mesurer  la  dette  de  Cheetah  
+Indicateur Ce  qu'il  mesure Seuil  d'alerte Seuil  critique 
+Couverture  de  tests  (%) %  du  code  couvert  par  des  tests  automatiques 
+<  60% <  30% 
+Lead  time  de  livraison Délai  entre  écriture  du  code  et  mise  en  prod 
+>  5  jours >  2  semaines 
+Taux  de  bugs  prod  /  semaine 
+Bugs  reportés  par  semaine  par  rapport  au  nb  de  users 
+>  5/semaine >  20/semaine 
+Age  moyen  des  dépendances 
+Ancienneté  des  librairies  et  frameworks  utilisés 
+>  12  mois  sans  MAJ Faille  CVE  connue 
+Cheetah  SaaS  ·  Edition  2026  Page  11  /  27
+ 
+--- Page 12 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Indicateur Ce  qu'il  mesure Seuil  d'alerte Seuil  critique 
+Fréquence  incidents  prod Pannes  ou  dégradations  notables  en  production  par  mois 
+>  2/mois >  5/mois 
+Temps  de  démarrage  équipe 
+Délai  pour  qu'un  nouveau  dev  soit  productif 
+>  2  semaines >  1  mois 
+ 
+4.4  La  règle  des  20%  :  le  standard  des  meilleures  équipes  
+⚠   Règle  absolue  :  20%  du  temps  de  développement  doit  être  consacré  au  remboursement  de  dette Google,  Amazon,  Stripe,  Spotify  :  toutes  ces  entreprises  réservent  20%  du  temps  des  développeurs  à  la  dette  technique. Si  cette  règle  n'est  pas  respectée,  la  vélocité  de  développement  diminue  de  10  à  15%  par  trimestre  —  jusqu'au  point  ou  une  nouvelle  fonctionnalité  prend  3  fois  plus  de  temps  qu'avant. Ce  n'est  pas  une  dépense  —  c'est  un  investissement  avec  un  ROI  de  300%  sur  18  mois. 
+ 
+4.5  Prioriser  la  dette  :  par  ou  commencer  
+Priorité Critère Exemple  concret  chez  Cheetah Délai  recommandé 
+P0  —  Immédiat Faille  de  sécurité  ou  bug  critique  prod 
+Librairie  avec  CVE  critique  non  patchée 
+<  48  heures 
+P1  —  Urgent Impact  direct  sur  la  satisfaction  client 
+Export  excel  qui  échoue  parfois <  1  sprint 
+P2  —  Important Ralentit  significativement  les  développements 
+Module  qui  prend  2j  a  chaque  évolution 
+<  1  trimestre 
+P3  —  Planifie Risque  futur,  pas  d'impact  immédiat 
+Framework  qui  ne  sera  plus  supporté  en  2027 
+<  6  mois 
+ 
+4.6  La  communication  de  la  dette  au  non-technicien  
+ℹ   Comment  expliquer  la  dette  technique  au  dirigeant  ou  à  l'investisseur Mettre  tout  en  euros  et  en  temps  :  'Notre  dette  sur  le  module  de  facturation  nous  coûte  3  jours/mois  de  maintenance.  En  la  remboursant  (3  semaines  de  travail),  on  économise  36  jours/an.' Utiliser  l'analogie  véhicule  :  'Le  produit  est  comme  une  voiture.  On  peut  rouler  même  sans  entretien...  jusqu'au  jour  où  le  moteur  tombe  en  panne  sur  l'autoroute.' Produire  un  'Debt  Score'  visible  :  note  de  0  à  100  mise  à  jour  trimestriellement  et  partagée  avec  la  direction. 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  12  /  27
+ 
+--- Page 13 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+5.  Sécurité  Enterprise  :  Passer  au  Niveau  Supérieur  
+La  sécurité  'de  base'  (mots  de  passe  robustes,  HTTPS,  sauvegardes)  est  couverte  dans  le  Guide  de  
+Sécurité
+ 
+V1.
+ 
+Ce
+ 
+chapitre
+ 
+traite
+ 
+de
+ 
+la
+ 
+sécurité
+ 
+de
+ 
+niveau
+ 
+entreprise
+ 
+:
+ 
+les
+ 
+pratiques
+ 
+des
+ 
+grandes
+ 
+entreprises
+ 
+et
+ 
+startups
+ 
+à
+ 
+forte
+ 
+croissance
+ 
+pour
+ 
+protéger
+ 
+leurs
+ 
+clients,
+ 
+leur
+ 
+réputation,
+ 
+et
+ 
+leur
+ 
+business. 
+5.1  Zero  Trust  :  'Ne  faire  confiance  à  personne  par  défaut'  
+✔   Concrètement  :  Le  modèle  Zero  Trust  renverse  complètement  la  logique  de  la  sécurité  classique Avant  (périmètre  de  sécurité)  :  le  réseau  internet  est  sûr,  l'extérieur  est  dangereux.  C'est  comme  un  château  fort  :  bien  protégé  à  l'extérieur,  totalement  libre  à  l'intérieur. Problème  :  si  un  attaquant  entre  (un  employé  piraté,  un  ordinateur  volé),  il  a  accès  à  TOUT. Zero  Trust  :  Personne  n'est  digne  de  confiance  par  défaut  —  ni  un  employé  au  bureau,  ni  un  appareil  de  l'entreprise,  ni  même  un  serveur  interne. Google  applique  Zero  Trust  depuis  2014  (programme  BeyondCorp).  Résultat  :  0  brèche  majeure  depuis  lors. 
+ 
+Principe  Zéro  Trust Ce  que  ça  signifie  concrètement Outil  /  Méthode 
+Vérification  explicite Chaque  connexion  vérifiée,  même  depuis  les  bureaux 
+SSO  +  MFA  obligatoire  sur  tout 
+Moindre  privilège Chaque  employé  a  acces  UNIQUEMENT  à  ce  dont  il  a  besoin 
+RBAC  (Role-Based  Access  Control) 
+Supposition  de  brèche Agir  comme  si  on  était  DÉJÀ  compromise,  préparer  la  réponse 
+SIEM  +  monitoring  24/7 
+Micro-segmentation Isoler  les  composants  du  système  les  uns  des  autres 
+Firewalls  internes,  VPC  isolés 
+Session  à  durée  limitée Aucun  acces  permanent,  tout  acces  expire  après  X  heures 
+JIT  Access  (Just-In-Time) 
+ 
+5.2  SSO  &  IAM  :  centraliser  pour  mieux  contrôler  
+ℹ   Definition  :  SSO  (Single  Sign-On) Le  SSO  permet  à  un  employé  de  se  connecter  UNE  SEULE  FOIS  (avec  son  compte  Google  ou  Microsoft)  et  d'avoir  accès  à  tous  les  outils  de  l'entreprise. Avantage  sécurité  majeur  :  quand  un  employé  quitte  l'entreprise,  on  désactive  son  compte  SSO  et  TOUS  ses  acces  disparaissent  instantanément. Sans  SSO  :  il  faut  penser  à  supprimer  manuellement  les  acces  Notion,  Slack,  GitHub,  AWS,  Vercel,  Figma,  etc.  —  et  on  en  oublie  toujours. Outils  :  Okta,  Auth0,  Microsoft  Entra  ID,  Google  Workspace  SSO. 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  13  /  27
+ 
+--- Page 14 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+⚠   Regle  absolue  :  Aucun  employé  ne  doit  avoir  acces  en  permanence  à  la  base  de  données  de  production L'accès  à  la  base  de  production  doit  être  temporaire  (JIT  :  Just-In-Time),  log,  et  expirer  automatiquement. Même  le  CTO  ne  doit  pas  avoir  un  acces  permanent  et  non  trace  a  la  base  de  production. Tout  acces  direct  à  la  prod  doit  générer  une  alerte  et  être  révisé  en  post-mortem  si  non  planifié. 
+ 
+5.3  SIEM  :  la  tour  de  contrôle  de  la  sécurité  
+✔   Concrètement  :  Un  SIEM,  c'est  la  caméra  de  surveillance  intelligente  de  toute  votre  infrastructure Un  SIEM  (Security  Information  and  Event  Management)  collecte  tous  les  journaux  d'activité  de  tous  vos  systèmes  en  temps  réel. Il  détecte  automatiquement  les  comportements  anormaux  :  connexion  à  3h  du  matin  depuis  un  pays  inconnu,  tentative  d'accès  à  500  fichiers  en  30  secondes,  export  massif  de  données... Outils  SaaS  accessibles  dès  la  phase  growth  :  Datadog  Security,  Elastic  SIEM,  Splunk  Cloud. 
+ 
+5.4  La  grille  de  maturité  sécurité  de  Cheetah  
+Niveau Description Critères  de  validation Horizon  Cheetah 
+1  —  Basique Protection  minimum  viable 
+HTTPS,  mots  de  passe,  sauvegardés,  MFA  email 
+Atteint  (Guide  V1) 
+2  —  Intermédiaire 
+Bonne  hygiène  sécurité MFA  universel,  RBAC,  chiffrement  données 
+Q3  2025 
+3  —  Avance Standard  enterprise  /  grands  comptes 
+SSO,  SIEM,  pentest  annuel,  Zero  Trust  début 
+Q1  2026 
+4  —  Expert Grande  entreprise,  éligible  grands  marchés  publics 
+ISO  27001,  SOC  2,  Red  Team,  Bug  Bounty 
+2027-2028 
+ 
+5.5  Pentest  et  Bug  Bounty  :  attaquez-vous  en  premier  
+Un  pentest  (test  d'intrusion)  consiste  à  payer  des  experts  en  sécurité  pour  'attaquer'  votre  système  
+exactement
+ 
+comme
+ 
+le
+ 
+ferait
+ 
+un
+ 
+hacker.
+ 
+C'est
+ 
+la
+ 
+méthode
+ 
+la
+ 
+plus
+ 
+efficace
+ 
+pour
+ 
+trouver
+ 
+les
+ 
+failles
+ 
+avant
+ 
+que
+ 
+les
+ 
+criminels
+ 
+ne
+ 
+le
+ 
+fassent. 
+Type Fréquence Budget  indicatif Ce  qu'on  teste 
+Pentest  interne 1  fois  par  an  minimum 5  000  -  15  000  EUR Application  complète,  API,  base  de  données 
+Pentest  avant  release Chaque  version  majeure  du  produit 
+2  000  -  5  000  EUR Nouvelles  fonctionnalités,  nouvelles  intégrations 
+Cheetah  SaaS  ·  Edition  2026  Page  14  /  27
+ 
+--- Page 15 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Type Fréquence Budget  indicatif Ce  qu'on  teste 
+Bug  Bounty  privé Continu  (programme  permanent) 
+200  -  5  000  EUR/bug Chercheurs  indépendants  testent  en  continu 
+Social  Engineering 1  fois  par  an Inclus  dans  pentest Resistance  des  equipes  au  phishing,  vishing  
+Cheetah  SaaS  ·  Edition  2026  Page  15  /  27
+ 
+--- Page 16 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+6.  Montée  en  Échelle  :  Grandir  Sans  se  Casser  
+La  scalabilité  est  la  capacité  d'un  système  à  supporter  une  charge  croissante  sans  perte  de  performance.  
+Pour
+ 
+un
+ 
+SaaS,
+ 
+elle
+ 
+a
+ 
+deux
+ 
+dimensions
+ 
+indissociables
+ 
+:
+ 
+la
+ 
+technique
+ 
+(le
+ 
+code
+ 
+et
+ 
+les
+ 
+serveurs)
+ 
+et
+ 
+l'organisation
+ 
+(les
+ 
+équipes
+ 
+et
+ 
+les
+ 
+processus).
+ 
+Rater
+ 
+l'une
+ 
+compromet
+ 
+l'autre. 
+6.1  Scalabilité  technique  :  les  trois  modes  
+✔   Concrètement  :  La  scalabilité,  c'est  comme  une  route  nationale Une  route  à  2  voies  supporte  1  000  voitures/heure.  Avec  50  000  voitures,  tout  s'arrête. Scalabilité  verticale  :  agrandir  la  route  (mettre  un  serveur  plus  puissant).  Rapide  à  faire,  mais  limité  physiquement. Scalabilité  horizontale  :  construire  des  routes  parallèles  (multiplier  les  serveurs  identiques).  C'est  ce  que  font  Netflix,  Spotify,  Amazon. Scalabilité  élastique  :  des  routes  qui  apparaissent  et  disparaissent  selon  le  trafic  en  temps  réel.  C'est  le  cloud  moderne  (AWS  Auto  Scaling,  Vercel  Edge). 
+ 
+Type Principe Avantages Limites 
+Verticale  (Scale-up) Un  seul  serveur  plus  puissant Simple,  pas  de  refonte  architecture 
+Limite  physique,  point  unique  de  panne 
+Horizontale  (Scale-out) Plusieurs  serveurs  identiques  en  parallèle 
+Théoriquement  illimitée,  résiliente 
+Complexité  +  besoin  d'un  load  balancer 
+Elastique  (Cloud  natif) S'adapte  automatiquement  à  la  charge  en  temps  réel 
+Coûts  optimisés,  0  surcapacité 
+Requiert  une  architecture  cloud-native  
+6.2  Les  goulots  d'étranglement  :  trouver  le  maillon  faible  
+Un  goulot  d'étranglement  (bottleneck)  est  le  point  le  plus  lent  d'un  système.  La  loi  de  la  chaîne  s'applique  
+:
+ 
+elle
+ 
+est
+ 
+aussi
+ 
+solide
+ 
+que
+ 
+son
+ 
+maillon
+ 
+le
+ 
+plus
+ 
+faible.
+ 
+Peu
+ 
+importe
+ 
+la
+ 
+vitesse
+ 
+des
+ 
+autres
+ 
+composants. 
+Goulot  classique Symptôme  observable Solution  architecturale 
+Base  de  données  surchargée Pages  lentes  lors  des  pics  d'utilisation 
+Cache  Redis  +  index  +  réplicas  en  lecture  seule 
+API  sans  protection Une  seule  requête  abusive  bloque  tout 
+Rate  limiting  +  queues  asynchrones  +  circuit  breaker 
+Deployments  manuels Releases  lentes,  erreurs  humaines  fréquentes 
+CI/CD  automatisé  (GitHub  Actions  +  Vercel) 
+Monolithe  sans  modules Une  modification  ralentit  tout  le  déploiement 
+Architecture  modulaire  /  micro-services  progressifs 
+Cheetah  SaaS  ·  Edition  2026  Page  16  /  27
+ 
+--- Page 17 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Goulot  classique Symptôme  observable Solution  architecturale 
+Goulet  humain  (1  personne) Tout  passe  par  1  dev  pour  toute  décision  tech 
+Pair  programming  +  decision  records  +  delegation  
+6.3  Scalabilité  organisationnelle  :  le  modèle  des  équipes  autonomes  
+Au-delà  de  10  à  15  personnes,  la  communication  elle-même  devient  le  principal  problème  de  croissance.  
+Le
+ 
+modèle
+ 
+'Squad'
+ 
+(équipe
+ 
+autonome),
+ 
+popularisé
+ 
+par
+ 
+Spotify,
+ 
+permet
+ 
+de
+ 
+scaler
+ 
+sans
+ 
+créer
+ 
+une
+ 
+bureaucratie
+ 
+paralysante. 
+ℹ   Le  modèle  Squad  :  des  équipes  qui  fonctionnent  comme  des  startups  internes Chaque  Squad  est  une  équipe  pluridisciplinaire  (de  +  produit  +  design)  complètement  autonome  sur  son  périmètre. Elle  a  son  propre  backlog,  ses  propres  KPI,  et  prend  ses  propres  décisions  techniques  dans  son  domaine. Les  Squads  se  coordonnent  via  des  interfaces  définies  (API,  événements)  et  non  via  des  réunions  permanentes. Règle  :  'Two-pizza  rule'  (Amazon)  —  Une  Squad  ne  doit  jamais  être  plus  grande  que  ce  que  deux  pizzas  peuvent  nourrir  (5  à  8  personnes  max). 
+ 
+Squad  Cheetah  (proposition) 
+Périmètre KPI  principal 
+Squad  Core  Produit Fonctionnalités  FGF,  bilans,  interface  principale NPS  utilisateur  +  adoption  features 
+Squad  Plateforme  &  Sécurité 
+Infra,  performance,  securite,  fiabilite  24/7 Uptime  +  MTTR  (temps  de  reprise) 
+Squad  Croissance Onboarding,  API  publique,  intégrations  tierces Time-to-value  +  activation  rate 
+Squad  Data  &  Intelligence Benchmarks,  analytics,  predictif,  IA Nb  d'insights  actives  par  client  
+6.4  Les  signaux  d'alerte  :  quand  agir  
+Signal Mesure  concrète Action  immédiate 
+Temps  de  réponse  API  >  500  ms 
+Monitoring  Datadog  /  New  Relic Investigation  perf  +  optimisation  sprint 
+Taux  d'erreur  >  1%  sur  24h Dashboard  erreurs  temps  réel Incident  P1  —  intervention  immediate 
+Lead  time  livraison  >  2  semaines 
+Tickets  :  ouverture  ->  merge  ->  prod 
+Audit  processus  +  suppression  frictions 
+Satisfaction  equipe  <  7/10 Pulse  survey  mensuel  anonyme Workshop  retro  +  plan  d'action  30  jours 
+Cheetah  SaaS  ·  Edition  2026  Page  17  /  27
+ 
+--- Page 18 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Signal Mesure  concrète Action  immédiate 
+Bus  Factor  <  2  sur  3  systèmes Audit  trimestriel  Bus  Factor Pair  programming  +  documentation  intense  
+Cheetah  SaaS  ·  Edition  2026  Page  18  /  27
+ 
+--- Page 19 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+7.  Dépendance  Produit  Saine  :  Éviter  le  Piège  du  
+Fournisseur
+ 
+Le  vendeur  lock-in  (littéralement  :  verrouillage  fournisseur)  désigne  la  situation  ou  l'on  devient  si  
+dépendant
+ 
+d'un
+ 
+fournisseur
+ 
+qu'on
+ 
+ne
+ 
+peut
+ 
+plus
+ 
+le
+ 
+quitter
+ 
+sans
+ 
+des
+ 
+coûts
+ 
+et
+ 
+des
+ 
+risques
+ 
+prohibitifs.
+ 
+Pour
+ 
+un
+ 
+SaaS,
+ 
+c'est
+ 
+un
+ 
+risque
+ 
+stratégique
+ 
+majeur
+ 
+qui
+ 
+compromet
+ 
+l'indépendance
+ 
+et
+ 
+la
+ 
+valorisation
+ 
+de
+ 
+l'entreprise. 
+7.1  Pourquoi  le  vendor  lock-in  est  dangereux  
+✔   Concrètement  :  Être  en  vendor  lock-in,  c'est  comme  louer  votre  outil  de  travail  principal  sans  contrat Si  votre  four  principal  est  loué  et  que  le  propriétaire  triple  le  prix  du  jour  au  lendemain,  vous  êtes  bloqué. Dans  le  digital  :  si  votre  infrastructure  entière  est  sur  AWS  sans  abstraction,  Amazon  peut  augmenter  ses  tarifs  de  50%  et  vous  n'avez  aucun  recours  immédiat. Cas  réel  :  en  2023,  plusieurs  startups  ont  vu  leurs  coûts  cloud  tripler  sans  préavis  —  celles  sans  plan  B  ont  débordé  ou  ferme. 
+ 
+7.2  Les  5  types  de  dépendances  à  surveiller  
+Type  de  dépendance Exemple Niveau  de  risque 
+Stratégie  de  protection 
+Infrastructure  Cloud 100%  sur  AWS  sans  abstraction  Terraform 
+Critique IaC  multicloud  +  abstraction  via  Terraform 
+Base  de  données  propriétaire 
+Fonctionnalites  specifiques  Oracle 
+Elève Standards  SQL  ouverts  +  ORM  portable  (Prisma) 
+Fournisseur  SaaS  critique 
+Un  seul  processeur  de  paiement 
+Moyen-élevé Architecture  2  PSP  +  abstraction  du  service 
+Librairie  open-source  unique 
+Framework  non  maintenu  depuis  18  mois 
+Moyen Audit  régulier  +  fork  si  nécessaire 
+Compétence  humaine  unique 
+1  seul  dev  connait  l'architecture  complète 
+Elève Documentation  +  formation  croisée  obligatoire  
+7.3  L'excitabilité  score  :  évaluer  chaque  fournisseur  
+ℹ   Principe  :  Pour  chaque  fournisseur  critique,  posez  la  question  :  'Si  on  devait  changer  demain,  combien  cela  coûterait-il  ?' Score  1-3  :  Sortie  facile  (moins  d'1  semaine,  aucun  risque).  Bonne  situation. Score  4-6  :  Sortie  modérée  (1  à  4  semaines,  quelques  risques).  Acceptable  si  score  maîtrise. Score  7-10  :  Vendor  lock-in  fort  (plus  d'1  mois,  risque  élevé).  Plan  de  contingence  obligatoire. 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  19  /  27
+ 
+--- Page 20 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Fournisseur Catégorie Score  à  évaluer Plan  de  contingence  à  définir 
+Hébergement  principal Infrastructure ?  /  10 Alternative  identifier  ? 
+Base  de  données Données ?  /  10 Export  format  standard  ? 
+Service  de  paiement Monétisation ?  /  10 Second  PSP  configure  ? 
+Emails  transactionnels Communication ?  /  10 Alternative  sous  24h  ? 
+Authentification  /  SSO Securite  /  Acces ?  /  10 Migration  plan  documenté  ? 
+Monitoring  /  Observabilite Opérationnel ?  /  10 Export  logs  possible  ?  
+7.4  Les  4  principes  d'une  architecture  indépendante  
+1.   Abstraction  systématique  :  ne  jamais  appeler  directement  une  API  externe  —  toujours  via  une  
+couche
+ 
+d'abstraction
+ 
+interne.
+ 
+Si
+ 
+le
+ 
+fournisseur
+ 
+change,
+ 
+on
+ 
+change
+ 
+1fichier,
+ 
+pas
+ 
+200. 2.   Standards  ouverts  préférentiels  :  privilégier  REST,  GraphQL,  SQL  ANSI,  OpenID  aux  API  
+propriétaires
+ 
+qui
+ 
+créent
+ 
+de
+ 
+la
+ 
+dépendance. 3.   Audit  trimestriel  :  réviser  la  liste  des  fournisseurs  critiques  et  recalculer  leur  excitabilité  score  chaque  
+trimestre. 4.   Clause  de  portabilité  des  données  :  exiger  contractuellement  que  tout  fournisseur  SaaS  remette  les  
+données
+ 
+dans
+ 
+un
+ 
+format
+ 
+standard
+ 
+et
+ 
+exploitable
+ 
+sous
+ 
+5
+ 
+jours
+ 
+ouvrés.  
+Cheetah  SaaS  ·  Edition  2026  Page  20  /  27
+ 
+--- Page 21 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+8.  Supervision  &  Gestion  de  Crise  :  Voir  et  Réagir  
+Avant
+ 
+le
+ 
+Client
+ 
+Un  avion  moderne  ne  vole  pas  a  l'aveugle  —  il  est  équipé  de  centaines  de  capteurs,  d'alertes  en  temps  
+réel,
+ 
+et
+ 
+de
+ 
+protocoles
+ 
+d'urgence
+ 
+précis.
+ 
+Un
+ 
+SaaS
+ 
+professionnel
+ 
+non
+ 
+plus.
+ 
+La
+ 
+supervision
+ 
+est
+ 
+la
+ 
+capacité
+ 
+à
+ 
+voir
+ 
+ce
+ 
+qui
+ 
+se
+ 
+passe
+ 
+en
+ 
+temps
+ 
+réel.
+ 
+La
+ 
+gestion
+ 
+de
+ 
+crise
+ 
+est
+ 
+la
+ 
+capacité
+ 
+à
+ 
+réagir
+ 
+vite
+ 
+et
+ 
+bien
+ 
+quand
+ 
+quelque
+ 
+chose
+ 
+va
+ 
+mal. 
+8.1  L'observabilité  :  les  3  piliers  
+✔   Concrètement  :  Sans  observabilité,  vous  découvrez  les  pannes  quand  le  client  appelle Avec  une  bonne  observabilité,  vous  détectez  le  problème  AVANT  le  client  —  et  vous  êtes  déjà  en  train  de  le  résoudre  quand  il  appelle. Netflix,  Stripe,  et  Datadog  ont  rendu  l'observabilité  accessible  aux  startups  :  le  budget  de  départ  est  inférieur  à  200  EUR/mois. 
+ 
+Pilier Ce  qu'il  capture Outil  recommandé Métrique  clé  à  surveiller 
+1.  Metriques  (Metrics) Nombres  :  temps  de  réponse,  erreurs,  CPU,  RAM 
+Datadog,  Prometheus,  Grafana 
+p95  latency  +  error  rate 
+2.  Logs  (Journaux) Enregistrement  textuel  de  chaque  événement 
+Datadog  Logs,  Elastic,  Loki 
+Error  logs  +  audit  trail  securite 
+3.  Traces  (Traçage) Parcours  d'une  requête  utilisateur  de  bout  en  bout 
+Datadog  APM,  Jaeger,  Tempo 
+Temps  par  étape  du  parcours  
+8.2  Les  niveaux  de  sévérité  :  calibrer  la  réponse  à  l'urgence  
+Tous  les  incidents  ne  sont  pas  égaux.  Un  système  de  classification  précis  permet  de  mobiliser  les  bonnes  
+ressources
+ 
+avec
+ 
+la
+ 
+bonne
+ 
+urgence
+ 
+—
+ 
+ni
+ 
+sur-réagir
+ 
+(épuisement
+ 
+des
+ 
+équipes),
+ 
+ni
+ 
+sous-réagir
+ 
+(client
+ 
+impacte
+ 
+sans
+ 
+réponse). 
+Niveau Définition Délai  de  réponse Communication Exemple 
+P0  —  Critique 100%  utilisateurs  impactés  OU  données  compromises 
+<  15  minutes CEO  +  tous  clients  en  direct 
+Panne  totale,  breach  confirme 
+P1  —  Majeur Fonctionnalité  clé  indisponible,  >  20%  users 
+<  1  heure CTO  +  clients  grands  comptes 
+Export  impossible,  login  lent 
+Cheetah  SaaS  ·  Edition  2026  Page  21  /  27
+ 
+--- Page 22 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Niveau Définition Délai  de  réponse Communication Exemple 
+P2  —  Significant 
+Degradation  notable,  <  20%  users 
+<  4  heures Equipe  technique  +  support 
+Page  lente,  calcul  incorrect 
+P3  —  Mineur Impact  limité,  solution  de  contournement  disponible 
+<  24  heures Ticket  support  interne Bug  cosmétique,  cas  limite  
+8.3  Le  Runbook  :  le  manuel  de  survie  opérationnel  
+ℹ   Définition  :  Un  Runbook  est  un  guide  étape  par  étape  pour  réagir  à  une  situation  d'incident  précise Exemple  :  'Si  l'alerte  DATA_CONNECTION_TIMEOUT  se  déclenche  à  3h  du  matin,  voici  exactement  les  7  étapes  à  suivre  dans  l'ordre.' L'objectif  :  n'importe  quelle  personne  autorisée  (même  en  pleine  nuit,  même  stressée)  peut  suivre  le  runbook  et  résoudre  l'incident. Un  bon  runbook  remplace  5  ans  d'expérience  par  15  minutes  de  lecture  et  d'exécution. 
+ 
+Structure  obligatoire  d'un  Runbook  •   Titre  et  identifiant  :  Nom  de  l'incident  type  +  code  unique •   Détecté  par  :  Quelle  alerte  specifique,  quel  symptôme  observable •   Impact  potentiel  :  Qui  est  concerné,  quelle  fonctionnalité,  quelle  sévérité •   Etapes  de  diagnostic  (dans  l'ordre)  :  Questions  à  se  poser,  commandes  à  exécuter •   Étapes  de  résolution  (dans  l'ordre)  :  Actions  précises  avec  commandes  si  applicable •   Escalade  :  A  qui  appeler  si  le  problème  n'est  pas  résolu  en  X  minutes •   Post-incident  :  Que  remplir  dans  le  post-mortem,  que  noter  dans  les  logs  
+8.4  Le  post-mortem  'sans  blâme'  :  apprendre  sans  punir  
+Après  chaque  incident  P0  ou  P1,  une  rétrospective  formelle  doit  être  réalisée  dans  les  48  heures.  La  
+culture
+ 
+du
+ 
+post-mortem
+ 
+'blameless'
+ 
+(sans
+ 
+punition)
+ 
+est
+ 
+fondamentale
+ 
+:
+ 
+l'objectif
+ 
+n'est
+ 
+pas
+ 
+de
+ 
+trouver
+ 
+un
+ 
+coupable
+ 
+—
+ 
+c'est
+ 
+de
+ 
+comprendre
+ 
+les
+ 
+causes
+ 
+profondes
+ 
+et
+ 
+d'empêcher
+ 
+la
+ 
+récurrence. 
+▶   Attention  :  La  culture  de  la  faute  détruit  les  équipes  et  cache  les  problèmes Si  les  employés  craignent  d'être  punis  après  un  incident,  ils  cacheront  les  problèmes  jusqu'à  ce  qu'ils  deviennent  catastrophiques. Google  Sur,  Netflix,  et  Amazon  ont  prouvé  que  les  équipes  avec  la  culture  du  blameless  post-mortem  sont  statistiquement  les  plus  fiables. 
+Cheetah  SaaS  ·  Edition  2026  Page  22  /  27
+ 
+--- Page 23 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+La  bonne  question  n'est  JAMAIS  'Qui  a  fait  cette  erreur  ?'  mais  toujours  'Pourquoi  notre  système  a  permis  que  cette  erreur  ait  un  impact  ?' 
+ 
+Section  du  post-mortem Questions  cles  a  explorer Durée 
+1.  Chronologie  précise Quand  exactement  chaque  événement  s'est-il  produit  ?  (a  la  minute) 
+15  min 
+2.  Impact  mesure Combien  d'utilisateurs  ?  Pendant  combien  de  temps  ?  Quel  coût  estimé  ? 
+10  min 
+3.  Causes  racines Méthode  des  5  Pourquoi  :  pourquoi  A  ->  pourquoi  B  ->  pourquoi  C... 
+20  min 
+4.  Actions  correctives Que  changerons-nous  concrètement  ?  Qui  fait  quoi  ?  Pour  quand  ? 
+20  min 
+5.  Leçons  et  partage Qu'avons-nous  appris  ?  Comment  le  partager  avec  toute  l'équipe  ? 
+10  min 
+ 
+8.5  La  communication  de  crise  :  le  plan  B  de  la  communication  
+Quand  un  incident  devient  visible  par  les  clients,  la  communication  est  aussi  importante  que  la  résolution  
+technique.
+ 
+Une
+ 
+mauvaise
+ 
+communication
+ 
+transforme
+ 
+un
+ 
+incident
+ 
+technique
+ 
+en
+ 
+crise
+ 
+de
+ 
+confiance. 
+Timing Action  de  communication Responsable 
+T+0  (détection) Notification  interne  :  alerte  Slack  #incidents  +  escalade  immédiate 
+On-call 
+T+15  min  (P0) Status  page  mise  à  jour  :  'Incident  identifié,  équipe  mobilisée' 
+CTO 
+T+1h Email  aux  clients  impactés  :  'Nous  travaillons,  estimation  X' 
+CTO  ou  CEO 
+T+résolution Email  :  'Incident  résolu.  Voici  ce  qui  s'est  passé  et  ce  qu'on  change' 
+CEO 
+T+48h Post-mortem  public  (si  P0)  ou  résumé  interne  (si  P1) CTO  
+Cheetah  SaaS  ·  Edition  2026  Page  23  /  27
+ 
+--- Page 24 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Glossaire  :  Chaque  terme  technique  explique  
+simplement
+ 
+Ce  glossaire  couvre  les  termes  spécifiques  à  ce  document.  Pour  les  termes  du  Guide  V1  (RGPD,  NDA,  
+SaaS,
+ 
+DPA,
+ 
+etc.),
+ 
+se
+ 
+référer
+ 
+au
+ 
+Glossaire
+ 
+du
+ 
+Guide
+ 
+de
+ 
+Sécurité
+ 
+2026.  
+Terme  technique Ce  que  ça  signifie  vraiment Analogie  du  quotidien 
+ADR Architecture  Décision  Record  —  note  écrite  qui  explique  pourquoi  on  a  pris  une  décision  technique  importante 
+Le  compte-rendu  notarial  d'une  décision  immobilière 
+APM Application  Performance  Monitoring  —  mesure  en  temps  réel  de  la  performance 
+L'électrocardiogramme  de  votre  produit 
+Bottleneck Goulot  d'étranglement  —  le  point  le  plus  lent  d'un  système 
+L'unique  caisse  d'un  supermarché  avec  100  clients 
+Bus  Factor Nombre  de  personnes-cles  dont  le  départ  soudain  paralysait  l'entreprise 
+Si  1  pilote  tombe  malade,  l'avion  peut-il  quand  même  décoller  ? 
+CI/CD Intégration  Continue  /  Déploiement  Continu  —  automatisation  des  mises  en  production 
+La  chaîne  de  montage  automatisée  d'une  usine 
+CSIRT Computer  Security  Incident  Response  Team  —  équipe  de  réponse  aux  incidents  cyber 
+Les  pompiers  de  la  cybersécurité 
+IAM Identity  and  Access  Management  —  système  de  gestion  des  identités  et  des  droits 
+Le  controle  d'acces  electronique  avec  badges  distincts  par  rôle 
+JIT  Access Just-In-Time  Access  —  acces  temporaires  accordés  uniquement  quand  nécessaire 
+Cle  de  securite  a  usage  unique  qui  expire  après  4  heures 
+Lead  Time Délai  entre  le  début  d'un  travail  et  sa  livraison  au  client 
+De  la  commande  en  ligne  à  la  livraison  sur  le  pas  de  la  porte 
+Moat Fossé  économique  —  avantage  concurrentiel  durable  et  difficile  à  copier 
+Les  douves  du  château  qui  empêche  les  assaillants 
+MTTR Mean  Time  To  Recover  —  durée  moyenne  de  résolution  d'un  incident 
+Le  temps  moyen  d'intervention  d'une  équipe  de  pompiers 
+Observabilité Capacité  à  comprendre  l'état  interne  d'un  système  depuis  ses  sorties 
+Diagnostiquer  une  panne  par  les  symptômes  externes,  comme  un  médecin 
+PCA  /  PRA Plan  de  Continuité  /  de  Reprise  d'Activité  —  protocoles  post-catastrophe 
+Le  plan  d'évacuation  d'un  bâtiment  en  cas  d'incendie 
+RACI Matrix  Responsible  /  Accountable  /  Consulted  /  Informed 
+L'organigramme  des  responsabilités  d'un  projet  de  construction 
+RBAC Role-Based  Access  Control  —  acces  définis  par  le  rôle  dans  l'entreprise 
+Votre  badge  n'ouvre  que  les  portes  de  votre  département 
+Cheetah  SaaS  ·  Edition  2026  Page  24  /  27
+ 
+--- Page 25 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Terme  technique Ce  que  ça  signifie  vraiment Analogie  du  quotidien 
+RPO Recovery  Point  Objective  —  quantité  maximale  de  données  acceptables  à  perdre 
+Si  on  perd  les  commandes  de  la  dernière  heure,  c'est  acceptable  ou  non  ? 
+RTO Recovery  Time  Objective  —  durée  maximale  tolérable  de  panne 
+Un  restaurant  peut  se  permettre  2h  de  fermeture,  pas  3  jours 
+Runbook Guide  opérationnel  étape  par  étape  pour  gérer  un  incident  spécifique 
+Le  manuel  du  fabricant  pour  réparer  un  appareil  en  panne 
+SIEM Security  Information  and  Event  Management  —  surveillance  sécurité  centralisée 
+La  salle  des  caméras  de  surveillance,  avec  IA  qui  détecte  les  anomalies 
+Squad Equipe  autonome  pluridisciplinaire  (de  +  produit  +  design) 
+Une  brigade  autonome  avec  son  médecin,  sergent,  et  ingénieur 
+SSO Single  Sign-On  —  une  seule  connexion  pour  tous  les  outils 
+Un  badge  unique  qui  ouvre  toutes  les  portes  du  bâtiment 
+Vendor  Lock-in Dépendance  excessive  à  un  fournisseur,  très  coûteux  à  quitter 
+Etre  client  d'un  seul  opérateur  qui  peut  augmenter  ses  tarifs  sans  concurrence 
+Zero  Trust Architecture  de  sécurité  qui  ne  fait  confiance  à  personne  par  défaut 
+Vérifier  l'identité  de  tout  le  monde  a  chaque  porte,  même  les  employés  
+Cheetah  SaaS  ·  Edition  2026  Page  25  /  27
+ 
+--- Page 26 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Annexes  :  Ressources,  Outils  et  Standards  
+Recommandés
+ 
+A.  Outils  de  gouvernance  et  documentation  
+Outil Usage Tarif  indicatif 
+Notion Base  de  connaissances,  Décision  Log,  Runbooks Gratuit  ->  10  EUR/user/mois 
+Linear Gestion  backlog,  suivi  de  la  dette  technique 8  EUR/user/mois 
+Loom Documentation  vidéo  asynchrone Gratuit  ->  10  EUR/user/mois 
+Miro Ateliers  virtuels,  matrices  RACI  visuelles 10  EUR/user/mois  
+B.  Outils  de  sécurité  enterprise  
+Outil Usage Tarif  indicatif 
+Okta  /  Auth0 SSO  et  IAM  centralisé A  partir  de  15  EUR/user/mois 
+1Password  Teams Coffre-fort  mots  de  passe  d'équipe 5  EUR/user/mois 
+Datadog SIEM,  monitoring,  observabilite  complete A  partir  de  15  EUR/host/mois 
+Snyk Détection  vulnérabilités  dans  les  dépendances Gratuit  ->  25  EUR/dev/mois  
+C.  Outils  de  résilience  et  observabilite  
+Outil Usage Tarif  indicatif 
+PagerDuty Alertes  et  gestion  d'incidents  24/7 A  partir  de  20  EUR/user/mois 
+Grafana  Cloud Dashboards  d'observabilité  open-source Gratuit  ->  30  EUR/mois 
+Terraform Infrastructure  as  Code  multi-cloud Open-source  (gratuit) 
+Runbook.app Templates  de  runbooks  collaboratifs A  partir  de  10  EUR/mois  
+D.  Normes  et  certifications  à  visser  
+Norme Domaine Pertinence  stratégique Horizon  cible 
+ISO  27001 Sécurité  de  l'information  (norme  mondiale) 
+Indispensable  pour  marchés  publics  et  CAC  40 
+2027 
+SOC  2  Type  II Securite,  dispo,  confidentialité  (norme  US) 
+Obligatoire  pour  clients  nord-américains 
+2027 
+Cheetah  SaaS  ·  Edition  2026  Page  26  /  27
+ 
+--- Page 27 ---
+Cheetah  —  Gouvernance  &  Resilience  2026  CONFIDENTIEL
+ 
+Norme Domaine Pertinence  stratégique Horizon  cible 
+ISO  22301 Management  de  la  continuité  d'activité 
+Valide  et  certifie  le  PCA/PRA 2028 
+TISAX Sécurité  spécifique  industrie  automobile 
+Si  développement  sur  le  marché  automotive 
+Optionnel 
+ 
+⚠   Note  finale  :  Ce  document  est  vivant Ce  guide  doit  être  révisé  au  minimum  une  fois  par  an  et  a  chaque  changement  stratégique  majeur  de  Cheetah. Il  est  recommandé  de  réaliser  un  atelier  de  travail  semestriel  pour  évaluer  la  maturité  sur  chacun  des  8  thèmes. Version  actuelle  :  1.0  —  Mai  2026   |   Prochain  audit  recommande  :  Novembre  2026 
+ 
+Cheetah  SaaS  ·  Edition  2026  Page  27  /  27
+ 

@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cheetah-vitrine",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('child_process').spawn('npm',['run','dev'],{cwd:'C:/dev/my-next-tailwind/my-next-tailwind',stdio:'inherit',shell:true,env:{...process.env,PORT:'3003'}})"],
+      "port": 3003
+    },
+    {
+      "name": "cheetahcost",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "process.chdir('C:/dev/projetfinal (2)/projetfinal (3)');const {spawn}=require('child_process');spawn('npm',['run','dev'],{stdio:'inherit',shell:true,env:{...process.env,PORT:'3010'}})"],
+      "port": 3010
+    },
+    {
+      "name": "ChantierDevis",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('child_process').spawn('npm',['run','dev'],{cwd:'C:/dev/ChantierDevis',stdio:'inherit',shell:true,env:{...process.env,PORT:'3001'}})"],
+      "port": 3001
+    }
+  ]
+}

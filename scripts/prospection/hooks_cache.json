@@ -1,0 +1,442 @@
+{
+  "fcheron@mstore-ecochard.com": {
+    "hook": "Les entreprises de travaux spécialisés comme vous perdent 15h par semaine à rédiger des devis. ChantierDevis génère vos devis en 5 minutes avec signature numérique intégrée, sans relecture administrative.",
+    "subject": "Vos devis de travaux spécialisés en 5 min au lieu de 2h"
+  },
+  "contact@fabiennecostel.com": {
+    "hook": "Vous faites des projets de réhabilitation comme ceux de Belle-Île, mais vos devis restent manuels et vous perdez des chantiers à cause des délais. ChantierDevis génère vos devis en 48h avec signature électronique intégrée.",
+    "subject": "Vos devis de réhabilitation prennent trop de temps à Bourg-en-Bresse"
+  },
+  "agence117@avenir-renovations.fr": {
+    "hook": "Vous proposez des extensions et surélévations mais vos clients attendent des semaines pour avoir un devis. ChantierDevis génère vos estimations en 48h, signature incluse.",
+    "subject": "Viriat : pourquoi vos devis de rénovation prennent 3 semaines"
+  },
+  "jean-baptiste.fontan@pylone-telecoms.fr": {
+    "hook": "Chez PYLON, chaque devis de construction prend du temps à compiler. ChantierDevis génère vos devis IA en quelques minutes et les clients les signent directement. Vous récupérez des signatures valables immédiatement, sans relances.",
+    "subject": "Devis maisons Ornex : 48h au lieu de 2 semaines"
+  },
+  "contact@artisanatdeperiers.fr": {
+    "hook": "Samuel, je vois que vous gérez 5 chantiers simultanés en Calvados avec terrasse, charpente, bardage. ChantierDevis génère vos devis et factures en quelques minutes, signature client direct sur le téléphone du chantier.",
+    "subject": "Vos devis chantier Calvados en 48h au lieu d'une semaine"
+  },
+  "contact@ibat-idf.fr": {
+    "hook": "Vos devis prennent trop de temps et vous laissez des chantiers sur la table. ChantierDevis génère vos devis en 10 minutes avec signature électronique intégrée, directement depuis vos plans.",
+    "subject": "I'BAT - Gagnez 5h par devis à Arbent"
+  },
+  "menuiseries@bretmateriaux.fr": {
+    "hook": "Vous gérez vos devis de maisons à la main ou avec des outils obsolètes. ChantierDevis génère vos devis en 5 minutes, signature électronique incluse, et réduit vos relances de 40%.",
+    "subject": "Montrevel Matériaux : vos devis construction perdent du temps"
+  },
+  "cyril@rika-soissons.fr": {
+    "hook": "Les constructeurs de maisons à Confrançon perdent en moyenne 3h par semaine à éditer des devis manuels. ChantierDevis génère vos estimations en 2 minutes avec signature électronique intégrée.",
+    "subject": "Réduire le temps de devis de 80% sur vos chantiers"
+  },
+  "hello@tapio-bois.fr": {
+    "hook": "Vos devis construction bois prennent du temps à chiffrer entre charpente, bardage et zinguerie. ChantierDevis automatise ça en quelques clics et sécurise vos marges.",
+    "subject": "MCB Hugonnard : optimiser vos devis chantiers bois"
+  },
+  "administration@mps35.fr": {
+    "hook": "M.P. Services, vos équipes passent combien de temps chaque semaine sur les devis papier et les allers-retours clients. ChantierDevis génère vos devis en 2 minutes, signature électronique incluse, directement depuis le chantier.",
+    "subject": "Guéreins : vos devis chantier en 48h au lieu de 3 jours"
+  },
+  "pascale.bender@o-f-b.fr": {
+    "hook": "Vous perdez du temps sur chaque devis de brise-soleil et stores toiles à personnaliser. ChantierDevis génère vos chiffrages en quelques clics et les clients signent directement, sans allers-retours.",
+    "subject": "Vos devis volets roulants OFB signés 3x plus vite"
+  },
+  "contact@bet-er2e.com": {
+    "hook": "Les équipes BTP à Trévoux perdent en moyenne 5h par semaine sur la création de devis papier. ChantierDevis automatise tout en quelques clics et vous signe les clients plus vite.",
+    "subject": "Devis 3x plus rapides pour vos chantiers à Trévoux"
+  },
+  "eric.sculfort@koesio-habitat.fr": {
+    "hook": "KOESIO Habitat gère des dizaines de chantiers par an dans l'Ain mais chaque devis reste chronophage à générer et faire signer. ChantierDevis automatise cette étape pour vous récupérer 10h par semaine.",
+    "subject": "Vos devis chantier signés 3x plus vite à Viriat"
+  },
+  "m.andrade@acielouvert.com": {
+    "hook": "Vos devis prennent trop de temps et vous perdez des chantiers en attente de signature. ChantierDevis génère vos devis en 2 minutes avec signature électronique intégrée, comme les pros du bâtiment à 4,9/5 le font déjà.",
+    "subject": "Devis chantier à Montréal-la-Cluse : gagnez 4h par semaine"
+  },
+  "contact@yobo-charpente.fr": {
+    "hook": "Gilles, vos clients attendent les devis de rénovation de toiture mais vous y passez des heures. ChantierDevis génère vos devis automatiquement et les signe électroniquement, vous gagnez 5h par semaine.",
+    "subject": "Toitures Grenoble : devis 48h sans déplacement"
+  },
+  "jean-charles@atelierfranceschi.com": {
+    "hook": "Charly, vos devis BTP vous prennent combien de temps à monter actuellement ? Avec ChantierDevis, les entreprises de construction gagnent 3h par devis en moyenne.",
+    "subject": "Réduire le temps de chiffrage sur vos chantiers Ain"
+  },
+  "contact@bourgmenuiserie.com": {
+    "hook": "Les menuisiers de Bourg-en-Bresse perdent 5h par devis entre les mesures et la rédaction. ChantierDevis génère vos devis en 15 minutes, signature comprise.",
+    "subject": "Pourquoi vos devis menuiserie prennent 3 jours à Bourg"
+  },
+  "contact@interieur-exterieur.pro": {
+    "hook": "J'ai vu que vous gérez menuiseries et cloisons entre l'Ain et Loire-Atlantique. La plupart des plâtriers nous disent que les devis chantier leur bouffent 3-4h par semaine. ChantierDevis génère les vôtres en 15 min, signature client incluse.",
+    "subject": "Lukasz, vos devis menuiseries prennent combien de temps"
+  },
+  "contact@menuiseriefauvet.fr": {
+    "hook": "Vous générez vos devis peinture à la main ou Excel. ChantierDevis vous les sort en 5 minutes avec signature électronique intégrée, ça paraît bête mais ça change tout pour les appels d'offres.",
+    "subject": "Devis peinture vitrerie Crézancy : 3 jours au lieu de 2 semaines"
+  },
+  "contact@miroiterie-philippot.fr": {
+    "hook": "On sait que générer un devis prend facilement 2-3h entre les mesures et la saisie. ChantierDevis automatise tout ça en 15min, signature directement sur le téléphone du client sur le chantier.",
+    "subject": "Devis peinture vitrerie : -40% temps admin à Saint-Quentin"
+  },
+  "contact@elfhabitat.fr": {
+    "hook": "Les entreprises de peinture-vitrerie perdent 5h par devis entre les allers-retours clients et la paperasse. ChantierDevis signe vos devis en ligne en 2 minutes, comme ELF Habitat le fait déjà avec ses clients RGE.",
+    "subject": "Vos devis peinture vitrerie signés 3x plus vite à Vierzy"
+  },
+  "contact@sascarbonnel.com": {
+    "hook": "Les peintres et vitriers de votre région perdent 5h par semaine sur la facturation. ChantierDevis automatise vos devis et signatures directement depuis le chantier.",
+    "subject": "Vos devis peinture à Villers-Cotterêts : 70% plus rapides"
+  },
+  "contact@isoconcepthabitat.fr": {
+    "hook": "Vos devis plâtrerie prennent trop de temps à chiffrer et vous laissez des affaires sur la table. ChantierDevis génère vos devis en quelques minutes avec signature électronique intégrée, vous fermiez plus vite.",
+    "subject": "Devis plâtrerie Caumont : gagnez 5h par chantier"
+  },
+  "secretariat@ent-lambinet.fr": {
+    "hook": "Olivier, vous gérez les devis cloisons et doublages à la main encore. ChantierDevis automatise ça en quelques clics, vos équipes gagnent 5h par semaine et vos clients reçoivent leurs devis signés le jour même.",
+    "subject": "Vos devis plâtrerie Aisne en 24h au lieu de 3 jours"
+  },
+  "sarlgargadennecfabrice@bbox.fr": {
+    "hook": "Vous gérez vos devis platrerie à la main ou sur Excel. ChantierDevis automatise tout et vous signe les contrats en ligne, directement chez le client.",
+    "subject": "Platrerie : gagnez 5h par devis avec la signature électronique"
+  },
+  "helene@aamereau.fr": {
+    "hook": "Les plaquistes de votre région perdent en moyenne 5h par devis entre relevés et chiffrage. ChantierDevis automatise tout et vous récupère ce temps pour la production.",
+    "subject": "Mauregny : vos devis plâtrerie prêts en 48h"
+  },
+  "contact@boh-ic.fr": {
+    "hook": "Vous générez encore vos devis plâtrerie à la main. ChantierDevis crée vos estimations en 2 minutes, signature électronique incluse, et vous gagnez 5h par semaine sur l'administratif.",
+    "subject": "Vermand - Vos devis plâtrerie signés 3x plus vite"
+  },
+  "agence@fouquet-architecture.com": {
+    "hook": "Yoan, vos devis plâtrerie prennent combien de temps à la main actuellement ? ChantierDevis les génère en 10 minutes et les clients signent direct, sans allers-retours.",
+    "subject": "Devis plâtrerie Mont-Saint-Père : gagnez 4h par chantier"
+  },
+  "contact@tanguybordet.fr": {
+    "hook": "Tanguy, vos devis plâtrerie prennent combien de temps à chiffrer actuellement ? Chez les plâtriers de la région, ChantierDevis divise ce temps par 3 et règle les signatures sur le terrain.",
+    "subject": "Wimy : 3 jours gagnés par chantier de plâtrerie"
+  },
+  "compta@douay-collinse.fr": {
+    "hook": "Eric, vos devis plâtrerie prennent combien de temps à établir actuellement. Avec ChantierDevis, les plâtriers de votre région les génèrent en moins de 5 minutes, signature client incluse.",
+    "subject": "Platrerie à Gauchy : devis 3x plus rapides"
+  },
+  "emmanuellehubau@store-deco.com": {
+    "hook": "Camille, vos devis menuiserie PVC et bois prennent combien de temps à établir actuellement. ChantierDevis automatise cette étape et vos clients signent 3x plus vite.",
+    "subject": "30 000 clients à Saint-Quentin : comment ils gagnent du temps sur les devis"
+  },
+  "contact@fermetures-leichnam.fr": {
+    "hook": "Vous fabriquez des fenêtres, portes et portails sur mesure mais vos devis traînent en longueur. ChantierDevis génère vos estimations en quelques minutes, signature client incluse, pour que vos prospects ne partent pas chez le concurrent d'à côté.",
+    "subject": "Vos devis menuiseries prêts en 48h - Saint-Quentin"
+  },
+  "secretaire@trolard-bernard.fr": {
+    "hook": "Pascal, vous fabriquez du sur-mesure haute qualité depuis 2012. Vos devis menuiseries prennent combien de temps actuellement avant signature client ?",
+    "subject": "Vos devis menuiserie bois : 48h chrono à Camelin"
+  },
+  "contact@sgm-menuiserie.com": {
+    "hook": "Vos devis bois et PVC prennent trop de temps à chiffrer. ChantierDevis génère vos estimations en minutes, signature client intégrée, zéro ressaisie administrative.",
+    "subject": "Rocquigny - Devis menuiserie: gain de 3h par chantier"
+  },
+  "menuiserie@labart02.fr": {
+    "hook": "Vos clients attendent 5-7 jours pour un devis fenêtre ou porte, pendant que la concurrence en envoie en 24h. ChantierDevis génère vos estimations en 48h avec signature électronique incluse.",
+    "subject": "Laon : vos devis menuiserie prennent 3x trop de temps"
+  },
+  "contact@e2mk.fr": {
+    "hook": "J'ai vu que vous travaillez sur des menuiseries ALU et PVC. ChantierDevis génère vos devis automatiquement et les clients les signent directement, sans passer par 5 allers-retours d'emails.",
+    "subject": "Menuiseries PVC à Laon : vos devis en 48h sans appels"
+  },
+  "contact@sbf-entreprise.com": {
+    "hook": "Vous passez combien de temps chaque semaine à générer vos devis menuiserie en PDF. ChantierDevis le fait en 2 minutes avec signature électronique incluse, directement depuis votre téléphone.",
+    "subject": "Devis menuiserie PVC-bois : -40% temps de chiffrage à Belleu"
+  },
+  "devis@lesfermeturesduchemindesdames.fr": {
+    "hook": "Vos clients attendent leurs devis de portes et menuiseries mais vos chiffrages traînent. ChantierDevis génère vos devis en quelques minutes, signature incluse, pour que vous remportiez les chantiers avant vos concurrents.",
+    "subject": "Pontavert : vos devis menuiserie en 48h au lieu de 2 semaines"
+  },
+  "pdeguine@amc-fenetres.fr": {
+    "hook": "Vos clients attendent leurs devis de pose fenêtres PVC et vous perdez 3-4 jours à les chiffrer manuellement. ChantierDevis génère vos estimations signées numériquement en quelques clics, directement depuis votre téléphone sur chantier.",
+    "subject": "Saint-Quentin : vos devis fenêtres/volets en 48h au lieu de 2 semaines"
+  },
+  "contact@dlpmb.fr": {
+    "hook": "Gaylord, avec 11 salariés et vos chantiers bois + photovoltaïque, vous gérez les devis à la main ou avec des outils génériques qui ne parlent pas menuiserie. ChantierDevis génère vos chiffrages complexes en quelques clics et récupère les signatures directement sur le terrain.",
+    "subject": "DLPMB : vos devis ossature bois prennent 3x plus de temps"
+  },
+  "info@fjmars.fr": {
+    "hook": "Vous gérez encore vos chantiers menuiserie à la main entre appels et emails. ChantierDevis génère vos devis en 5 min et les clients signent directement, sans relance.",
+    "subject": "Vos devis menuiserie perdent du temps à Gauchy"
+  },
+  "contact@komilfo02.fr": {
+    "hook": "Vos devis fenêtres et structures métalliques prennent combien de temps à finaliser. ChantierDevis les génère en minutes, signature client incluse, pendant que vos concurrents sont encore sur Excel.",
+    "subject": "Devis menuiserie : vos clients attendent plus vite"
+  },
+  "contact@noralu.fr": {
+    "hook": "Noralu génère des devis détaillés pour vos projets (façades VEA, verrières, garde-corps) en 2 jours avec notre IA. Vous gagnez du temps et vos clients ont leur chiffrage immédiatement.",
+    "subject": "Vos devis métal/verre : 48h au lieu de 2 semaines"
+  },
+  "contact@scmmorgen.fr": {
+    "hook": "SCM Morgen fabrique du sur-mesure, mais vos devis prennent combien de temps actuellement. ChantierDevis génère vos chiffrages en quelques minutes, plans inclus, directement depuis votre atelier.",
+    "subject": "Vos devis métallerie 3x plus rapides - Fère-en-Tardenois"
+  },
+  "contact@lantenoiselectricite.fr": {
+    "hook": "Vous gérez actuellement vos devis de motorisation et climatisation à la main ou via des outils peu adaptés au BTP. ChantierDevis vous permet de générer et faire signer vos propositions en quelques minutes, directement depuis votre téléphone sur chantier.",
+    "subject": "Ronchères : vos devis domotique signés 3x plus vite"
+  },
+  "contact@caronsa.fr": {
+    "hook": "Les menuiseries métalliques, c'est du temps perdu en chiffrage manuel et des clients qui s'impatientent. ChantierDevis génère vos devis en quelques minutes, signature comprise.",
+    "subject": "Vos devis menuiserie metal prêts en 48h au Verguier"
+  },
+  "contact@eylinergy.fr": {
+    "hook": "On a remarqué que vous gérez encore les devis à la main comme EYLINE. Avec ChantierDevis, vos audits énergétiques et projets de rénovation se transforment en devis signés en 48h au lieu d'une semaine.",
+    "subject": "Vos devis menuiserie métallique traînent en retard à Saint-Quentin"
+  },
+  "arzel@arzel.fr": {
+    "hook": "Vous fabriquez des façades et portes sur mesure mais passez encore du temps sur les devis papier. ChantierDevis automatise ça en 48h, signature électronique incluse - comme le font déjà les menuisiers alsaciens de votre secteur.",
+    "subject": "Menuiserie alu : vos devis signés 3x plus vite"
+  },
+  "contact@espace-alu.fr": {
+    "hook": "Vous passez encore des heures à chiffrer vos menuiseries alu ? ChantierDevis génère vos devis en 5 minutes et les clients les signent directement, sans allers-retours par email.",
+    "subject": "Vos devis métal traînent en retard à Saint-Quentin"
+  },
+  "contact@sarl-sth.fr": {
+    "hook": "Vos clients attendent 5-7 jours pour un devis fenêtres ou portails. ChantierDevis génère les vôtres en quelques minutes, signature comprise, et vous récupérez les signatures directement sur le chantier.",
+    "subject": "Vos devis menuiserie métallique 80% plus rapides à Soissons"
+  },
+  "info@menuiserie-thincelin.fr": {
+    "hook": "Vous fabriquez des meubles et agencements custom mais vos devis prennent une semaine à finaliser. ChantierDevis génère vos propositions en 48h, signature client intégrée, sans modifier votre processus de fabrication.",
+    "subject": "Menuiseries sur-mesure : vos devis en 48h au lieu de 2 semaines"
+  },
+  "contact@simon-chauffage.com": {
+    "hook": "Yvann, vos clients attendent les devis de chaudières bois et PAC avant de signer. ChantierDevis les génère en 2 minutes avec signature électronique, vous gagnez 2-3 jours par dossier.",
+    "subject": "Vos devis chauffage bois signés 3x plus vite à Pavant"
+  },
+  "contact@placair.fr": {
+    "hook": "Vos devis carrelage et parquet vous prennent encore 2-3 heures chacun à cause des métrés manuels et des allers-retours clients. ChantierDevis automatise ça en 10 minutes et envoie une signature directe, pendant que vous pensez à l'essentiel.",
+    "subject": "Carrelage & parquet : perdre 2h par devis à Villeneuve-Saint-Germain"
+  },
+  "j.boutteaux@chauffage-boutteaux.com": {
+    "hook": "Vous installez des PAC et poêles à granulés autour de Beautor, mais générer un devis prend encore 2-3 jours. ChantierDevis crée vos devis en 5 minutes avec signature électronique intégrée, directement acceptés par vos clients.",
+    "subject": "Loïc, vos devis chauffage prennent trop de temps"
+  },
+  "gestion@sas-sorie.fr": {
+    "hook": "Vos devis carrelage et parquet prennent trop de temps à rédiger et vous perdez des clients pendant ce délai. ChantierDevis génère vos devis en 5 minutes avec signature électronique intégrée, il ne vous reste plus qu'à les envoyer.",
+    "subject": "Devis carrelage Saint-Quentin : gagnez 4h par chantier"
+  },
+  "compta@poulainsarl.fr": {
+    "hook": "Les carreleurs de votre région perdent du temps sur chaque devis papier. ChantierDevis génère vos devis en 5 minutes, signature digitale incluse, pour facturer plus vite.",
+    "subject": "Devis carrelage Pontavert : gagnez 4h par chantier"
+  },
+  "contact@societe-desrousseaux.fr": {
+    "hook": "Vous perdez du temps à faire des devis papier sur chantier alors que vos clients attendent. ChantierDevis génère vos devis carrelage en 2 minutes, signature directe sur téléphone, et c'est déjà chez 200+ artisans en Hauts-de-France.",
+    "subject": "Marc Rousseaux - Devis carrelage parquet signés 3x plus vite"
+  },
+  "contact@toitures-soissonnaises.fr": {
+    "hook": "On voit que vous gérez les devis à la main - entre les appels clients et les chiffrages, vous perdez des heures chaque semaine. ChantierDevis automatise tout ça en 2 minutes, signature incluse.",
+    "subject": "Vos devis carrelage perdent du temps à Soissons"
+  },
+  "contact@desouzabarbosa-habitat.fr": {
+    "hook": "J'ai vu que vous gérez plâtrerie, revêtements et électricité sur des rénovations complètes. ChantierDevis automatise vos estimations et signatures en ligne pour gagner 5h par semaine sur l'administratif.",
+    "subject": "Vos devis de finition prennent trop de temps à Nogent-l'Artaud"
+  },
+  "secretariat@bpc-brouette.fr": {
+    "hook": "Vous établissez encore vos devis finition à la main. ChantierDevis génère vos devis en 10 minutes chrono, signature électronique incluse - vos clients les signent direct depuis leur téléphone.",
+    "subject": "Devis finition : gagnez 5h par chantier à Essomes"
+  },
+  "contact@brocpoudevigne.fr": {
+    "hook": "Vous traitez des devis menuiseries pour Saint-Quentin et région, mais entre les 4000 références et les allers-retours clients, le temps s'envole. ChantierDevis génère vos devis en quelques minutes, signature électronique incluse, pour que vous fermiez plus de commandes.",
+    "subject": "4000 références de menuiseries : comment gérer les devis plus vite"
+  },
+  "contact@colin-electricite.fr": {
+    "hook": "Vous perdez du temps à chiffrer chaque finition à la main alors que vos clients attendent leurs devis. ChantierDevis génère vos estimés en quelques clics, signature incluse.",
+    "subject": "Devis finition Ambleny : gagnez 5h par chantier"
+  },
+  "contact@gexpertise.fr": {
+    "hook": "Vos chantiers de finition traînent sur les devis papier et les allers-retours clients. ChantierDevis génère vos devis en quelques minutes avec signature électronique intégrée, vous gagnez 5 jours par projet.",
+    "subject": "Saint-Quentin : vos devis de finition en 48h au lieu d'une semaine"
+  },
+  "contact@menuiserie-paradis.fr": {
+    "hook": "Jérôme, vos clients attendent leurs devis escaliers et menuiseries mais vous passez 5h par semaine à les chiffrer manuellement. ChantierDevis génère vos devis en quelques minutes, signature incluse.",
+    "subject": "Menuiseries à Machécourt : vos devis en 48h sans appels téléphoniques"
+  },
+  "vigiercaroline@aol.com": {
+    "hook": "Les entreprises de finition comme la vôtre perdent 5-7h par semaine sur la création de devis. ChantierDevis génère vos devis en 2 minutes avec signature électronique intégrée, ce qui vous laisse plus de temps sur les chantiers.",
+    "subject": "Vos devis de finition prennent trop de temps à Troësnes"
+  },
+  "contact@laurencedamour-architecte.com": {
+    "hook": "Vos devis de finition prennent trop de temps à établir et vous perdez des chantiers. ChantierDevis automatise vos estimations en quelques minutes et vous permet de signer directement chez le client.",
+    "subject": "Les finitions qui traînent vous coûtent cher à Laon"
+  },
+  "g.lebreton@ets-lebreton.fr": {
+    "hook": "Vous gérez des chantiers à Essomes-sur-Marne et vous perdez du temps sur la rédaction des devis plomberie chauffage. ChantierDevis automatise vos devis techniques et les fait signer en ligne, comme le font déjà les meilleurs bureaux d'études du secteur Caen-Villers-Bocage.",
+    "subject": "ERIK LEBRET : vos devis plomberie chauffage en 48h"
+  },
+  "contact@jdelec.fr": {
+    "hook": "J.D ELEC, vos devis papier vous coûtent du temps et des clients qui vont ailleurs. ChantierDevis génère vos devis en 5 min avec signature numérique, directement exploitable sur chantier.",
+    "subject": "Les électriciens de Saint-Quentin perdent 4h par devis"
+  },
+  "gibert.eirl@gmx.fr": {
+    "hook": "Les électriciens de votre région perdent 5h par semaine sur les devis papier. ChantierDevis les génère en 2 minutes avec signature numérique intégrée, directement acceptés par vos clients.",
+    "subject": "Vos devis électricité 3x plus rapides à Gauchy"
+  },
+  "contact@olnida.fr": {
+    "hook": "Vos devis électricité prennent combien de temps à rédiger actuellement ? ChantierDevis les génère en quelques minutes avec signature directe, sans relecture administrative.",
+    "subject": "Soissons : -40% temps devis électricité"
+  },
+  "contact@serelec37.com": {
+    "hook": "SERELEC 37, vos clients attendent les devis de rénovation électrique alors que vos équipes perdent des heures en paperasse. ChantierDevis génère et signe vos devis en ligne - vos clients reçoivent leur estimation conformée aux normes en quelques minutes.",
+    "subject": "Vos devis électriques signés 10x plus vite à Essigny"
+  },
+  "athuillier@thuillier-jj.com": {
+    "hook": "Vous perdez du temps sur chaque devis électricité, climatisation ou chauffage. Avec ChantierDevis, vos équipes gagnent 2-3 heures par chantier et signent directement depuis le terrain.",
+    "subject": "Vos devis électricité 3x plus rapides à Chauny et Saint-Quentin"
+  },
+  "contact@caillouxbatons.fr": {
+    "hook": "Vos clients attendent vos devis électricité et vous passez trop de temps sur la paperasse. ChantierDevis génère vos devis en quelques minutes avec signature électronique intégrée.",
+    "subject": "Neuilly-Saint-Front : vos devis électricité en 48h au lieu de 5 jours"
+  },
+  "contact@cme06.com": {
+    "hook": "CME 06 traite actuellement ses devis papier alors que vos concurrents gagnent 2h par chantier avec la signature numérique. ChantierDevis automatise vos estimations et vous libère du back-office.",
+    "subject": "Vos devis électricité signés 3x plus vite à Montcornet"
+  },
+  "opah@ccapv.fr": {
+    "hook": "Vous générez encore vos devis à la main comme la majorité des électriciens de Chauny. ChantierDevis automatise ça en 5 minutes et signe directement avec vos clients, pendant que vous êtes sur le chantier.",
+    "subject": "Électriciens Chauny : devis 10x plus rapides"
+  },
+  "solutionsbatiment@mailo.com": {
+    "hook": "Stéphane, vos devis papier ou Excel vous coûtent des chantiers. ChantierDevis génère vos devis en 2 minutes avec signature électronique, vos clients signent direct du téléphone.",
+    "subject": "Électriciens Charmes : -40% temps devis clients"
+  },
+  "contact@atelierlacour.fr": {
+    "hook": "J'ai vu que vous gérez tout en interne : chiffrage, dessin, planification. ChantierDevis automatise la partie devis pour que vos menuisiers se concentrent sur la pose. Ça vous intéresse d'économiser 5-10h par projet",
+    "subject": "Vos devis menuiserie perdent du temps en chiffrage"
+  },
+  "contact@electricite-burlet-robin.com": {
+    "hook": "Vous gérez les devis électricité à la main pour F BURLET SARL. ChantierDevis génère vos devis en 5 minutes avec signature client directe, sans allers-retours. Vos clients reçoivent leur chiffrage avant de partir du chantier.",
+    "subject": "Devis électricité Ardèche : gagner 5h par chantier"
+  },
+  "admin@maison-aubin.fr": {
+    "hook": "Maison AUBIN génère des devis sur-mesure en quelques clics avec ChantierDevis. Vos clients reçoivent leurs chiffrages signés numériquement, sans allers-retours par email.",
+    "subject": "Urcel : vos devis menuiseries signés 3x plus vite"
+  },
+  "gc@alarmeactuelle.fr": {
+    "hook": "Vos devis électriques vous prennent encore 2-3h à rédiger alors que vos concurrents utilisent l'IA pour les générer en 10 minutes. ChantierDevis fait vos devis automatiquement, signature comprise, et vous récupérez le temps pour décrocher plus de chantiers.",
+    "subject": "Électriciens Cerizy : gagnez 5h par devis avec l'IA"
+  },
+  "abdel@sasarelec.fr": {
+    "hook": "Les chantiers s'accumulent et vos devis prennent des heures à mettre en forme. ChantierDevis génère vos estimations en quelques minutes avec signature intégrée, directement depuis le terrain.",
+    "subject": "Électriciens Neuvillette : 40% moins de temps sur les devis"
+  },
+  "secretariat@nemond.fr": {
+    "hook": "Les électriciens de votre secteur perdent 5h par devis entre mesures et paperasse. ChantierDevis génère vos devis en IA et les fait signer directement sur le chantier.",
+    "subject": "Rozet-Saint-Albin : vos devis électricité prêts en 48h"
+  },
+  "compta@pessique.fr": {
+    "hook": "Vous perdez combien de clients par mois en attendant 10 jours avant de leur envoyer un devis plomberie. ChantierDevis génère vos estimations en ligne en quelques minutes, signature comprise.",
+    "subject": "Saint-Quentin : vos devis plomberie en 48h au lieu de 2 semaines"
+  },
+  "contact@cts-architecte.fr": {
+    "hook": "Je remarque que TRAULE n'a pas de solution de devis en ligne. Pendant ce temps, vos clients attendent vos tarifs et vos concurrents les prennent. ChantierDevis génère vos devis en 2 minutes avec signature électronique.",
+    "subject": "Urcel : vos devis plomberie perdus en ligne"
+  },
+  "okoton@architectes.org": {
+    "hook": "Christophe, vos clients attendent toujours vos devis papier alors que la concurrence livre des propositions signées numériquement en quelques minutes. ChantierDevis change la donne pour les plombiers qui veulent gagner du temps et des chantiers.",
+    "subject": "Crouy : vos devis plomberie en 3 minutes au lieu de 2h"
+  },
+  "agence.nantes@missenard-quint.com": {
+    "hook": "Vous établissez encore vos devis manuellement sur Gauchy alors que vos concurrents gagnent 2h par dossier avec une IA. ChantierDevis génère vos devis en 5 minutes, signature électronique comprise, et vous récupérez le temps pour les chantiers qui rapportent.",
+    "subject": "Vos devis chauffageClimatisation gagnent du temps chez Missenard-Quint"
+  },
+  "info@cpservices.fr": {
+    "hook": "CP Services, j'ai vu que vous gérez encore les devis chauffage manuellement. Avec ChantierDevis, vos estimations se font en 2 minutes chrono, signature client incluse.",
+    "subject": "Saint-Quentin : vos devis chauffage perdent combien de temps"
+  },
+  "sylvie@mauprivez.fr": {
+    "hook": "Vos clients attendent 15 jours pour un devis chauffage tandis que vos concurrents les envoient en 48h. ChantierDevis génère les vôtres en automatique, signé électroniquement, pendant que vous gérez le chantier suivant.",
+    "subject": "Devis chauffage Ambleny : 3 jours au lieu de 2 semaines"
+  },
+  "koch@fareneit.fr": {
+    "hook": "Vos devis chauffage-clim prennent trop de temps à finaliser et vous perdez des appels d'offres. ChantierDevis automatise la génération et signature pour que vous répondiez plus vite que vos concurrents du groupe Fareneït.",
+    "subject": "SN KOCH - Devis CVC Saint-Quentin, délai réduit de 48h"
+  },
+  "contact@rousseletsas.fr": {
+    "hook": "Ludovic, j'imagine que générer des devis de climatisation à la main vous bouffe du temps chaque semaine. ChantierDevis automatise tout ça en 2 minutes, signature incluse, pour que vous vous concentriez sur l'installation.",
+    "subject": "Devis chauffage Parcy-et-Tigny : gagnez 5h par semaine"
+  },
+  "contact@ecotesys.com": {
+    "hook": "Vos devis chauffage-clim prennent trop de temps à monter et vos clients attendent. ChantierDevis génère des devis professionnels en 10 minutes avec signature électronique intégrée, pendant que vous êtes sur le terrain.",
+    "subject": "Devis climatisation : gagnez 5h par chantier à Origny-Sainte-Benoite"
+  },
+  "pschaab@octeha.fr": {
+    "hook": "Les copropriétés comme la vôtre perdent des jours sur chaque devis chauffage. ChantierDevis génère vos devis en 10 minutes et les fait signer directement par le client.",
+    "subject": "Vos devis chauffage climatisation 80% plus rapides à Cuffies"
+  },
+  "amerlino@merlino-peinture.fr": {
+    "hook": "Arnaud, vous gérez les devis de chantier en isolation et plâtrerie à Chézy-en-Orxois. ChantierDevis vous fait gagner 5h par devis avec signature client directe, c'est du temps qu'on peut mettre sur le terrain.",
+    "subject": "Devis chantier isolation thermique - délai 48h garanti"
+  },
+  "contact@gerard-philippe.fr": {
+    "hook": "Thomas, avec 46 collaborateurs répartis sur 4 magasins, vos équipes de pose passent probablement trop de temps à rédiger et relancer les devis granulés et pompes à chaleur. ChantierDevis automatise ça en quelques clics et récupère les signatures directement depuis le chantier.",
+    "subject": "Gérard Philippe - Vos devis chauffage signés 3x plus vite"
+  },
+  "soissons@gerardphilippe.fr": {
+    "hook": "Votre site actuel ne génère aucun lead pour vos installations de chauffage à Vauxbuin. ChantierDevis capture automatiquement les demandes de devis et les signe numériquement, sans effort supplémentaire.",
+    "subject": "GERARD PHILIPPE : vos devis chauffage perdus en ligne"
+  },
+  "soretherm.picardie@soretherm.fr": {
+    "hook": "Votre site est en construction depuis combien de temps. Pendant ce temps, vous laissez des appels d'offres chauffage-clim partir à la concurrence. ChantierDevis génère vos devis en 48h et signe directement avec vos clients.",
+    "subject": "Chavignon : vos devis chauffage perdus en construction"
+  },
+  "contact@baroncedrick.fr": {
+    "hook": "Cédrick, j'ai vu que vous proposez des devis gratuits sur mesure en climatisation et chauffage. ChantierDevis permet à vos clients de signer directement en ligne et de réduire votre délai de conversion. Ça vous intéresse de tester gratuitement sur votre prochain chantier ?",
+    "subject": "Hérault : vos devis chauffage signés 3x plus vite"
+  },
+  "compta@locheron.fr": {
+    "hook": "Vos devis chauffage prennent trop de temps à rédiger et vos clients attendent. ChantierDevis génère vos devis en 2 minutes avec signature électronique intégrée, les clients signent direct sans faire l'aller-retour.",
+    "subject": "Devis climatisation Laon : gagnez 5h par semaine"
+  },
+  "contact@afeer.fr": {
+    "hook": "Gilles, vous manipulez les fluides et posez vos PAC en direct - ChantierDevis vous génère les devis techniques en 2 minutes chrono, fluides et attestations inclus. Ça change quoi pour vos clients.",
+    "subject": "Vos PAC Air-Air sans sous-traitance - étude gratuite Beuvardes"
+  },
+  "entreprise@etscolas.fr": {
+    "hook": "Vos devis chauffage et clim prennent combien de temps à finaliser. ChantierDevis les génère en 5 minutes avec signature client directe, sans allers-retours",
+    "subject": "Devis climatisation Origny : économisez 2h par chantier"
+  },
+  "courrier@gaillard-groupe.fr": {
+    "hook": "Gaillard traite 100+ chantiers/an en Vendée, mais vos devis thermiques prennent encore 10 jours à valider. ChantierDevis les génère en 2h avec signature client instantanée.",
+    "subject": "Vos devis thermiques en 48h - pas 2 semaines"
+  },
+  "fred.defrize@defrizenergies.fr": {
+    "hook": "Vous installez des chaudières et poêles à bois en Aisne-Marne mais vos devis prennent 3-4 jours à éditer. ChantierDevis génère vos devis techniques en quelques minutes, signature digitale comprise, pour que vos prospects signent plus vite.",
+    "subject": "Vos devis chauffage signés en 48h dans l'Aisne"
+  },
+  "chauffage@dbenergies.fr": {
+    "hook": "Vos clients attendent les devis avant de commander le fioul ou le bois. ChantierDevis génère et fait signer vos propositions en ligne, pendant que vous préparez les livraisons J+2. Vous économisez 5h par semaine sur l'administratif.",
+    "subject": "Crépy : vos devis chauffage signés en 48h"
+  },
+  "contact@fdsprojetbois.fr": {
+    "hook": "Fabien, j'ai vu que SH Projet gère l'isolation thermique sur mesure. Le problème : vos clients attendent 10-15 jours pour un devis PAC alors que la concurrence répond en 48h. ChantierDevis automatise vos chiffrages et libère du temps commercial.",
+    "subject": "Vos devis PAC en 48h - pas 2 semaines"
+  },
+  "n.varain@iso02.fr": {
+    "hook": "Les artisans isolation de Bézu-Saint-Germain perdent 15h/mois en devis papier. ChantierDevis génère vos devis en 5 min avec signature électronique intégrée, les clients signent direct depuis leur téléphone.",
+    "subject": "Devis isolation : 3 jours au lieu de 2 semaines"
+  },
+  "contact@sarda-chauny.com": {
+    "hook": "Vous générez encore vos devis d'isolation à la main comme Sarda le faisait il y a 5 ans. ChantierDevis signe les devis en ligne et vous économise 4h par semaine.",
+    "subject": "Chauny : vos devis isolation signés 3x plus vite"
+  },
+  "contact@artirenov.com": {
+    "hook": "Vous passez combien de temps par semaine à faire des devis isolation à la main. ChantierDevis génère vos estimations en 2 minutes et les clients signent directement, pendant que vous êtes sur le terrain.",
+    "subject": "Devis isolation Villers-Cotterêts : -40% temps admin avec IA"
+  },
+  "marthe.gahinet@maho.fr": {
+    "hook": "Vous générez encore vos devis d'isolation manuellement. ChantierDevis crée vos devis en 2 minutes avec signature électronique intégrée, vos clients signent directement et vous gagnez du temps de préparation sur chaque intervention.",
+    "subject": "Devis isolation : gagnez 5h par chantier à Anizy-le-Grand"
+  },
+  "contact@turbofonte-caen.fr": {
+    "hook": "Vos devis d'isolation prennent combien de temps à établir actuellement ? Chez les entreprises comme la vôtre, c'est souvent 2-3 jours perdus par dossier, alors que vos clients veulent leur réponse en 24h.",
+    "subject": "Devis isolation Trélou-sur-Marne, vos clients attendent plus vite"
+  },
+  "gestion@renoco.fr": {
+    "hook": "Vous avez des copropriétés ou maisons avec isolation à refaire à Braine. RENO&CO vous aide à accéder aux aides publiques et gère vos démarches administratives pour transformer ça en chantier rentable.",
+    "subject": "Façades Braine : financements MaPrimeRénov' à débloquer"
+  }
+}

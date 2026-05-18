@@ -1,0 +1,64 @@
+=== Segmentation ChantierDevis ===
+Genere le : 2026-05-10 08:29
+
+TOTAL CIBLES (email + petite structure) : 26392
+  Avec telephone                        : 25272 (95%)
+  Avec site web                         : 15616 (59%)
+  Email + telephone                     : 25272
+
+STRUCTURE JURIDIQUE
+  SARL                 : 13767
+  EI/micro             : 6293
+  SAS/SASU             : 6161
+  SNC                  : 66
+  EURL                 : 48
+  SARL var.            : 28
+  SARL coop            : 18
+  SA simplif.          : 11
+
+PAR METIER
+  Chauffage/clim            : 3785
+  Plomberie                 : 3282
+  Menuiserie bois           : 2973
+  Electricite               : 2000
+  Platrerie                 : 1882
+  Couverture                : 1498
+  Charpente                 : 1390
+  Isolation                 : 1312
+  Peinture                  : 1299
+  Menuiserie metallique     : 1248
+  Maconnerie                : 1153
+  Construction maisons      : 912
+  Travaux specialises       : 775
+  Carrelage/parquet         : 731
+  Finition                  : 690
+  Construction batiments    : 635
+  Etancheite                : 524
+  Autres installations      : 303
+
+TOP 15 DEPARTEMENTS
+    01 : 927
+    02 : 534
+    03 : 505
+    07 : 432
+    22 : 406
+    35 : 393
+    06 : 392
+    49 : 392
+    12 : 390
+    38 : 386
+    26 : 367
+    14 : 365
+    21 : 365
+    17 : 359
+    42 : 356
+
+BATCH TEST
+  batch_500.csv : 500 prospects (equilibre par metier)
+  Conseil : envoyer ce batch en premier, mesurer open rate avant
+  la liste complete.
+
+NOTE MOBILE
+  Les telephones sont des fixes professionnels (source ADEME RGE).
+  Pour des mobiles : enrichir manuellement les top prospects via
+  LinkedIn ou Pages Jaunes — les 50 premiers suffisent pour un test.
