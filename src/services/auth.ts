@@ -251,7 +251,22 @@ function getSessionExpiry() {
 }
 
 function getIdentityStorePath() {
-  return path.join(process.cwd(), "data", "cheetah-time.identity.json");
+  // Explicit override (e.g. CHEETAH_TIME_IDENTITY_STORE_PATH=/tmp/cheetah-time.identity.json)
+  const configured = process.env["CHEETAH_TIME_IDENTITY_STORE_PATH"]?.trim();
+  if (configured) {
+    return path.isAbsolute(configured)
+      ? configured
+      : path.join(process.cwd(), "data", path.basename(configured));
+  }
+
+  // On Vercel / AWS Lambda the CWD is /var/task which is read-only.
+  // Fall back to /tmp which is always writable in serverless environments.
+  const cwd = process.cwd();
+  if (cwd.startsWith("/var/task") || cwd.startsWith("/var/runtime")) {
+    return "/tmp/cheetah-time.identity.json";
+  }
+
+  return path.join(cwd, "data", "cheetah-time.identity.json");
 }
 
 function cloneStore(store: IdentityStore): IdentityStore {
