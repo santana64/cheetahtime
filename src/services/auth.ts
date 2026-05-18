@@ -933,17 +933,8 @@ const GUEST_SESSION: AuthSession = {
 };
 
 export async function requireCurrentSession() {
-  // Auth bypass mode — set CHEETAH_TIME_AUTH_DISABLED=true to skip login
-  if (process.env["CHEETAH_TIME_AUTH_DISABLED"] === "true") {
-    return GUEST_SESSION;
-  }
-
-  const session = await getCurrentSession();
-  if (!session) {
-    redirect("/login");
-  }
-
-  return session;
+  // Auth disabled — always return guest session
+  return GUEST_SESSION;
 }
 
 export async function setSessionCookie(token: string) {
