@@ -2,9 +2,12 @@ import {
   getConfiguredPersistenceMode,
   getResolvedPersistenceMode,
 } from "@/lib/prisma";
-import * as localStore from "@/services/local-store";
-import * as prismaStore from "@/services/prisma-store";
 import type { AppDataStore } from "@/types/planning";
+
+// NOTE: local-store and prisma-store are loaded with dynamic imports so that
+// Turbopack only bundles the active store. Static imports of local-store would
+// pull process.cwd() into every route bundle, causing the NFT tracer to include
+// the entire project directory in the Vercel deployment artifact.
 
 export interface PersistenceInfo {
   mode: "local" | "prisma";
@@ -34,20 +37,22 @@ export function getPersistenceInfo(): PersistenceInfo {
   };
 }
 
-export async function readStore() {
+export async function readStore(): Promise<AppDataStore> {
   if (getResolvedPersistenceMode() === "prisma") {
-    return prismaStore.readStore();
+    const { readStore: prismaRead } = await import("@/services/prisma-store");
+    return prismaRead();
   }
-
-  return localStore.readStore();
+  const { readStore: localRead } = await import("@/services/local-store");
+  return localRead();
 }
 
 export async function mutateStore(
   mutate: (draft: AppDataStore) => void | Promise<void>,
-) {
+): Promise<AppDataStore> {
   if (getResolvedPersistenceMode() === "prisma") {
-    return prismaStore.mutateStore(mutate);
+    const { mutateStore: prismaMutate } = await import("@/services/prisma-store");
+    return prismaMutate(mutate);
   }
-
-  return localStore.mutateStore(mutate);
+  const { mutateStore: localMutate } = await import("@/services/local-store");
+  return localMutate(mutate);
 }

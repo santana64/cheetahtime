@@ -12,24 +12,20 @@ import type {
 const CURRENT_STORE_VERSION = 7;
 
 export function getLocalStorePath() {
-  const configuredPath = process.env["CHEETAH_TIME_LOCAL_STORE_PATH"]?.trim();
-
-  if (configuredPath) {
-    if (path.isAbsolute(configuredPath)) {
-      return configuredPath;
-    }
-    /* turbopackIgnore: true */
-    return path.join(process.cwd(), "data", path.basename(configuredPath));
-  }
-
-  // On Vercel / AWS Lambda the CWD is /var/task which is read-only.
-  /* turbopackIgnore: true */
-  const cwd = process.cwd();
-  if (cwd.startsWith("/var/task") || cwd.startsWith("/var/runtime")) {
+  // VERCEL=1 is set at build time — Turbopack dead-code-eliminates
+  // the path.join(process.cwd()) branches entirely, preventing NFT
+  // from tracing the whole project into the deployment bundle.
+  if (process.env.VERCEL === "1" || process.env.AWS_LAMBDA_FUNCTION_NAME) {
     return "/tmp/cheetah-time.local.json";
   }
 
-  return path.join(cwd, "data", "cheetah-time.local.json");
+  const configuredPath = process.env["CHEETAH_TIME_LOCAL_STORE_PATH"]?.trim();
+  if (configuredPath) {
+    if (path.isAbsolute(configuredPath)) return configuredPath;
+    return path.join(process.cwd(), "data", path.basename(configuredPath));
+  }
+
+  return path.join(process.cwd(), "data", "cheetah-time.local.json");
 }
 
 function getLocalStoreDirectory() {
