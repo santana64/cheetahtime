@@ -14,10 +14,9 @@ const nextConfig: NextConfig = {
       "./node_modules/.prisma/client/libquery_engine*",
       "./node_modules/@prisma/engines/**/*",
       "./node_modules/prisma/libquery_engine*",
-      // Build tooling binaries not needed at runtime
-      "./node_modules/esbuild/**/*",
-      "./node_modules/@swc/**/*",
-      "./node_modules/webpack/**/*",
+      // Heavy build-only binaries (NOT @swc/helpers — needed by Next.js runtime)
+      "./node_modules/esbuild/bin/**/*",
+      "./node_modules/esbuild/install.js",
     ],
   },
 };
