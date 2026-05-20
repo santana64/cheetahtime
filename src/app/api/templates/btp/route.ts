@@ -25,8 +25,8 @@ export async function POST(request: Request) {
       templateId: getString(body, "templateId"),
       name: getString(body, "name", false),
       targetStartDate: getString(body, "targetStartDate"),
-      ownerName: getString(body, "ownerName", false) ?? session.name,
-      sponsorName: getString(body, "sponsorName", false) ?? session.name,
+      ownerName: getString(body, "ownerName", false) ?? "Invité",
+      sponsorName: getString(body, "sponsorName", false) ?? "Invité",
       clientName: getString(body, "clientName", false) ?? "Client BTP",
     });
     return jsonResponse({ projectId }, 201);
