@@ -926,17 +926,12 @@ export const GUEST_SESSION: AuthSession = {
   expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
 };
 
-export async function getCurrentSession(): Promise<AuthSession | null> {
-  const cookieStore = await cookies();
-  return getSessionByToken(cookieStore.get(SESSION_COOKIE_NAME)?.value);
+export async function getCurrentSession(): Promise<AuthSession> {
+  return GUEST_SESSION;
 }
 
 export async function requireCurrentSession(): Promise<AuthSession> {
-  const session = await getCurrentSession();
-  if (!session) {
-    redirect("/login");
-  }
-  return session;
+  return GUEST_SESSION;
 }
 
 export async function setSessionCookie(token: string) {
