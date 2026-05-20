@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 
 import Image from "next/image";
 import { BrandMark } from "@/components/app/brand-mark";
+import { OnboardingTour } from "@/components/app/onboarding-tour";
 import { cn } from "@/lib/utils";
 import type { AuthSession } from "@/services/auth";
 
@@ -24,6 +25,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
 
   return (
     <div className="min-h-screen">
+      <OnboardingTour />
       <div className="mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-10 pt-4 lg:px-8">
 
         {/* ── Navigation sombre — identité Cheetah Time ── */}
