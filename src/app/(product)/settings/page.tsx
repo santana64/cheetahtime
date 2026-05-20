@@ -12,9 +12,6 @@ export const metadata: Metadata = {
 export default async function SettingsPage() {
   
   const settings = await getWorkspaceSettings("workspace-cheetah-time");
-  
-    security.memberships.find((membership) => membership.workspaceId === "workspace-cheetah-time") ??
-    security.memberships[0];
 
   return (
     <div className="space-y-6">
