@@ -4,7 +4,6 @@ import {
   jsonResponse,
   parseJsonBody,
 } from "@/lib/api/route-utils";
-import { requireCurrentSession } from "@/services/auth";
 import {
   createProjectFromBtpTemplate,
   listBtpTemplates,
@@ -19,10 +18,10 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const session = await requireCurrentSession();
+    
     const body = await parseJsonBody(request);
     const projectId = await createProjectFromBtpTemplate({
-      workspaceId: session.workspaceId,
+      workspaceId: "workspace-cheetah-time",
       templateId: getString(body, "templateId"),
       name: getString(body, "name", false),
       targetStartDate: getString(body, "targetStartDate"),

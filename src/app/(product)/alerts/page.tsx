@@ -1,13 +1,12 @@
 import Link from "next/link";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { requireCurrentSession } from "@/services/auth";
 import { listWorkspaceSmartAlerts } from "@/services/smart-alerts";
 import { cn } from "@/lib/utils";
 
 export default async function AlertsPage() {
-  const session = await requireCurrentSession();
-  const alerts = await listWorkspaceSmartAlerts(session.workspaceId);
+  
+  const alerts = await listWorkspaceSmartAlerts("workspace-cheetah-time");
 
   return (
     <div className="space-y-5">

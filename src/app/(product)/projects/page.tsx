@@ -13,14 +13,13 @@ import { ProjectImportPanel } from "@/features/projects/project-import-panel";
 import { formatCurrency, formatDateLabel, formatPercent } from "@/lib/format/formatters";
 import { getPersistenceInfo } from "@/services/project-store";
 import { listProjectViews } from "@/services/projects";
-import { requireCurrentSession } from "@/services/auth";
 import { cn } from "@/lib/utils";
 
 export default async function ProjectsPage() {
-  const session = await requireCurrentSession();
+  
   const views = await listProjectViews({
     includeArchived: true,
-    workspaceId: session.workspaceId,
+    workspaceId: "workspace-cheetah-time",
   });
   const persistence = getPersistenceInfo();
   const activeViews = views.filter((v) => !v.aggregate.project.archivedAt);

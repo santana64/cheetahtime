@@ -1,13 +1,12 @@
 import { CreateProjectForm } from "@/features/projects/create-project-form";
 import { BtpTemplateLauncher } from "@/features/projects/btp-template-launcher";
 import { ProjectTemplateLauncher } from "@/features/projects/project-template-launcher";
-import { requireCurrentSession } from "@/services/auth";
 import { listBtpTemplates } from "@/services/btp-templates";
 import { listProjectTemplates } from "@/services/templates";
 
 export default async function NewProjectPage() {
-  const session = await requireCurrentSession();
-  const templates = await listProjectTemplates(session.workspaceId);
+  
+  const templates = await listProjectTemplates("workspace-cheetah-time");
   const btpTemplates = listBtpTemplates();
   const defaultStartDate = new Date().toISOString().slice(0, 10);
 

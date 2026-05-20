@@ -3,11 +3,10 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatDateLabel } from "@/lib/format/formatters";
 import { buildPortfolioRoadmap } from "@/services/advanced-planning";
-import { requireCurrentSession } from "@/services/auth";
 
 export default async function PortfolioPage() {
-  const session = await requireCurrentSession();
-  const roadmap = await buildPortfolioRoadmap(session.workspaceId);
+  
+  const roadmap = await buildPortfolioRoadmap("workspace-cheetah-time");
 
   return (
     <div className="space-y-5">

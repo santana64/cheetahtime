@@ -275,6 +275,7 @@ DEFAULT_METIER_CONFIG = {
 
 UTM      = "utm_source=cold&utm_medium=email&utm_campaign=v5_ai"
 UTM_REG  = "utm_source=cold&utm_medium=email&utm_campaign=v5_ai_reg"
+UTM_BVN  = "utm_source=cold&utm_medium=email&utm_campaign=v5_ai_bvn"
 
 
 # ============================================================
@@ -598,8 +599,8 @@ def make_html(row, custom_hook=None):
     ville_phrase = f" a {ville}" if ville else ""
     hook_text    = custom_hook if custom_hook else cfg["hook"]
     hook_html    = hook_text.replace("\n\n", "</p><p style=\"margin:0 0 16px\">")
-    demo_url     = f"https://chantierdevis.fr/demo?{UTM}"
-    register_url = f"https://chantierdevis.fr/register?{UTM_REG}"
+    demo_url     = f"https://chantierdevis.fr/bienvenue?{UTM_BVN}"
+    register_url = f"https://chantierdevis.fr/bienvenue?{UTM_BVN}"
 
     return f"""<!DOCTYPE html>
 <html lang="fr">
@@ -652,8 +653,8 @@ def make_text(row, custom_hook=None):
     salutation   = f"Bonjour {prenom}," if prenom else "Bonjour,"
     ville_phrase = f" a {ville}" if ville else ""
     hook_text    = custom_hook if custom_hook else cfg["hook"]
-    demo_url     = f"https://chantierdevis.fr/demo?{UTM}"
-    register_url = f"https://chantierdevis.fr/register?{UTM_REG}"
+    demo_url     = f"https://chantierdevis.fr/bienvenue?{UTM_BVN}"
+    register_url = f"https://chantierdevis.fr/bienvenue?{UTM_BVN}"
 
     return f"""{salutation}
 

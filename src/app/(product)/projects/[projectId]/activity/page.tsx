@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 
 import { ActivityFeed } from "@/features/projects/activity-feed";
 import { TaskCollaborationPanel } from "@/features/projects/task-collaboration-panel";
-import { requireCurrentSession } from "@/services/auth";
 import { listProjectAttachments } from "@/services/attachments";
 import { listActivity } from "@/services/activity";
 import { listProjectComments } from "@/services/comments";
@@ -13,9 +12,9 @@ export default async function ProjectActivityPage({
 }: {
   params: Promise<{ projectId: string }>;
 }) {
-  const session = await requireCurrentSession();
+  
   const { projectId } = await params;
-  const view = await getProjectView(projectId, { workspaceId: session.workspaceId }).catch(() => notFound());
+  const view = await getProjectView(projectId, { workspaceId: "workspace-cheetah-time" }).catch(() => notFound());
   const [events, comments, attachments] = await Promise.all([
     listActivity(projectId, 250),
     listProjectComments(projectId),

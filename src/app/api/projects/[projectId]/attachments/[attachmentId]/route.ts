@@ -1,6 +1,5 @@
 import { jsonError, jsonErrorFromUnknown } from "@/lib/api/route-utils";
 import { getTaskAttachmentFile } from "@/services/attachments";
-import { requireCurrentSession } from "@/services/auth";
 import { getProjectAggregate } from "@/services/projects";
 
 export async function GET(
@@ -8,9 +7,9 @@ export async function GET(
   context: { params: Promise<{ projectId: string; attachmentId: string }> },
 ) {
   try {
-    const session = await requireCurrentSession();
+    
     const { projectId, attachmentId } = await context.params;
-    await getProjectAggregate(projectId, { workspaceId: session.workspaceId });
+    await getProjectAggregate(projectId, { workspaceId: "workspace-cheetah-time" });
     const file = await getTaskAttachmentFile(projectId, attachmentId);
 
     if (!file) {

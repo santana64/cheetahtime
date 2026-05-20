@@ -11,7 +11,6 @@ import { AiAssistant } from "@/components/app/ai-assistant";
 import { LiveRefresh } from "@/components/app/live-refresh";
 import { formatDateLabel } from "@/lib/format/formatters";
 import { getProjectView } from "@/services/projects";
-import { requireCurrentSession } from "@/services/auth";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -37,8 +36,8 @@ export default async function ProjectLayout({
   params: Promise<{ projectId: string }>;
 }) {
   const { projectId } = await params;
-  const session = await requireCurrentSession();
-  const view = await getProjectView(projectId, { workspaceId: session.workspaceId }).catch(() => notFound());
+  
+  const view = await getProjectView(projectId, { workspaceId: "workspace-cheetah-time" }).catch(() => notFound());
   const isArchived = Boolean(view.aggregate.project.archivedAt);
 
   return (

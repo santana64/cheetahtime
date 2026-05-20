@@ -921,7 +921,7 @@ export async function getCurrentSession() {
   return getSessionByToken(cookieStore.get(SESSION_COOKIE_NAME)?.value);
 }
 
-const GUEST_SESSION: AuthSession = {
+export const GUEST_SESSION: AuthSession = {
   id: "guest-session",
   userId: DEFAULT_USER_ID,
   workspaceId: DEFAULT_WORKSPACE_ID,
