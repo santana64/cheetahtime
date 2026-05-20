@@ -18,10 +18,12 @@ export function getLocalStorePath() {
     if (path.isAbsolute(configuredPath)) {
       return configuredPath;
     }
+    /* turbopackIgnore: true */
     return path.join(process.cwd(), "data", path.basename(configuredPath));
   }
 
   // On Vercel / AWS Lambda the CWD is /var/task which is read-only.
+  /* turbopackIgnore: true */
   const cwd = process.cwd();
   if (cwd.startsWith("/var/task") || cwd.startsWith("/var/runtime")) {
     return "/tmp/cheetah-time.local.json";

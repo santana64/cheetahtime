@@ -256,11 +256,12 @@ function getIdentityStorePath() {
   if (configured) {
     return path.isAbsolute(configured)
       ? configured
-      : path.join(process.cwd(), "data", path.basename(configured));
+      : /* turbopackIgnore: true */ path.join(process.cwd(), "data", path.basename(configured));
   }
 
   // On Vercel / AWS Lambda the CWD is /var/task which is read-only.
   // Fall back to /tmp which is always writable in serverless environments.
+  /* turbopackIgnore: true */
   const cwd = process.cwd();
   if (cwd.startsWith("/var/task") || cwd.startsWith("/var/runtime")) {
     return "/tmp/cheetah-time.identity.json";
