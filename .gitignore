@@ -48,3 +48,8 @@ next-env.d.ts
 /.codex-temp/
 /scripts/__pycache__/
 .env.local
+
+# local AI tooling and generated identity stores
+/.claude/
+/data/cheetah-time.identity.json
+*pdfs_extracted.txt

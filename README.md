@@ -65,27 +65,11 @@ Le moteur dans `src/lib/planning/` supporte:
 
 Les surfaces planning lisent les resultats calcules; le Gantt n'est pas decoratif.
 
-## Auth, RBAC Et MFA
+## Public Demo Security State
 
-Cheetah Time inclut maintenant:
+The public branch currently runs in an explicit demo mode: `getCurrentSession()` and `requireCurrentSession()` resolve to a guest `OWNER` session so the hosted product can be explored without credentials. The repository still contains authentication, role and MFA implementation code, but those controls must **not** be interpreted as active security boundaries on the public demo branch.
 
-- `proxy.ts` pour proteger routes produit et API.
-- Sessions stockees par hash de token.
-- Cookie `cheetah_time_session` HTTP-only.
-- Bootstrap workspace/admin.
-- Lockout temporaire apres echecs de connexion.
-- MFA TOTP activable dans `/settings`.
-- Roles `OWNER`, `ADMIN`, `PLANNER`, `VIEWER` avec matrice de permissions cote serveur.
-
-Variables utiles:
-
-- `CHEETAH_TIME_BOOTSTRAP_EMAIL`
-- `CHEETAH_TIME_BOOTSTRAP_PASSWORD`
-- `CHEETAH_TIME_BOOTSTRAP_NAME`
-- `CHEETAH_TIME_SESSION_DAYS`
-- `CHEETAH_TIME_AUTH_SECRET`
-
-Limite: ce n'est pas encore du SSO enterprise complet avec SAML/OIDC, SCIM ou politiques conditionnelles avancees.
+Before any production deployment, the guest bypass must be removed and the authentication/RBAC paths re-enabled and covered by integration tests.
 
 ## Collaboration, Notifications Et Fichiers
 
